@@ -1,0 +1,130 @@
+{
+  "suite_name": "variant_robustness_loss_adaptive_base_v1",
+  "recalibration_path": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "threshold_tables": {
+    "poisson": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/poisson_recalibrated_table.csv",
+    "burgers": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/burgers_recalibrated_table.csv",
+    "stokes_poiseuille": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/stokes_poiseuille_recalibrated_table.csv"
+  },
+  "variants": {
+    "loss_adaptive_uncertainty_v1": {
+      "training": {
+        "adaptive_weighting": {
+          "enabled": true,
+          "method": "uncertainty_v1",
+          "lr": 0.01,
+          "warmup_epochs": 20,
+          "regularizer_scale": 1.0,
+          "clamp_min": -4.0,
+          "clamp_max": 4.0,
+          "log_var_init": {
+            "data": 0.0,
+            "physics": 0.0,
+            "boundary": 0.0
+          }
+        }
+      }
+    }
+  },
+  "point_experiments": [
+    {
+      "case": "poisson",
+      "label": "safe_obs256_noise000",
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "poisson",
+      "label": "degraded_obs8_noise020",
+      "num_observation": 8,
+      "noise_std": 0.2,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "safe_obs64_noise000",
+      "num_observation": 64,
+      "noise_std": 0.0,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "num_observation": 8,
+      "noise_std": 0.125,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "failure_obs8_noise0175",
+      "num_observation": 8,
+      "noise_std": 0.175,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "burgers",
+      "label": "safe_obs64_noise005",
+      "num_observation": 64,
+      "noise_std": 0.05,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "burgers",
+      "label": "transition_obs48_noise010",
+      "num_observation": 48,
+      "noise_std": 0.1,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "burgers",
+      "label": "seed_sensitive_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.1,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "burgers",
+      "label": "failure_obs32_noise0175",
+      "num_observation": 32,
+      "noise_std": 0.175,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "compare_name": "region_aware_compare_v3_u3",
+  "experiments": [
+    {
+      "case": "burgers",
+      "label": "transition_obs48_noise005",
+      "num_observation": 48,
+      "noise_std": 0.05,
+      "seeds": [41, 42, 43, 44, 45],
+      "overrides": {},
+      "strategies": {
+        "baseline": {},
+        "naive_region_aware_v1": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.5,
+              "collocation_focus_ratio": 0.7,
+              "x_range": [-0.4, 0.4],
+              "t_range": [0.0, 0.5]
+            }
+          }
+        },
+        "dim_guided_v2": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "x_range": [-0.6, 0.6],
+              "t_range": [0.0, 0.35]
+            }
+          }
+        },
+        "non_dominant_guided_v3": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.4,
+              "collocation_focus_ratio": 0.0,
+              "x_range": [-0.2, 0.2],
+              "t_range": [0.55, 1.0]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "burgers",
+      "label": "seed_sensitive_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.10,
+      "seeds": [41, 42, 43, 44, 45],
+      "overrides": {},
+      "strategies": {
+        "baseline": {},
+        "naive_region_aware_v1": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.5,
+              "collocation_focus_ratio": 0.7,
+              "x_range": [-0.4, 0.4],
+              "t_range": [0.0, 0.5]
+            }
+          }
+        },
+        "dim_guided_v2": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "x_range": [-0.6, 0.6],
+              "t_range": [0.0, 0.35]
+            }
+          }
+        },
+        "non_dominant_guided_v3": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.4,
+              "collocation_focus_ratio": 0.0,
+              "x_range": [-0.2, 0.2],
+              "t_range": [0.55, 1.0]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "num_observation": 8,
+      "noise_std": 0.125,
+      "seeds": [41, 42, 43, 44, 45],
+      "overrides": {},
+      "strategies": {
+        "baseline": {},
+        "naive_region_aware_v1": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.5,
+              "collocation_focus_ratio": 0.7,
+              "y_bands": [[-1.0, -0.6], [-0.2, 0.2], [0.6, 1.0]],
+              "band_weights": [0.4, 0.2, 0.4]
+            }
+          }
+        },
+        "dim_guided_v2": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "y_bands": [[-1.0, -0.8], [0.8, 1.0]],
+              "band_weights": [0.5, 0.5]
+            }
+          }
+        },
+        "non_dominant_guided_v3": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "y_bands": [[-0.25, 0.25]],
+              "band_weights": [1.0]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "near_boundary_obs12_noise020",
+      "num_observation": 12,
+      "noise_std": 0.20,
+      "seeds": [41, 42, 43, 44, 45],
+      "overrides": {},
+      "strategies": {
+        "baseline": {},
+        "naive_region_aware_v1": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.5,
+              "collocation_focus_ratio": 0.7,
+              "y_bands": [[-1.0, -0.6], [-0.2, 0.2], [0.6, 1.0]],
+              "band_weights": [0.4, 0.2, 0.4]
+            }
+          }
+        },
+        "dim_guided_v2": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "y_bands": [[-1.0, -0.8], [0.8, 1.0]],
+              "band_weights": [0.5, 0.5]
+            }
+          }
+        },
+        "non_dominant_guided_v3": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "y_bands": [[-0.25, 0.25]],
+              "band_weights": [1.0]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,505 @@
+case,variant,label,seed,task,boundary_method,target_positive,pred_positive,method_meta
+stokes_poiseuille,baseline,safe_obs64_noise000,41,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,43,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,failure_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,failure_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,failure_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,41,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,43,safe_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,42,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,41,safe_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,43,safe_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,41,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,42,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,41,safe_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,42,safe_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,43,safe_boundary,REF_P1_global_partition,1,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,41,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,42,safe_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,safe_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,safe_obs64_noise005,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,transition_obs48_noise010,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,seed_sensitive_obs32_noise010,43,failure_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,41,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,baseline,failure_obs32_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,safe_obs64_noise005,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,transition_obs48_noise010,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,41,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,capacity_v1,failure_obs32_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,safe_obs64_noise005,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,41,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,transition_obs48_noise010,43,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,failure_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,failure_boundary,REF_P1_global_partition,0,0,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,failure_boundary,REF_P1_global_partition,0,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,failure_boundary,REF_P1_global_partition,1,1,partition_method=P1_anchor_mean_midpoint
+stokes_poiseuille,baseline,safe_obs64_noise000,41,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,baseline,safe_obs64_noise000,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,baseline,safe_obs64_noise000,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,baseline,safe_obs64_noise000,41,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,43,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,41,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,43,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030014
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise000"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,safe_obs64_noise000,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,safe_obs64_noise000,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,baseline,safe_obs64_noise000,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,safe_obs64_noise000,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,critical_obs8_noise0125,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,baseline,failure_obs8_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,safe_obs64_noise000,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,critical_obs8_noise0125,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,capacity_v1,failure_obs8_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,failure_boundary,L0_rel2_midpoint,0,0,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,failure_boundary,L0_rel2_midpoint,1,1,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.042667
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,failure_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,safe_obs64_noise000,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,critical_obs8_noise0125,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+stokes_poiseuille,weight_balanced_v2,failure_obs8_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs8_noise0175"", ""negative_anchor"": ""critical_obs8_noise0125""}"
+burgers,baseline,safe_obs64_noise005,41,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,baseline,safe_obs64_noise005,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,baseline,safe_obs64_noise005,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,baseline,transition_obs48_noise010,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,transition_obs48_noise010,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,transition_obs48_noise010,43,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030128
+burgers,baseline,seed_sensitive_obs32_noise010,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,seed_sensitive_obs32_noise010,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,seed_sensitive_obs32_noise010,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,failure_obs32_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,failure_obs32_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,failure_obs32_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,baseline,safe_obs64_noise005,41,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,43,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,43,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,42,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,41,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,43,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,transition_obs48_noise010,43,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,42,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,failure_obs32_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,41,safe_boundary,L0_rel2_midpoint,1,0,threshold=0.030128
+burgers,capacity_v1,safe_obs64_noise005,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,capacity_v1,safe_obs64_noise005,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,capacity_v1,transition_obs48_noise010,41,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030128
+burgers,capacity_v1,transition_obs48_noise010,42,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030128
+burgers,capacity_v1,transition_obs48_noise010,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,failure_obs32_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,failure_obs32_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,failure_obs32_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,capacity_v1,safe_obs64_noise005,41,safe_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,43,safe_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,41,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,42,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,41,safe_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,43,safe_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,41,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,42,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,41,safe_boundary,L0_rel2_midpoint,1,0,threshold=0.030128
+burgers,weight_balanced_v2,safe_obs64_noise005,42,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,weight_balanced_v2,safe_obs64_noise005,43,safe_boundary,L0_rel2_midpoint,1,1,threshold=0.030128
+burgers,weight_balanced_v2,transition_obs48_noise010,41,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030128
+burgers,weight_balanced_v2,transition_obs48_noise010,42,safe_boundary,L0_rel2_midpoint,0,1,threshold=0.030128
+burgers,weight_balanced_v2,transition_obs48_noise010,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,safe_boundary,L0_rel2_midpoint,0,0,threshold=0.030128
+burgers,weight_balanced_v2,safe_obs64_noise005,41,safe_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,42,safe_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,43,safe_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,41,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,42,safe_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,safe_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,41,safe_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,42,safe_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,43,safe_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,41,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,42,safe_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,safe_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""safe_obs64_noise005"", ""negative_anchor"": ""transition_obs48_noise010""}"
+burgers,baseline,safe_obs64_noise005,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,safe_obs64_noise005,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,safe_obs64_noise005,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,transition_obs48_noise010,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,transition_obs48_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,transition_obs48_noise010,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,seed_sensitive_obs32_noise010,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,seed_sensitive_obs32_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,baseline,seed_sensitive_obs32_noise010,43,failure_boundary,L0_rel2_midpoint,0,0,threshold=0.070960
+burgers,baseline,failure_obs32_noise0175,41,failure_boundary,L0_rel2_midpoint,1,1,threshold=0.070960
+burgers,baseline,failure_obs32_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,baseline,failure_obs32_noise0175,43,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,baseline,safe_obs64_noise005,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,safe_obs64_noise005,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,safe_obs64_noise005,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,43,failure_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,safe_obs64_noise005,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,safe_obs64_noise005,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,safe_obs64_noise005,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,transition_obs48_noise010,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,seed_sensitive_obs32_noise010,43,failure_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,baseline,failure_obs32_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,41,failure_boundary,L0_rel2_midpoint,0,0,threshold=0.070960
+burgers,capacity_v1,safe_obs64_noise005,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,safe_obs64_noise005,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,transition_obs48_noise010,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,transition_obs48_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,transition_obs48_noise010,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,capacity_v1,failure_obs32_noise0175,41,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,capacity_v1,failure_obs32_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,capacity_v1,failure_obs32_noise0175,43,failure_boundary,L0_rel2_midpoint,1,1,threshold=0.070960
+burgers,capacity_v1,safe_obs64_noise005,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,safe_obs64_noise005,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,transition_obs48_noise010,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,seed_sensitive_obs32_noise010,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,capacity_v1,failure_obs32_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,safe_obs64_noise005,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,safe_obs64_noise005,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,transition_obs48_noise010,41,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,transition_obs48_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,transition_obs48_noise010,43,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,failure_boundary,L0_rel2_midpoint,0,0,threshold=0.070960
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,failure_boundary,L0_rel2_midpoint,0,1,threshold=0.070960
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,failure_boundary,L0_rel2_midpoint,0,0,threshold=0.070960
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,failure_boundary,L0_rel2_midpoint,1,0,threshold=0.070960
+burgers,weight_balanced_v2,safe_obs64_noise005,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,41,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,43,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,failure_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,failure_boundary,L1_pair_prototype_2d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,failure_boundary,L1_pair_prototype_2d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,failure_boundary,L1_pair_prototype_2d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,failure_boundary,L1_pair_prototype_2d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,safe_obs64_noise005,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,transition_obs48_noise010,43,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,41,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,42,failure_boundary,L2_pair_prototype_3d,0,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,seed_sensitive_obs32_noise010,43,failure_boundary,L2_pair_prototype_3d,0,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,41,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,42,failure_boundary,L2_pair_prototype_3d,1,0,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"
+burgers,weight_balanced_v2,failure_obs32_noise0175,43,failure_boundary,L2_pair_prototype_3d,1,1,"{""prototype_features"": ""transferred_rel_l2,transferred_R,structural_stability_recal"", ""positive_anchor"": ""failure_obs32_noise0175"", ""negative_anchor"": ""seed_sensitive_obs32_noise010""}"

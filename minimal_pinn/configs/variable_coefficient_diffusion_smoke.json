@@ -1,0 +1,29 @@
+{
+  "run_name": "variable_coefficient_diffusion_smoke",
+  "case": {
+    "name": "variable_coefficient_diffusion",
+    "coeff_amp": 0.35
+  },
+  "seed": 42,
+  "network": {
+    "hidden_layers": [64, 64, 64],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 60,
+    "lr": 0.001,
+    "print_every": 20,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    }
+  },
+  "data": {
+    "num_observation": 128,
+    "num_collocation": 1024,
+    "num_boundary": 128,
+    "num_eval": 41,
+    "noise_std": 0.0
+  }
+}

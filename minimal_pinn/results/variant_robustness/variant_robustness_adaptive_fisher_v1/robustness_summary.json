@@ -1,0 +1,68 @@
+{
+  "suite_name": "variant_robustness_adaptive_fisher_v1",
+  "n_point_runs": 12,
+  "n_strategy_runs": 0,
+  "point_summary": [
+    {
+      "case": "fisher_kpp",
+      "label": "safe_obs64_noise000",
+      "variant": "adaptive_rar_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.012715782349308332,
+      "rel_l2_std": 0.0016007178048521142,
+      "cross_rate": 0,
+      "reliability_raw_recal_mean": 0.8698966247526166,
+      "reliability_raw_recal_std": 0.0532171716099714,
+      "physics_consistency_recal_mean": 0.9417824099081731,
+      "training_stability_recal_mean": 0.6432526526221106,
+      "numerical_accuracy_recal_mean": 0.9480891761208848,
+      "structural_stability_recal_mean": 0.946462260359298
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "edge_obs16_noise005",
+      "variant": "adaptive_rar_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.018044833404322464,
+      "rel_l2_std": 0.0039933557627309085,
+      "cross_rate": 0.6666666666666666,
+      "reliability_raw_recal_mean": 0.844427287684438,
+      "reliability_raw_recal_std": 0.07402177870047029,
+      "physics_consistency_recal_mean": 0.9115293814420968,
+      "training_stability_recal_mean": 0.6049125571747521,
+      "numerical_accuracy_recal_mean": 0.9224919437655706,
+      "structural_stability_recal_mean": 0.9387752683553324
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "transition_obs128_noise020",
+      "variant": "adaptive_rar_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.019332701961199444,
+      "rel_l2_std": 0.001412541714288209,
+      "cross_rate": 0.6666666666666666,
+      "reliability_raw_recal_mean": 0.800742345658452,
+      "reliability_raw_recal_std": 0.07428707126213772,
+      "physics_consistency_recal_mean": 0.8792750574197926,
+      "training_stability_recal_mean": 0.46882177954101795,
+      "numerical_accuracy_recal_mean": 0.9177372767017788,
+      "structural_stability_recal_mean": 0.9371352689712187
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "failure_obs16_noise030",
+      "variant": "adaptive_rar_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.06614749133586884,
+      "rel_l2_std": 0.023622659314232932,
+      "cross_rate": 1,
+      "reliability_raw_recal_mean": 0.23863058442559051,
+      "reliability_raw_recal_std": 0.22046303153841684,
+      "physics_consistency_recal_mean": 0.24627237556326306,
+      "training_stability_recal_mean": 0.03141262703549435,
+      "numerical_accuracy_recal_mean": 0.36547579416082604,
+      "structural_stability_recal_mean": 0.31136154094277857
+    }
+  ],
+  "strategy_summary": []
+}

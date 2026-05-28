@@ -1,0 +1,29 @@
+{
+  "matrix_name": "refine_burgers_v1",
+  "cases": [
+    "burgers"
+  ],
+  "observation_counts": [
+    128,
+    96,
+    64,
+    48,
+    40,
+    32,
+    24,
+    16,
+    12,
+    8
+  ],
+  "noise_levels": [
+    0.0,
+    0.05,
+    0.075,
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2
+  ],
+  "overrides": {}
+}

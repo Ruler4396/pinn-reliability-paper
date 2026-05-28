@@ -1,0 +1,17 @@
+case,ablation,jaccard_vs_full
+poisson,R_minus_phy,0.7142857142857143
+poisson,R_minus_train,0.5
+poisson,R_minus_num,0.5
+poisson,R_minus_str,0.5
+burgers,R_minus_phy,0.7777777777777778
+burgers,R_minus_train,0.8823529411764706
+burgers,R_minus_num,0.8823529411764706
+burgers,R_minus_str,0.7777777777777778
+stokes_poiseuille,R_minus_phy,0.6
+stokes_poiseuille,R_minus_train,0.8461538461538461
+stokes_poiseuille,R_minus_num,0.6
+stokes_poiseuille,R_minus_str,0.8461538461538461
+fisher_kpp,R_minus_phy,1.0
+fisher_kpp,R_minus_train,1.0
+fisher_kpp,R_minus_num,1.0
+fisher_kpp,R_minus_str,1.0

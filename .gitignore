@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.docx
+*.ckpt
+*.pt
+*.pth
+minimal_pinn/results/**/runs/
+minimal_pinn/results/**/plots/
+minimal_pinn/results/**/best_model/
+logs/
+wandb/
+*.log

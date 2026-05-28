@@ -1,0 +1,1574 @@
+{
+  "configs": {
+    "q10-90|geometric|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6453837597330367
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 7
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9025082044069386
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8356117566643882
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 4,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9016685205784205
+      }
+    },
+    "q10-90|geometric|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7397107897664071
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 7
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8862165963431786
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8047163362952837
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 4,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9043381535038932
+      }
+    },
+    "q10-90|geometric|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5305895439377085
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 7
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.7950539146741679
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7058783321941217
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 4,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8482758620689655
+      }
+    },
+    "q10-90|arithmetic|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 4,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7005561735261402
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 8
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9260431317393343
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8326725905673275
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 2,
+          "numerical_accuracy": 2,
+          "structural_stability": 2
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9016685205784205
+      }
+    },
+    "q10-90|arithmetic|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 4,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7810901001112347
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 8
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9121659634317862
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8038961038961039
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 2,
+          "numerical_accuracy": 2,
+          "structural_stability": 2
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9056729699666296
+      }
+    },
+    "q10-90|arithmetic|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 4,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5764182424916574
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 8
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8326769807782466
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6978127136021873
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 2,
+          "numerical_accuracy": 2,
+          "structural_stability": 2
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8553948832035595
+      }
+    },
+    "q10-90|minimum|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5866518353726362
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 15,
+          "training_stability": 30,
+          "numerical_accuracy": 8,
+          "structural_stability": 6
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8892405063291139
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 8,
+          "training_stability": 0,
+          "numerical_accuracy": 0,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8308954203691046
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 6,
+          "training_stability": 6,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8776418242491657
+      }
+    },
+    "q10-90|minimum|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6725250278086763
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 15,
+          "training_stability": 30,
+          "numerical_accuracy": 8,
+          "structural_stability": 6
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8714017815283638
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 8,
+          "training_stability": 0,
+          "numerical_accuracy": 0,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7892002734107997
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 6,
+          "training_stability": 6,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8763070077864293
+      }
+    },
+    "q10-90|minimum|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.303670745272525
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 15,
+          "training_stability": 30,
+          "numerical_accuracy": 8,
+          "structural_stability": 6
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.7390295358649789
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 8,
+          "training_stability": 0,
+          "numerical_accuracy": 0,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7204374572795625
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 6,
+          "training_stability": 6,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8153503893214683
+      }
+    },
+    "q15-85|geometric|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5243604004449388
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9211439287388654
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.868215994531784
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 5,
+          "numerical_accuracy": 5,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9114571746384872
+      }
+    },
+    "q15-85|geometric|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6062291434927698
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9074542897327708
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8466165413533835
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 5,
+          "numerical_accuracy": 5,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9123470522803114
+      }
+    },
+    "q15-85|geometric|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.37263626251390436
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8258087201125176
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7699248120300752
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 5,
+          "numerical_accuracy": 5,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8803114571746384
+      }
+    },
+    "q15-85|arithmetic|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6240266963292548
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9430614158462259
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8665755297334244
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 2,
+          "numerical_accuracy": 5,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9154616240266963
+      }
+    },
+    "q15-85|arithmetic|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7152391546162402
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9340131270511017
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8449077238550923
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 2,
+          "numerical_accuracy": 5,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9123470522803114
+      }
+    },
+    "q15-85|arithmetic|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.47408231368186876
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8707454289732771
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7691045796308954
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 2,
+          "numerical_accuracy": 5,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8838709677419355
+      }
+    },
+    "q15-85|minimum|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 2,
+          "numerical_accuracy": 4,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.47408231368186876
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 13,
+          "training_stability": 30,
+          "numerical_accuracy": 7,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9101031411157994
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8516062884483937
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8878754171301446
+      }
+    },
+    "q15-85|minimum|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 2,
+          "numerical_accuracy": 4,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5519466073414906
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 13,
+          "training_stability": 30,
+          "numerical_accuracy": 7,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8954992967651195
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8191387559808613
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.885650723025584
+      }
+    },
+    "q15-85|minimum|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 2,
+          "numerical_accuracy": 4,
+          "structural_stability": 2
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.17552836484983314
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 13,
+          "training_stability": 30,
+          "numerical_accuracy": 7,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.770042194092827
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7702665755297334
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8318131256952169
+      }
+    },
+    "q20-80|geometric|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.38776418242491656
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 10,
+          "structural_stability": 16
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9242850445382091
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 0,
+          "numerical_accuracy": 6,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8745727956254272
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 5,
+          "numerical_accuracy": 3,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9101223581757508
+      }
+    },
+    "q20-80|geometric|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.51412680756396
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 10,
+          "structural_stability": 16
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9117674636661979
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 0,
+          "numerical_accuracy": 6,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8544087491455913
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 5,
+          "numerical_accuracy": 3,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9056729699666296
+      }
+    },
+    "q20-80|geometric|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.21690767519466073
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 10,
+          "structural_stability": 16
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8222691045475855
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 2,
+          "training_stability": 0,
+          "numerical_accuracy": 6,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7822966507177034
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 5,
+          "numerical_accuracy": 3,
+          "structural_stability": 4
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8914349276974416
+      }
+    },
+    "q20-80|arithmetic|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.6453837597330367
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 23,
+          "numerical_accuracy": 11,
+          "structural_stability": 18
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9488748241912799
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8732057416267942
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "structural_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 3,
+          "numerical_accuracy": 3,
+          "structural_stability": 6
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9261401557285873
+      }
+    },
+    "q20-80|arithmetic|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7063403781979978
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 23,
+          "numerical_accuracy": 11,
+          "structural_stability": 18
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9403891233005157
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8541353383458646
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "structural_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 3,
+          "numerical_accuracy": 3,
+          "structural_stability": 6
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.9123470522803114
+      }
+    },
+    "q20-80|arithmetic|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.5314794215795328
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 23,
+          "numerical_accuracy": 11,
+          "structural_stability": 18
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.8731364275668073
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 0,
+          "numerical_accuracy": 8,
+          "structural_stability": 0
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7746411483253588
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "structural_stability",
+        "counts": {
+          "physics_consistency": 1,
+          "training_stability": 3,
+          "numerical_accuracy": 3,
+          "structural_stability": 6
+        },
+        "role_holds": false,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.885650723025584
+      }
+    },
+    "q20-80|minimum|mean_equal": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.34771968854282537
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 21,
+          "training_stability": 27,
+          "numerical_accuracy": 2,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.923722456633849
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.8587833219412166
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 1,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8794215795328142
+      }
+    },
+    "q20-80|minimum|mean_nonphysics": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.467853170189099
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 21,
+          "training_stability": 27,
+          "numerical_accuracy": 2,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.9062119081106423
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.829254955570745
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 1,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8838709677419355
+      }
+    },
+    "q20-80|minimum|minimum": {
+      "poisson": {
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "numerical_accuracy",
+        "counts": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.1167964404894327
+      },
+      "burgers": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 21,
+          "training_stability": 27,
+          "numerical_accuracy": 2,
+          "structural_stability": 9
+        },
+        "role_holds": true,
+        "role_reason": "training+structural > physics and numerical",
+        "spearman_rel_l2_vs_R": -0.7744960150023441
+      },
+      "stokes_poiseuille": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "dominant_dimension": "physics_consistency",
+        "counts": {
+          "physics_consistency": 7,
+          "training_stability": 0,
+          "numerical_accuracy": 1,
+          "structural_stability": 0
+        },
+        "role_holds": false,
+        "role_reason": "dominant=numerical_accuracy",
+        "spearman_rel_l2_vs_R": -0.7866163127654443
+      },
+      "fisher_kpp": {
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "dominant_dimension": "training_stability",
+        "counts": {
+          "physics_consistency": 4,
+          "training_stability": 7,
+          "numerical_accuracy": 1,
+          "structural_stability": 1
+        },
+        "role_holds": true,
+        "role_reason": "training+numerical >= physics+structural and no physics collapse",
+        "spearman_rel_l2_vs_R": -0.8184649610678532
+      }
+    }
+  },
+  "aggregate": {
+    "n_configs": 27,
+    "n_all_case_roles_hold": 9
+  }
+}

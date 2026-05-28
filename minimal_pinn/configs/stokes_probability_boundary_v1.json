@@ -1,0 +1,14 @@
+{
+  "matrix_name": "stokes_probability_boundary_v1",
+  "case": "stokes_poiseuille",
+  "observation_counts": [16, 12, 10, 8],
+  "noise_levels": [0.0, 0.05, 0.10, 0.125, 0.15, 0.175, 0.20],
+  "seeds": [41, 42, 43, 44, 45],
+  "threshold_rel_l2": 0.01537943878211081,
+  "recalibration_path": "minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "overrides": {
+    "training": {
+      "epochs": 500
+    }
+  }
+}

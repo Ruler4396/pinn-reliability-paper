@@ -1,0 +1,71 @@
+{
+  "probe_name": "fisher_kpp_boundary_keypoints_v2_extra_seed51_70",
+  "case": "fisher_kpp",
+  "seeds": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70
+  ],
+  "threshold_rel_l2": 0.018860769923776388,
+  "recalibration_path": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/fisher_kpp_recalibrated_dimensions_v1/recalibrated_summary.json",
+  "points": [
+    {
+      "label": "safe_clean_obs64_noise000",
+      "num_observation": 64,
+      "noise_std": 0.0
+    },
+    {
+      "label": "edge_obs16_noise005",
+      "num_observation": 16,
+      "noise_std": 0.05
+    },
+    {
+      "label": "edge_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.1
+    },
+    {
+      "label": "transition_obs128_noise020",
+      "num_observation": 128,
+      "noise_std": 0.2
+    },
+    {
+      "label": "failure_obs32_noise020",
+      "num_observation": 32,
+      "noise_std": 0.2
+    },
+    {
+      "label": "transition_obs64_noise030",
+      "num_observation": 64,
+      "noise_std": 0.3
+    },
+    {
+      "label": "failure_obs128_noise030",
+      "num_observation": 128,
+      "noise_std": 0.3
+    },
+    {
+      "label": "failure_obs16_noise030",
+      "num_observation": 16,
+      "noise_std": 0.3
+    }
+  ],
+  "overrides": {}
+}

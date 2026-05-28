@@ -1,0 +1,17 @@
+method,case,task,mean_transfer_accuracy,mean_transfer_f1,point_disagreement_rate
+L0_rel2_midpoint,burgers,failure_boundary,0.16666666666666666,0.08333333333333333,0.25
+L1_pair_prototype_2d,burgers,failure_boundary,0.8333333333333333,0.6857142857142857,0.25
+L2_pair_prototype_3d,burgers,failure_boundary,0.7916666666666667,0.45,0.25
+REF_P1_global_partition,burgers,failure_boundary,0.9166666666666667,0.875,0.25
+L0_rel2_midpoint,burgers,safe_boundary,0.75,0.5714285714285715,0.25
+L1_pair_prototype_2d,burgers,safe_boundary,0.625,0.30952380952380953,0.5
+L2_pair_prototype_3d,burgers,safe_boundary,0.625,0.30952380952380953,0.5
+REF_P1_global_partition,burgers,safe_boundary,0.5833333333333333,0.29166666666666663,0.75
+L0_rel2_midpoint,stokes_poiseuille,failure_boundary,0.1111111111111111,0.1111111111111111,0.0
+L1_pair_prototype_2d,stokes_poiseuille,failure_boundary,0.8888888888888888,0.8333333333333333,0.0
+L2_pair_prototype_3d,stokes_poiseuille,failure_boundary,0.7777777777777778,0.5,0.3333333333333333
+REF_P1_global_partition,stokes_poiseuille,failure_boundary,0.8888888888888888,0.8333333333333333,0.0
+L0_rel2_midpoint,stokes_poiseuille,safe_boundary,0.9444444444444444,0.9285714285714286,0.0
+L1_pair_prototype_2d,stokes_poiseuille,safe_boundary,0.9444444444444444,0.9285714285714286,0.0
+L2_pair_prototype_3d,stokes_poiseuille,safe_boundary,0.9444444444444444,0.9285714285714286,0.0
+REF_P1_global_partition,stokes_poiseuille,safe_boundary,0.9444444444444444,0.9285714285714286,0.0

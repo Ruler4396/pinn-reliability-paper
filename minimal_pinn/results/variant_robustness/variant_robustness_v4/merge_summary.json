@@ -1,0 +1,22 @@
+{
+  "source_suites": [
+    "/root/dev/pinn-reliability-paper/minimal_pinn/results/variant_robustness/variant_robustness_v3",
+    "/root/dev/pinn-reliability-paper/minimal_pinn/results/variant_robustness/variant_robustness_loss_adaptive_base_v1",
+    "/root/dev/pinn-reliability-paper/minimal_pinn/results/variant_robustness/variant_robustness_loss_adaptive_fisher_v1"
+  ],
+  "n_point_runs": 195,
+  "n_point_summary_rows": 65,
+  "cases": [
+    "burgers",
+    "fisher_kpp",
+    "poisson",
+    "stokes_poiseuille"
+  ],
+  "variants": [
+    "adaptive_rar_v1",
+    "baseline",
+    "capacity_v1",
+    "loss_adaptive_uncertainty_v1",
+    "weight_balanced_v2"
+  ]
+}

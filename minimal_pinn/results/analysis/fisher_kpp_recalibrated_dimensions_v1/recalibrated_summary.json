@@ -1,0 +1,38 @@
+{
+  "fisher_kpp": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.0180175827816128,
+        "fail": 0.03845001626759759,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.0050266636069863195,
+        "fail": 0.017940876306965933,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.01227403106167908,
+        "fail": 0.05164744928479192,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.00014706850051878498,
+        "fail": 0.0018190860748290398,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 6.291251377769857e-06,
+        "fail": 2.758499937061033e-05,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.00011508952993113501,
+        "fail": 0.01070359466768821,
+        "mode": "smaller_better"
+      }
+    },
+    "selection_rule": "matrix_quantile_q15_q85",
+    "n_selected": 8
+  }
+}

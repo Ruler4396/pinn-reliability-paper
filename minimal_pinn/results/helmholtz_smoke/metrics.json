@@ -1,0 +1,31 @@
+{
+  "case": "helmholtz",
+  "scalar_metrics": {
+    "physics_rms": 3.0794708728790283,
+    "boundary_rms": 0.5089471340179443,
+    "rel_l2": 1.0004700422286987,
+    "structure_error": 1.032314419746399,
+    "loss_std": 2.5332560249319456,
+    "loss_ratio": 0.012151316726792613
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 1.0004700422286987
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 8.75651076269652e-27,
+      "boundary_rms": 5.220944101551846e-06,
+      "rel_l2": 4.098349722427961e-06,
+      "structure_error": 2.5020043708621198e-06,
+      "loss_std": 8.75651076269652e-27,
+      "loss_ratio": 0.9633064409196902
+    },
+    "dimension_scores": {
+      "physics_consistency": 2.284938533429695e-09,
+      "training_stability": 9.814817578129969e-07,
+      "numerical_accuracy": 4.098349722427961e-06,
+      "structural_stability": 2.5020043708621198e-06
+    },
+    "reliability_raw": 1.8960301974091268e-06
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "poisson": {
+    "n_points": 30,
+    "top_k": 6,
+    "single_indicator_overlap": {
+      "full_vs_rel_l2_only_jaccard": 0.3333333333333333,
+      "full_vs_physics_only_jaccard": 0.09090909090909091
+    },
+    "ablation_overlap": {
+      "R_minus_phy": 0.7142857142857143,
+      "R_minus_train": 0.5,
+      "R_minus_num": 0.5,
+      "R_minus_str": 0.5
+    },
+    "full_only_vs_rel_l2_only_means": {
+      "n_points": 3,
+      "rel_l2": 0.11450841526190432,
+      "physics_consistency_recal": 0.5022392365114204,
+      "training_stability_recal": 0.3635511550576857,
+      "structural_stability_recal": 0.6619815227956932
+    },
+    "rel_l2_only_vs_full_means": {
+      "n_points": 3,
+      "rel_l2": 0.11603742341200507,
+      "physics_consistency_recal": 0.8037225743607381,
+      "training_stability_recal": 0.8266139020904597,
+      "structural_stability_recal": 0.6385194661518608
+    }
+  },
+  "burgers": {
+    "n_points": 80,
+    "top_k": 16,
+    "single_indicator_overlap": {
+      "full_vs_rel_l2_only_jaccard": 0.7777777777777778,
+      "full_vs_physics_only_jaccard": 0.8823529411764706
+    },
+    "ablation_overlap": {
+      "R_minus_phy": 0.7777777777777778,
+      "R_minus_train": 0.8823529411764706,
+      "R_minus_num": 0.8823529411764706,
+      "R_minus_str": 0.7777777777777778
+    },
+    "full_only_vs_rel_l2_only_means": {
+      "n_points": 2,
+      "rel_l2": 0.05570421367883675,
+      "physics_consistency_recal": 0.39268314639737045,
+      "training_stability_recal": 0.32758412032582523,
+      "structural_stability_recal": 0.41361528217520854
+    },
+    "rel_l2_only_vs_full_means": {
+      "n_points": 2,
+      "rel_l2": 0.05801092088222495,
+      "physics_consistency_recal": 0.7181628835022758,
+      "training_stability_recal": 0.8610797443106826,
+      "structural_stability_recal": 0.6658987968425842
+    }
+  },
+  "stokes_poiseuille": {
+    "n_points": 56,
+    "top_k": 12,
+    "single_indicator_overlap": {
+      "full_vs_rel_l2_only_jaccard": 0.7142857142857143,
+      "full_vs_physics_only_jaccard": 0.8461538461538461
+    },
+    "ablation_overlap": {
+      "R_minus_phy": 0.6,
+      "R_minus_train": 0.8461538461538461,
+      "R_minus_num": 0.6,
+      "R_minus_str": 0.8461538461538461
+    },
+    "full_only_vs_rel_l2_only_means": {
+      "n_points": 2,
+      "rel_l2": 0.033528716303408104,
+      "physics_consistency_recal": 0.47613924624495907,
+      "training_stability_recal": 0.4594671091836468,
+      "structural_stability_recal": 0.44530263507811507
+    },
+    "rel_l2_only_vs_full_means": {
+      "n_points": 2,
+      "rel_l2": 0.0391369797289371,
+      "physics_consistency_recal": 0.6773161740616296,
+      "training_stability_recal": 0.9299209223367793,
+      "structural_stability_recal": 0.8860488777790806
+    }
+  },
+  "fisher_kpp": {
+    "n_points": 30,
+    "top_k": 6,
+    "single_indicator_overlap": {
+      "full_vs_rel_l2_only_jaccard": 1.0,
+      "full_vs_physics_only_jaccard": 1.0
+    },
+    "ablation_overlap": {
+      "R_minus_phy": 1.0,
+      "R_minus_train": 1.0,
+      "R_minus_num": 1.0,
+      "R_minus_str": 1.0
+    },
+    "full_only_vs_rel_l2_only_means": {
+      "n_points": 0,
+      "rel_l2": null,
+      "physics_consistency_recal": null,
+      "training_stability_recal": null,
+      "structural_stability_recal": null
+    },
+    "rel_l2_only_vs_full_means": {
+      "n_points": 0,
+      "rel_l2": null,
+      "physics_consistency_recal": null,
+      "training_stability_recal": null,
+      "structural_stability_recal": null
+    }
+  }
+}

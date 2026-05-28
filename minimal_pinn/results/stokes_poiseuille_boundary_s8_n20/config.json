@@ -1,0 +1,66 @@
+{
+  "case": {
+    "name": "stokes_poiseuille"
+  },
+  "seed": 42,
+  "network": {
+    "hidden_layers": [
+      64,
+      64,
+      64
+    ],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 300,
+    "lr": 0.001,
+    "print_every": 100,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    }
+  },
+  "data": {
+    "num_observation": 8,
+    "num_collocation": 2048,
+    "num_boundary": 256,
+    "num_eval": 51,
+    "noise_std": 0.2
+  },
+  "run_name": "stokes_poiseuille_boundary_s8_n20",
+  "reliability": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.0001,
+        "fail": 0.01,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.1,
+        "fail": 0.9,
+        "mode": "smaller_better"
+      }
+    }
+  }
+}

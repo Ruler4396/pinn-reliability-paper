@@ -1,0 +1,9 @@
+split,case,n_calibration,n_evaluation,threshold_rel_l2,evaluation_cross_rate,dominant_dimension,spearman_rel_l2_vs_R_split,R_lin_eval_median
+noise_holdout_odd,poisson,18,12,0.1707783825695514,0.0,structure_score,-0.7132867132867133,0.4401323179663629
+noise_holdout_odd,stokes_poiseuille,18,12,0.0384813258424401,0.08333333333333333,reference_score,-0.7552447552447552,0.6536435620544813
+noise_holdout_odd,fisher_kpp,18,12,0.01886076992377635,0.5,physics_score,-0.9020979020979021,0.696807525160271
+noise_holdout_odd,burgers,18,12,0.02818822860717765,0.5833333333333334,training_score,-0.8601398601398601,0.5903090255201868
+sparsity_holdout_low,poisson,20,10,0.1707783825695514,0.0,physics_score,-0.5151515151515151,0.5008174918729669
+sparsity_holdout_low,stokes_poiseuille,20,10,0.0384813258424401,0.2,reference_score,-0.06666666666666667,0.19116152324781577
+sparsity_holdout_low,fisher_kpp,20,10,0.01886076992377635,0.8,reference_score,-0.9272727272727272,0.21834691043797966
+sparsity_holdout_low,burgers,20,10,0.02818822860717765,0.8,physics_score,-0.8303030303030303,0.2347936847407554

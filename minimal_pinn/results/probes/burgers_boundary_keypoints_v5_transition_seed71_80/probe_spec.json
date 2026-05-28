@@ -1,0 +1,51 @@
+{
+  "probe_name": "burgers_boundary_keypoints_v5_transition_seed71_80",
+  "case": "burgers",
+  "seeds": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "threshold_rel_l2": 0.02668845998123288,
+  "recalibration_path": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "points": [
+    {
+      "label": "safe_edge_obs64_noise005",
+      "num_observation": 64,
+      "noise_std": 0.05
+    },
+    {
+      "label": "transition_obs48_noise005",
+      "num_observation": 48,
+      "noise_std": 0.05
+    },
+    {
+      "label": "seed_sensitive_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.1
+    },
+    {
+      "label": "transition_obs24_noise0125",
+      "num_observation": 24,
+      "noise_std": 0.125
+    },
+    {
+      "label": "failure_obs64_noise015",
+      "num_observation": 64,
+      "noise_std": 0.15
+    },
+    {
+      "label": "failure_obs32_noise0175",
+      "num_observation": 32,
+      "noise_std": 0.175
+    }
+  ],
+  "overrides": {}
+}

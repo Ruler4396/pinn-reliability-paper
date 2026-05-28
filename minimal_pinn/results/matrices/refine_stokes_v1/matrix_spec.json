@@ -1,0 +1,26 @@
+{
+  "matrix_name": "refine_stokes_v1",
+  "cases": [
+    "stokes_poiseuille"
+  ],
+  "observation_counts": [
+    64,
+    32,
+    24,
+    16,
+    12,
+    10,
+    8,
+    6
+  ],
+  "noise_levels": [
+    0.0,
+    0.05,
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2
+  ],
+  "overrides": {}
+}

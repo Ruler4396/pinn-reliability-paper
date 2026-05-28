@@ -1,0 +1,152 @@
+{
+  "suite_name": "helmholtz_protocol_sweep_v1",
+  "experiments": [
+    {
+      "label": "tanh_minimal_mode2",
+      "config": {
+        "run_name": "helmholtz_tanh_minimal_mode2",
+        "case": {
+          "name": "helmholtz",
+          "mode": 2,
+          "kappa": 10.406
+        },
+        "seed": 42,
+        "network": {
+          "hidden_layers": [
+            64,
+            64,
+            64
+          ],
+          "activation": "tanh"
+        },
+        "training": {
+          "epochs": 1000,
+          "lr": 0.001,
+          "print_every": 100,
+          "weights": {
+            "data": 30.0,
+            "physics": 1.0,
+            "boundary": 30.0
+          }
+        },
+        "data": {
+          "num_observation": 512,
+          "num_collocation": 4096,
+          "num_boundary": 512,
+          "num_eval": 51,
+          "noise_std": 0.0
+        }
+      }
+    },
+    {
+      "label": "sin_minimal_mode2",
+      "config": {
+        "run_name": "helmholtz_sin_minimal_mode2",
+        "case": {
+          "name": "helmholtz",
+          "mode": 2,
+          "kappa": 10.406
+        },
+        "seed": 42,
+        "network": {
+          "hidden_layers": [
+            64,
+            64,
+            64
+          ],
+          "activation": "sin"
+        },
+        "training": {
+          "epochs": 1000,
+          "lr": 0.001,
+          "print_every": 100,
+          "weights": {
+            "data": 30.0,
+            "physics": 1.0,
+            "boundary": 30.0
+          }
+        },
+        "data": {
+          "num_observation": 512,
+          "num_collocation": 4096,
+          "num_boundary": 512,
+          "num_eval": 51,
+          "noise_std": 0.0
+        }
+      }
+    },
+    {
+      "label": "sin_wider_mode2",
+      "config": {
+        "run_name": "helmholtz_sin_wider_mode2",
+        "case": {
+          "name": "helmholtz",
+          "mode": 2,
+          "kappa": 10.406
+        },
+        "seed": 42,
+        "network": {
+          "hidden_layers": [
+            96,
+            96,
+            96
+          ],
+          "activation": "sin"
+        },
+        "training": {
+          "epochs": 1200,
+          "lr": 0.001,
+          "print_every": 100,
+          "weights": {
+            "data": 30.0,
+            "physics": 1.0,
+            "boundary": 30.0
+          }
+        },
+        "data": {
+          "num_observation": 512,
+          "num_collocation": 4096,
+          "num_boundary": 512,
+          "num_eval": 51,
+          "noise_std": 0.0
+        }
+      }
+    },
+    {
+      "label": "sin_mode3",
+      "config": {
+        "run_name": "helmholtz_sin_mode3",
+        "case": {
+          "name": "helmholtz",
+          "mode": 3
+        },
+        "seed": 42,
+        "network": {
+          "hidden_layers": [
+            96,
+            96,
+            96
+          ],
+          "activation": "sin"
+        },
+        "training": {
+          "epochs": 1200,
+          "lr": 0.001,
+          "print_every": 100,
+          "weights": {
+            "data": 30.0,
+            "physics": 1.0,
+            "boundary": 30.0
+          }
+        },
+        "data": {
+          "num_observation": 512,
+          "num_collocation": 4096,
+          "num_boundary": 512,
+          "num_eval": 51,
+          "noise_std": 0.0
+        }
+      }
+    }
+  ]
+}

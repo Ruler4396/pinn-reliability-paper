@@ -1,0 +1,67 @@
+{
+  "probe_name": "fisher_kpp_boundary_keypoints_v3_transition_seed71_80",
+  "case": "fisher_kpp",
+  "seeds": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80
+  ],
+  "threshold_rel_l2": 0.018860769923776388,
+  "points": {
+    "edge_obs16_noise005": {
+      "label": "edge_obs16_noise005",
+      "num_observation": 16,
+      "noise_std": 0.05,
+      "n_seed": 10,
+      "rel_l2_mean": 0.01576811131089926,
+      "rel_l2_std": 0.003376443551203937,
+      "rel_l2_min": 0.010199259966611862,
+      "rel_l2_max": 0.023163501173257828,
+      "reliability_raw_mean": 0.9466422491318793,
+      "reliability_raw_std": 0.002122081001977355,
+      "structure_error_mean": 0.0002369403839111328,
+      "structure_error_std": 0.00010830481098929225,
+      "crosses_threshold_count": 1,
+      "crosses_threshold_rate": 0.1
+    },
+    "edge_obs32_noise010": {
+      "label": "edge_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.1,
+      "n_seed": 10,
+      "rel_l2_mean": 0.019836580939590932,
+      "rel_l2_std": 0.004529525297579212,
+      "rel_l2_min": 0.011446312069892883,
+      "rel_l2_max": 0.028834031894803047,
+      "reliability_raw_mean": 0.9443257139469984,
+      "reliability_raw_std": 0.0025399958010128205,
+      "structure_error_mean": 0.0003169894218444824,
+      "structure_error_std": 0.0001102361238205546,
+      "crosses_threshold_count": 7,
+      "crosses_threshold_rate": 0.7
+    },
+    "transition_obs128_noise020": {
+      "label": "transition_obs128_noise020",
+      "num_observation": 128,
+      "noise_std": 0.2,
+      "n_seed": 10,
+      "rel_l2_mean": 0.01643807962536812,
+      "rel_l2_std": 0.0027539883859380525,
+      "rel_l2_min": 0.012151417322456837,
+      "rel_l2_max": 0.02172158472239971,
+      "reliability_raw_mean": 0.9462864478721374,
+      "reliability_raw_std": 0.0019952899703856277,
+      "structure_error_mean": 0.0002057492733001709,
+      "structure_error_std": 0.00012451423546974393,
+      "crosses_threshold_count": 2,
+      "crosses_threshold_rate": 0.2
+    }
+  }
+}

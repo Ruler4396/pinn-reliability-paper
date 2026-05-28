@@ -1,0 +1,122 @@
+{
+  "burgers::critical_obs32_noise010": {
+    "baseline": {
+      "case": "burgers",
+      "label": "critical_obs32_noise010",
+      "strategy": "baseline",
+      "n_seed": 3,
+      "rel_l2_mean": 0.05665655558307966,
+      "rel_l2_std": 0.034573316791621116,
+      "reliability_raw_recal_mean": 0.5252905335603831,
+      "reliability_raw_recal_std": 0.3517427180462896,
+      "physics_consistency_recal_mean": 0.5178958106091343,
+      "training_stability_recal_mean": 0.379846452846785,
+      "numerical_accuracy_recal_mean": 0.6086388907314874,
+      "structural_stability_recal_mean": 0.5947809800541258
+    },
+    "naive_region_aware_v1": {
+      "case": "burgers",
+      "label": "critical_obs32_noise010",
+      "strategy": "naive_region_aware_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.045642320066690445,
+      "rel_l2_std": 0.00336362087716829,
+      "reliability_raw_recal_mean": 0.4822151765019437,
+      "reliability_raw_recal_std": 0.08553948239771422,
+      "physics_consistency_recal_mean": 0.3059743560578092,
+      "training_stability_recal_mean": 0.27145785622409124,
+      "numerical_accuracy_recal_mean": 0.7557633098635118,
+      "structural_stability_recal_mean": 0.5956651838623626
+    },
+    "naive_region_aware_v1_delta": {
+      "delta_rel_l2_mean": -0.011014235516389213,
+      "delta_reliability_raw_recal_mean": -0.043075357058439456,
+      "delta_physics_consistency_recal_mean": -0.21192145455132505,
+      "delta_training_stability_recal_mean": -0.10838859662269373,
+      "delta_numerical_accuracy_recal_mean": 0.14712441913202445,
+      "delta_structural_stability_recal_mean": 0.0008842038082367276
+    },
+    "dim_guided_v2": {
+      "case": "burgers",
+      "label": "critical_obs32_noise010",
+      "strategy": "dim_guided_v2",
+      "n_seed": 3,
+      "rel_l2_mean": 0.04992103576660156,
+      "rel_l2_std": 0.009962557148596023,
+      "reliability_raw_recal_mean": 0.6554584755802212,
+      "reliability_raw_recal_std": 0.08653637336773785,
+      "physics_consistency_recal_mean": 0.5430186419396631,
+      "training_stability_recal_mean": 0.7897843734244165,
+      "numerical_accuracy_recal_mean": 0.676422652061553,
+      "structural_stability_recal_mean": 0.6126082348952522
+    },
+    "dim_guided_v2_delta": {
+      "delta_rel_l2_mean": -0.006735519816478096,
+      "delta_reliability_raw_recal_mean": 0.13016794201983806,
+      "delta_physics_consistency_recal_mean": 0.02512283133052884,
+      "delta_training_stability_recal_mean": 0.40993792057763156,
+      "delta_numerical_accuracy_recal_mean": 0.0677837613300657,
+      "delta_structural_stability_recal_mean": 0.01782725484112635
+    }
+  },
+  "stokes_poiseuille::critical_obs8_noise0125": {
+    "baseline": {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "strategy": "baseline",
+      "n_seed": 3,
+      "rel_l2_mean": 0.03887022038300832,
+      "rel_l2_std": 0.0028688531090109615,
+      "reliability_raw_recal_mean": 0.7932970595061188,
+      "reliability_raw_recal_std": 0.09276203194642416,
+      "physics_consistency_recal_mean": 0.8580506267936332,
+      "training_stability_recal_mean": 0.8767874519967824,
+      "numerical_accuracy_recal_mean": 0.5057265819570123,
+      "structural_stability_recal_mean": 0.9326235772770474
+    },
+    "naive_region_aware_v1": {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "strategy": "naive_region_aware_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.03975770187874635,
+      "rel_l2_std": 0.011414573273718599,
+      "reliability_raw_recal_mean": 0.7731850234810471,
+      "reliability_raw_recal_std": 0.13511479773859844,
+      "physics_consistency_recal_mean": 0.777674040456519,
+      "training_stability_recal_mean": 0.8781486387527,
+      "numerical_accuracy_recal_mean": 0.5564928222517292,
+      "structural_stability_recal_mean": 0.8804245924632402
+    },
+    "naive_region_aware_v1_delta": {
+      "delta_rel_l2_mean": 0.0008874814957380295,
+      "delta_reliability_raw_recal_mean": -0.020112036025071722,
+      "delta_physics_consistency_recal_mean": -0.0803765863371142,
+      "delta_training_stability_recal_mean": 0.001361186755917565,
+      "delta_numerical_accuracy_recal_mean": 0.05076624029471699,
+      "delta_structural_stability_recal_mean": -0.05219898481380714
+    },
+    "dim_guided_v2": {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "strategy": "dim_guided_v2",
+      "n_seed": 3,
+      "rel_l2_mean": 0.03946057210365931,
+      "rel_l2_std": 0.002788408057683223,
+      "reliability_raw_recal_mean": 0.7691128705052972,
+      "reliability_raw_recal_std": 0.08214255621973446,
+      "physics_consistency_recal_mean": 0.8875556209055845,
+      "training_stability_recal_mean": 0.8717587367378173,
+      "numerical_accuracy_recal_mean": 0.4781471753242522,
+      "structural_stability_recal_mean": 0.8389899490535346
+    },
+    "dim_guided_v2_delta": {
+      "delta_rel_l2_mean": 0.0005903517206509862,
+      "delta_reliability_raw_recal_mean": -0.024184189000821643,
+      "delta_physics_consistency_recal_mean": 0.029504994111951288,
+      "delta_training_stability_recal_mean": -0.0050287152589650885,
+      "delta_numerical_accuracy_recal_mean": -0.02757940663276004,
+      "delta_structural_stability_recal_mean": -0.09363362822351273
+    }
+  }
+}

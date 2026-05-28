@@ -1,0 +1,69 @@
+{
+  "seed": 42,
+  "run_name": "addiff_dom_probe_obs8_noise020_e500",
+  "case": {
+    "name": "advection_dominated_diffusion",
+    "eps": 0.02,
+    "beta_x": 4.0,
+    "beta_y": 1.0
+  },
+  "network": {
+    "hidden_layers": [
+      64,
+      64,
+      64
+    ],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 500,
+    "lr": 0.001,
+    "print_every": 100,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    }
+  },
+  "data": {
+    "num_observation": 8,
+    "num_collocation": 2048,
+    "num_boundary": 256,
+    "num_eval": 41,
+    "noise_std": 0.2
+  },
+  "reliability": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.0001,
+        "fail": 0.01,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.1,
+        "fail": 0.9,
+        "mode": "smaller_better"
+      }
+    }
+  }
+}

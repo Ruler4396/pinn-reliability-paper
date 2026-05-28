@@ -1,0 +1,198 @@
+{
+  "poisson": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.31635279506444924,
+        "fail": 0.34057041704654695,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.10572596266865728,
+        "fail": 0.10740329883992669,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.112968810275197,
+        "fail": 0.1159865584224462,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.00092995166778562,
+        "fail": 0.0012816190719604,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.0021049089566372798,
+        "fail": 0.0026265261640698095,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.001980097847467365,
+        "fail": 0.00216158324625444,
+        "mode": "smaller_better"
+      }
+    },
+    "low_q": 0.15,
+    "high_q": 0.85,
+    "selection_rule": "top_quartile_rel_l2",
+    "n_selected": 8,
+    "spearman_rel_l2_vs_reliability_raw_recal": -0.5243604004449388,
+    "spearman_rel_l2_vs_physics_consistency_recal": 0.30411568409343714,
+    "spearman_rel_l2_vs_training_stability_recal": 0.015795328142380424,
+    "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+    "spearman_rel_l2_vs_structural_stability_recal": -0.7273334119987607,
+    "dominant_dimension_counts_recal": {
+      "physics_consistency": 0,
+      "training_stability": 1,
+      "numerical_accuracy": 5,
+      "structural_stability": 2
+    }
+  },
+  "burgers": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.06268232017755507,
+        "fail": 0.07964141555130477,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.015160906640812735,
+        "fail": 0.021456071082502574,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.021662641409784484,
+        "fail": 0.06092318091541525,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.0007724702358245049,
+        "fail": 0.008004307746887117,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.00012292984282155498,
+        "fail": 0.002622592940270934,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.00176165409723492,
+        "fail": 0.010350359924875903,
+        "mode": "smaller_better"
+      }
+    },
+    "low_q": 0.15,
+    "high_q": 0.85,
+    "selection_rule": "threshold_rel_l2",
+    "n_selected": 59,
+    "spearman_rel_l2_vs_reliability_raw_recal": -0.9211439287388654,
+    "spearman_rel_l2_vs_physics_consistency_recal": -0.9207923112986404,
+    "spearman_rel_l2_vs_training_stability_recal": -0.526699484294421,
+    "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+    "spearman_rel_l2_vs_structural_stability_recal": -0.9101500234411627,
+    "dominant_dimension_counts_recal": {
+      "physics_consistency": 9,
+      "training_stability": 23,
+      "numerical_accuracy": 12,
+      "structural_stability": 15
+    }
+  },
+  "stokes_poiseuille": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.11261240206658833,
+        "fail": 0.12341104820370667,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.02593157347291705,
+        "fail": 0.0328886760398745,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.026009537279605824,
+        "fail": 0.039053037762641823,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 3.9130449295043945e-05,
+        "fail": 7.861852645874023e-05,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.000783790548713125,
+        "fail": 0.0009450645963392751,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.001218695971502825,
+        "fail": 0.00312719428082765,
+        "mode": "smaller_better"
+      }
+    },
+    "low_q": 0.15,
+    "high_q": 0.85,
+    "selection_rule": "threshold_rel_l2",
+    "n_selected": 8,
+    "spearman_rel_l2_vs_reliability_raw_recal": -0.868215994531784,
+    "spearman_rel_l2_vs_physics_consistency_recal": -0.9564593301435407,
+    "spearman_rel_l2_vs_training_stability_recal": -0.5334244702665756,
+    "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+    "spearman_rel_l2_vs_structural_stability_recal": -0.37902219797396497,
+    "dominant_dimension_counts_recal": {
+      "physics_consistency": 1,
+      "training_stability": 0,
+      "numerical_accuracy": 7,
+      "structural_stability": 0
+    }
+  },
+  "fisher_kpp": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.0180175827816128,
+        "fail": 0.03845001626759759,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.0050266636069863195,
+        "fail": 0.017940876306965933,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.01227403106167908,
+        "fail": 0.05164744928479192,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.00014706850051878498,
+        "fail": 0.0018190860748290398,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 6.291251377769857e-06,
+        "fail": 2.758499937061033e-05,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.00011508952993113501,
+        "fail": 0.01070359466768821,
+        "mode": "smaller_better"
+      }
+    },
+    "low_q": 0.15,
+    "high_q": 0.85,
+    "selection_rule": "threshold_rel_l2",
+    "n_selected": 13,
+    "spearman_rel_l2_vs_reliability_raw_recal": -0.9114571746384872,
+    "spearman_rel_l2_vs_physics_consistency_recal": -0.9101223581757508,
+    "spearman_rel_l2_vs_training_stability_recal": -0.725027808676307,
+    "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+    "spearman_rel_l2_vs_structural_stability_recal": -0.910567296996663,
+    "dominant_dimension_counts_recal": {
+      "physics_consistency": 2,
+      "training_stability": 5,
+      "numerical_accuracy": 5,
+      "structural_stability": 1
+    }
+  }
+}

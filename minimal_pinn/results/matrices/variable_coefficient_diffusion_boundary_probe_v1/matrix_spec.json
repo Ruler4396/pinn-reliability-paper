@@ -1,0 +1,50 @@
+{
+  "matrix_name": "variable_coefficient_diffusion_boundary_probe_v1",
+  "cases": [
+    "variable_coefficient_diffusion"
+  ],
+  "observation_counts": [
+    64,
+    32,
+    16,
+    8,
+    4
+  ],
+  "noise_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "overrides": {
+    "variable_coefficient_diffusion": {
+      "case": {
+        "name": "variable_coefficient_diffusion",
+        "coeff_amp": 0.35
+      },
+      "network": {
+        "hidden_layers": [
+          64,
+          64,
+          64
+        ],
+        "activation": "tanh"
+      },
+      "training": {
+        "epochs": 500,
+        "lr": 0.001,
+        "print_every": 100,
+        "weights": {
+          "data": 10.0,
+          "physics": 1.0,
+          "boundary": 10.0
+        }
+      },
+      "data": {
+        "num_collocation": 2048,
+        "num_boundary": 256,
+        "num_eval": 51
+      }
+    }
+  }
+}

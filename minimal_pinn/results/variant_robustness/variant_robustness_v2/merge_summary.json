@@ -1,0 +1,14 @@
+{
+  "source_suites": [
+    "/root/dev/pinn-reliability-paper/minimal_pinn/results/variant_robustness/variant_robustness_v1",
+    "/root/dev/pinn-reliability-paper/minimal_pinn/results/variant_robustness/variant_robustness_fisher_v1"
+  ],
+  "n_point_runs": 117,
+  "n_point_summary_rows": 39,
+  "cases": [
+    "burgers",
+    "fisher_kpp",
+    "poisson",
+    "stokes_poiseuille"
+  ]
+}

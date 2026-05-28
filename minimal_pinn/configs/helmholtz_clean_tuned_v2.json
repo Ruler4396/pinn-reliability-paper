@@ -1,0 +1,30 @@
+{
+  "run_name": "helmholtz_clean_tuned_v2",
+  "case": {
+    "name": "helmholtz",
+    "mode": 2,
+    "kappa": 10.406
+  },
+  "seed": 42,
+  "network": {
+    "hidden_layers": [64, 64, 64],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 1200,
+    "lr": 0.001,
+    "print_every": 100,
+    "weights": {
+      "data": 30.0,
+      "physics": 1.0,
+      "boundary": 30.0
+    }
+  },
+  "data": {
+    "num_observation": 512,
+    "num_collocation": 4096,
+    "num_boundary": 512,
+    "num_eval": 51,
+    "noise_std": 0.0
+  }
+}

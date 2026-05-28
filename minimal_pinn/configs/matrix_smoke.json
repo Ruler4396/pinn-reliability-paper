@@ -1,0 +1,15 @@
+{
+  "matrix_name": "smoke_v1",
+  "cases": ["burgers"],
+  "observation_counts": [256, 64],
+  "noise_levels": [0.0, 0.1],
+  "overrides": {
+    "burgers": {
+      "training": {
+        "epochs": 60,
+        "print_every": 30
+      }
+    }
+  }
+}
+

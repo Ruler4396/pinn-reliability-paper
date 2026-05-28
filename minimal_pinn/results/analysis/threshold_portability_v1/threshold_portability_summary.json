@@ -1,0 +1,276 @@
+{
+  "r_cutoffs": {
+    "reliable": 0.9,
+    "unreliable": 0.7
+  },
+  "cases": {
+    "poisson": {
+      "threshold_reference": [
+        {
+          "case": "poisson",
+          "variant": "baseline",
+          "variant_safe_rel_l2_mean": 0.114024077852567,
+          "absolute_threshold_rel_l2": 0.1707783825695514,
+          "baseline_safe_rel_l2_mean": 0.114024077852567,
+          "relative_factor_vs_safe": 1.4977396510092162,
+          "variant_relative_threshold_rel_l2": 0.1707783825695514
+        },
+        {
+          "case": "poisson",
+          "variant": "capacity_v1",
+          "variant_safe_rel_l2_mean": 0.10763836403687789,
+          "absolute_threshold_rel_l2": 0.1707783825695514,
+          "baseline_safe_rel_l2_mean": 0.114024077852567,
+          "relative_factor_vs_safe": 1.4977396510092162,
+          "variant_relative_threshold_rel_l2": 0.16121424578779647
+        },
+        {
+          "case": "poisson",
+          "variant": "weight_balanced_v2",
+          "variant_safe_rel_l2_mean": 0.12502086162567133,
+          "absolute_threshold_rel_l2": 0.1707783825695514,
+          "baseline_safe_rel_l2_mean": 0.114024077852567,
+          "relative_factor_vs_safe": 1.4977396510092162,
+          "variant_relative_threshold_rel_l2": 0.1872487016601045
+        }
+      ],
+      "rule_portability": {
+        "case": "poisson",
+        "mean_abs_cross_span": 0.0,
+        "mean_relative_cross_span": 0.0,
+        "mean_r_unreliable_span": 0.6666666666666666,
+        "mean_r_mean_span": 0.31763065476056274,
+        "abs_majority_disagreement_fraction": 0.0,
+        "relative_majority_disagreement_fraction": 0.0,
+        "r_majority_disagreement_fraction": 1.0
+      },
+      "severity_ordering": {
+        "baseline": {
+          "rho_severity_vs_rel_l2": 0.9999999999999999,
+          "rho_severity_vs_neg_r": 0.9999999999999999
+        },
+        "capacity_v1": {
+          "rho_severity_vs_rel_l2": 0.9999999999999999,
+          "rho_severity_vs_neg_r": 0.9999999999999999
+        },
+        "weight_balanced_v2": {
+          "rho_severity_vs_rel_l2": 0.9999999999999999,
+          "rho_severity_vs_neg_r": 0.9999999999999999
+        }
+      },
+      "worst_abs_span_label": {
+        "label": "degraded_obs8_noise020",
+        "abs_cross_span": 0.0
+      },
+      "worst_relative_span_label": {
+        "label": "degraded_obs8_noise020",
+        "relative_cross_span": 0.0
+      },
+      "worst_r_span_label": {
+        "label": "safe_obs256_noise000",
+        "r_unreliable_span": 1.0
+      }
+    },
+    "stokes_poiseuille": {
+      "threshold_reference": [
+        {
+          "case": "stokes_poiseuille",
+          "variant": "baseline",
+          "variant_safe_rel_l2_mean": 0.02115721659113957,
+          "absolute_threshold_rel_l2": 0.0400393344461917,
+          "baseline_safe_rel_l2_mean": 0.02115721659113957,
+          "relative_factor_vs_safe": 1.892467011136038,
+          "variant_relative_threshold_rel_l2": 0.0400393344461917
+        },
+        {
+          "case": "stokes_poiseuille",
+          "variant": "capacity_v1",
+          "variant_safe_rel_l2_mean": 0.013599471809963334,
+          "absolute_threshold_rel_l2": 0.0400393344461917,
+          "baseline_safe_rel_l2_mean": 0.02115721659113957,
+          "relative_factor_vs_safe": 1.892467011136038,
+          "variant_relative_threshold_rel_l2": 0.025736551769230117
+        },
+        {
+          "case": "stokes_poiseuille",
+          "variant": "weight_balanced_v2",
+          "variant_safe_rel_l2_mean": 0.022835616643230066,
+          "absolute_threshold_rel_l2": 0.0400393344461917,
+          "baseline_safe_rel_l2_mean": 0.02115721659113957,
+          "relative_factor_vs_safe": 1.892467011136038,
+          "variant_relative_threshold_rel_l2": 0.04321565117626197
+        }
+      ],
+      "rule_portability": {
+        "case": "stokes_poiseuille",
+        "mean_abs_cross_span": 0.4444444444444445,
+        "mean_relative_cross_span": 0.6666666666666666,
+        "mean_r_unreliable_span": 0.3333333333333333,
+        "mean_r_mean_span": 0.1454149636156203,
+        "abs_majority_disagreement_fraction": 0.6666666666666666,
+        "relative_majority_disagreement_fraction": 0.6666666666666666,
+        "r_majority_disagreement_fraction": 0.3333333333333333
+      },
+      "severity_ordering": {
+        "baseline": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        },
+        "capacity_v1": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        },
+        "weight_balanced_v2": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        }
+      },
+      "worst_abs_span_label": {
+        "label": "failure_obs8_noise0175",
+        "abs_cross_span": 0.6666666666666667
+      },
+      "worst_relative_span_label": {
+        "label": "critical_obs8_noise0125",
+        "relative_cross_span": 1.0
+      },
+      "worst_r_span_label": {
+        "label": "failure_obs8_noise0175",
+        "r_unreliable_span": 0.6666666666666666
+      }
+    },
+    "fisher_kpp": {
+      "threshold_reference": [
+        {
+          "case": "fisher_kpp",
+          "variant": "baseline",
+          "variant_safe_rel_l2_mean": 0.013094793384273834,
+          "absolute_threshold_rel_l2": 0.0188607699237763,
+          "baseline_safe_rel_l2_mean": 0.013094793384273834,
+          "relative_factor_vs_safe": 1.4403258890993351,
+          "variant_relative_threshold_rel_l2": 0.0188607699237763
+        },
+        {
+          "case": "fisher_kpp",
+          "variant": "capacity_v1",
+          "variant_safe_rel_l2_mean": 0.010031192253033267,
+          "absolute_threshold_rel_l2": 0.0188607699237763,
+          "baseline_safe_rel_l2_mean": 0.013094793384273834,
+          "relative_factor_vs_safe": 1.4403258890993351,
+          "variant_relative_threshold_rel_l2": 0.014448185900576503
+        },
+        {
+          "case": "fisher_kpp",
+          "variant": "weight_balanced_v2",
+          "variant_safe_rel_l2_mean": 0.01640141475945703,
+          "absolute_threshold_rel_l2": 0.0188607699237763,
+          "baseline_safe_rel_l2_mean": 0.013094793384273834,
+          "relative_factor_vs_safe": 1.4403258890993351,
+          "variant_relative_threshold_rel_l2": 0.023623382295901905
+        }
+      ],
+      "rule_portability": {
+        "case": "fisher_kpp",
+        "mean_abs_cross_span": 0.16666666666666666,
+        "mean_relative_cross_span": 0.41666666666666663,
+        "mean_r_unreliable_span": 0.0,
+        "mean_r_mean_span": 0.13822820795561708,
+        "abs_majority_disagreement_fraction": 0.25,
+        "relative_majority_disagreement_fraction": 0.5,
+        "r_majority_disagreement_fraction": 0.5
+      },
+      "severity_ordering": {
+        "baseline": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        },
+        "capacity_v1": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        },
+        "weight_balanced_v2": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        }
+      },
+      "worst_abs_span_label": {
+        "label": "edge_obs16_noise005",
+        "abs_cross_span": 0.6666666666666666
+      },
+      "worst_relative_span_label": {
+        "label": "transition_obs128_noise020",
+        "relative_cross_span": 1.0
+      },
+      "worst_r_span_label": {
+        "label": "edge_obs16_noise005",
+        "r_unreliable_span": 0.0
+      }
+    },
+    "burgers": {
+      "threshold_reference": [
+        {
+          "case": "burgers",
+          "variant": "baseline",
+          "variant_safe_rel_l2_mean": 0.02451713755726807,
+          "absolute_threshold_rel_l2": 0.0259927008301019,
+          "baseline_safe_rel_l2_mean": 0.02451713755726807,
+          "relative_factor_vs_safe": 1.0601849734450914,
+          "variant_relative_threshold_rel_l2": 0.0259927008301019
+        },
+        {
+          "case": "burgers",
+          "variant": "capacity_v1",
+          "variant_safe_rel_l2_mean": 0.038878023003538396,
+          "absolute_threshold_rel_l2": 0.0259927008301019,
+          "baseline_safe_rel_l2_mean": 0.02451713755726807,
+          "relative_factor_vs_safe": 1.0601849734450914,
+          "variant_relative_threshold_rel_l2": 0.04121789578560401
+        },
+        {
+          "case": "burgers",
+          "variant": "weight_balanced_v2",
+          "variant_safe_rel_l2_mean": 0.024669769530494965,
+          "absolute_threshold_rel_l2": 0.0259927008301019,
+          "baseline_safe_rel_l2_mean": 0.02451713755726807,
+          "relative_factor_vs_safe": 1.0601849734450914,
+          "variant_relative_threshold_rel_l2": 0.02615451895458433
+        }
+      ],
+      "rule_portability": {
+        "case": "burgers",
+        "mean_abs_cross_span": 0.3333333333333333,
+        "mean_relative_cross_span": 0.33333333333333337,
+        "mean_r_unreliable_span": 0.6666666666666666,
+        "mean_r_mean_span": 0.33726104290572056,
+        "abs_majority_disagreement_fraction": 0.5,
+        "relative_majority_disagreement_fraction": 0.5,
+        "r_majority_disagreement_fraction": 1.0
+      },
+      "severity_ordering": {
+        "baseline": {
+          "rho_severity_vs_rel_l2": 1.0,
+          "rho_severity_vs_neg_r": 1.0
+        },
+        "capacity_v1": {
+          "rho_severity_vs_rel_l2": 0.7999999999999999,
+          "rho_severity_vs_neg_r": 0.39999999999999997
+        },
+        "weight_balanced_v2": {
+          "rho_severity_vs_rel_l2": 0.6000000000000001,
+          "rho_severity_vs_neg_r": 0.7999999999999999
+        }
+      },
+      "worst_abs_span_label": {
+        "label": "transition_obs48_noise010",
+        "abs_cross_span": 1.0
+      },
+      "worst_relative_span_label": {
+        "label": "seed_sensitive_obs32_noise010",
+        "relative_cross_span": 0.6666666666666667
+      },
+      "worst_r_span_label": {
+        "label": "failure_obs32_noise0175",
+        "r_unreliable_span": 1.0
+      }
+    }
+  }
+}

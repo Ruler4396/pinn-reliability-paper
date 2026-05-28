@@ -1,0 +1,4 @@
+case,rho_rel_l2_mean,baseline_hardest_label,stronger_hardest_label
+poisson,-0.9999999999999999,stable_noisy_obs64_noise020,stable_sparse_obs32_noise020
+stokes_poiseuille,0.5,near_boundary_obs12_noise020,failure_obs8_noise020
+burgers,0.7999999999999999,failure_obs64_noise015,seed_sensitive_obs32_noise010

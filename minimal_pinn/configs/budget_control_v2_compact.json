@@ -1,0 +1,80 @@
+{
+  "experiment_name": "budget_control_v2_compact",
+  "seeds": [51, 52],
+  "budgets": [
+    {
+      "name": "baseline_budget",
+      "overrides": {
+        "training": {
+          "epochs": 500
+        },
+        "data": {
+          "num_collocation": 2048,
+          "num_boundary": 256
+        }
+      }
+    },
+    {
+      "name": "stronger_budget",
+      "overrides": {
+        "training": {
+          "epochs": 1000
+        },
+        "data": {
+          "num_collocation": 4096,
+          "num_boundary": 512
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case": "poisson",
+      "threshold_rel_l2": 0.170778,
+      "points": [
+        {
+          "label": "stable_noisy_obs64_noise020",
+          "num_observation": 64,
+          "noise_std": 0.2
+        }
+      ]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "threshold_rel_l2": 0.040039,
+      "points": [
+        {
+          "label": "boundary_obs8_noise0125",
+          "num_observation": 8,
+          "noise_std": 0.125
+        },
+        {
+          "label": "failure_obs8_noise020",
+          "num_observation": 8,
+          "noise_std": 0.2
+        }
+      ]
+    },
+    {
+      "case": "burgers",
+      "threshold_rel_l2": 0.025993,
+      "points": [
+        {
+          "label": "transition_obs48_noise005",
+          "num_observation": 48,
+          "noise_std": 0.05
+        },
+        {
+          "label": "seed_sensitive_obs32_noise010",
+          "num_observation": 32,
+          "noise_std": 0.1
+        },
+        {
+          "label": "failure_obs64_noise015",
+          "num_observation": 64,
+          "noise_std": 0.15
+        }
+      ]
+    }
+  ]
+}

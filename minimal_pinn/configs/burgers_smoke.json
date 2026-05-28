@@ -1,0 +1,29 @@
+{
+  "run_name": "burgers_smoke",
+  "case": {
+    "name": "burgers"
+  },
+  "seed": 42,
+  "network": {
+    "hidden_layers": [32, 32],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 20,
+    "lr": 0.001,
+    "print_every": 5,
+    "weights": {
+      "data": 1.0,
+      "physics": 1.0,
+      "boundary": 1.0
+    }
+  },
+  "data": {
+    "num_observation": 64,
+    "num_collocation": 256,
+    "num_boundary": 128,
+    "num_eval": 33,
+    "noise_std": 0.01
+  }
+}
+

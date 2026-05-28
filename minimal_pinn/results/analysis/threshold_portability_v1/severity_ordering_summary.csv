@@ -1,0 +1,13 @@
+case,variant,rho_severity_vs_rel_l2,rho_severity_vs_neg_r
+burgers,baseline,1.0,1.0
+burgers,capacity_v1,0.7999999999999999,0.39999999999999997
+burgers,weight_balanced_v2,0.6000000000000001,0.7999999999999999
+fisher_kpp,baseline,1.0,1.0
+fisher_kpp,capacity_v1,1.0,1.0
+fisher_kpp,weight_balanced_v2,1.0,1.0
+poisson,baseline,0.9999999999999999,0.9999999999999999
+poisson,capacity_v1,0.9999999999999999,0.9999999999999999
+poisson,weight_balanced_v2,0.9999999999999999,0.9999999999999999
+stokes_poiseuille,baseline,1.0,1.0
+stokes_poiseuille,capacity_v1,1.0,1.0
+stokes_poiseuille,weight_balanced_v2,1.0,1.0

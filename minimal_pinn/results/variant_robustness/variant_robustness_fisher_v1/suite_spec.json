@@ -1,0 +1,74 @@
+{
+  "suite_name": "variant_robustness_fisher_v1",
+  "recalibration_path": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "threshold_tables": {
+    "fisher_kpp": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/fisher_kpp_recalibrated_table.csv"
+  },
+  "variants": {
+    "baseline": {},
+    "capacity_v1": {
+      "network": {
+        "hidden_layers": [
+          96,
+          96,
+          96
+        ]
+      }
+    },
+    "weight_balanced_v2": {
+      "training": {
+        "weights": {
+          "data": 5.0,
+          "physics": 2.0,
+          "boundary": 15.0
+        }
+      }
+    }
+  },
+  "point_experiments": [
+    {
+      "case": "fisher_kpp",
+      "label": "safe_obs64_noise000",
+      "num_observation": 64,
+      "noise_std": 0.0,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "edge_obs16_noise005",
+      "num_observation": 16,
+      "noise_std": 0.05,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "transition_obs128_noise020",
+      "num_observation": 128,
+      "noise_std": 0.2,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "failure_obs16_noise030",
+      "num_observation": 16,
+      "noise_std": 0.3,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    }
+  ]
+}

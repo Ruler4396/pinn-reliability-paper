@@ -1,0 +1,7 @@
+{
+  "matrix_name": "coarse_v1",
+  "cases": ["poisson", "burgers", "stokes_poiseuille"],
+  "observation_counts": [256, 128, 64, 32, 16, 8],
+  "noise_levels": [0.0, 0.05, 0.10, 0.15, 0.20],
+  "overrides": {}
+}

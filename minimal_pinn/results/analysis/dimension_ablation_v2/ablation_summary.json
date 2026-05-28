@@ -1,0 +1,920 @@
+{
+  "burgers": {
+    "ranking_consistency": {
+      "R_full": {
+        "mean_rho": 0.5165384615384616,
+        "min_rho": 0.24846153846153846,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "R_minus_physics": {
+        "mean_rho": 0.49569230769230765,
+        "min_rho": 0.33999999999999997,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "R_minus_training": {
+        "mean_rho": 0.48392307692307696,
+        "min_rho": 0.02846153846153846,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "R_minus_numerical": {
+        "mean_rho": 0.5201538461538461,
+        "min_rho": 0.3353846153846154,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "R_minus_structural": {
+        "mean_rho": 0.5496153846153847,
+        "min_rho": 0.33692307692307694,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "rel_l2": {
+        "mean_rho": 0.42607692307692313,
+        "min_rho": 0.0,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "training_stability": {
+        "mean_rho": 0.38830769230769235,
+        "min_rho": 0.1276923076923077,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "physics_consistency": {
+        "mean_rho": 0.45899999999999996,
+        "min_rho": 0.08076923076923077,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "numerical_accuracy": {
+        "mean_rho": 0.42607692307692313,
+        "min_rho": 0.0,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      },
+      "structural_stability": {
+        "mean_rho": 0.26646153846153847,
+        "min_rho": 0.0,
+        "n_pairs": 10,
+        "n_common_cells": 25
+      }
+    },
+    "overlap_with_full": {
+      "R_minus_physics": {
+        "jaccard": 0.7777777777777778,
+        "shared": 7,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs32_n150",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "R_minus_training": {
+        "jaccard": 1.0,
+        "shared": 8,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "R_minus_numerical": {
+        "jaccard": 0.6,
+        "shared": 6,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs64_n150",
+          "obs32_n150",
+          "obs24_n150",
+          "obs16_n150",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "R_minus_structural": {
+        "jaccard": 1.0,
+        "shared": 8,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "rel_l2": {
+        "jaccard": 0.0,
+        "shared": 0,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs48_n125",
+          "obs64_n125",
+          "obs64_n050",
+          "obs24_n050",
+          "obs48_n050",
+          "obs32_n050",
+          "obs16_n050",
+          "obs64_n100"
+        ]
+      },
+      "training_stability": {
+        "jaccard": 0.45454545454545453,
+        "shared": 5,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs64_n150",
+          "obs24_n175",
+          "obs32_n150",
+          "obs24_n150",
+          "obs16_n175",
+          "obs48_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "physics_consistency": {
+        "jaccard": 1.0,
+        "shared": 8,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      },
+      "numerical_accuracy": {
+        "jaccard": 0.7777777777777778,
+        "shared": 7,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs32_n150",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs32_n175"
+        ]
+      },
+      "structural_stability": {
+        "jaccard": 0.7777777777777778,
+        "shared": 7,
+        "k": 8,
+        "worst_a": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs24_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ],
+        "worst_b": [
+          "obs24_n175",
+          "obs16_n125",
+          "obs32_n150",
+          "obs16_n150",
+          "obs24_n125",
+          "obs16_n175",
+          "obs64_n175",
+          "obs32_n175"
+        ]
+      }
+    },
+    "n_runs": 125,
+    "n_seeds": 5,
+    "n_cells": 25
+  },
+  "fisher_kpp": {
+    "ranking_consistency": {
+      "R_full": {
+        "mean_rho": 0.848823207443897,
+        "min_rho": 0.7378215654077723,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_physics": {
+        "mean_rho": 0.8279146141215106,
+        "min_rho": 0.6590038314176244,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_training": {
+        "mean_rho": 0.8420361247947454,
+        "min_rho": 0.739463601532567,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_numerical": {
+        "mean_rho": 0.8115489874110564,
+        "min_rho": 0.6743295019157088,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_structural": {
+        "mean_rho": 0.8310344827586207,
+        "min_rho": 0.7181171319102353,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "rel_l2": {
+        "mean_rho": 0.7982484948002189,
+        "min_rho": 0.6562671045429667,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "training_stability": {
+        "mean_rho": 0.5669950738916256,
+        "min_rho": 0.24466338259441706,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "physics_consistency": {
+        "mean_rho": 0.7613574165298304,
+        "min_rho": 0.5856595511767926,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "numerical_accuracy": {
+        "mean_rho": 0.7982484948002189,
+        "min_rho": 0.6562671045429667,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "structural_stability": {
+        "mean_rho": 0.7949644225506295,
+        "min_rho": 0.5374931581828133,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      }
+    },
+    "overlap_with_full": {
+      "R_minus_physics": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_training": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs8_n200",
+          "obs16_n175",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_numerical": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_structural": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "rel_l2": {
+        "jaccard": 0.0,
+        "shared": 0,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n000",
+          "obs16_n000",
+          "obs8_n050",
+          "obs12_n050",
+          "obs32_n100",
+          "obs8_n000",
+          "obs32_n000",
+          "obs32_n050",
+          "obs16_n050"
+        ]
+      },
+      "training_stability": {
+        "jaccard": 0.6363636363636364,
+        "shared": 7,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs8_n125",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs8_n175",
+          "obs12_n200",
+          "obs32_n175"
+        ]
+      },
+      "physics_consistency": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "numerical_accuracy": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs8_n125",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "structural_stability": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs32_n200",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs12_n100",
+          "obs8_n200",
+          "obs12_n125",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      }
+    },
+    "n_runs": 140,
+    "n_seeds": 5,
+    "n_cells": 28
+  },
+  "stokes_poiseuille": {
+    "ranking_consistency": {
+      "R_full": {
+        "mean_rho": 0.8819376026272577,
+        "min_rho": 0.8133552271483305,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_physics": {
+        "mean_rho": 0.8811165845648604,
+        "min_rho": 0.8133552271483305,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_training": {
+        "mean_rho": 0.8163656267104544,
+        "min_rho": 0.6699507389162561,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_numerical": {
+        "mean_rho": 0.8873563218390805,
+        "min_rho": 0.8544061302681991,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "R_minus_structural": {
+        "mean_rho": 0.8951286261631088,
+        "min_rho": 0.7870826491516147,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "rel_l2": {
+        "mean_rho": 0.8608100711548987,
+        "min_rho": 0.6770662287903666,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "training_stability": {
+        "mean_rho": 0.9047619047619048,
+        "min_rho": 0.8013136288998358,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "physics_consistency": {
+        "mean_rho": 0.8796934865900383,
+        "min_rho": 0.7805145046524357,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "numerical_accuracy": {
+        "mean_rho": 0.8608100711548987,
+        "min_rho": 0.6770662287903666,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      },
+      "structural_stability": {
+        "mean_rho": 0.5255876054188152,
+        "min_rho": 0.0,
+        "n_pairs": 10,
+        "n_common_cells": 28
+      }
+    },
+    "overlap_with_full": {
+      "R_minus_physics": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_training": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs8_n150",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_numerical": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "R_minus_structural": {
+        "jaccard": 0.6363636363636364,
+        "shared": 7,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs10_n200",
+          "obs8_n200",
+          "obs16_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "rel_l2": {
+        "jaccard": 0.0,
+        "shared": 0,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n000",
+          "obs16_n000",
+          "obs10_n050",
+          "obs12_n050",
+          "obs8_n050",
+          "obs16_n100",
+          "obs8_n000",
+          "obs10_n000",
+          "obs16_n050"
+        ]
+      },
+      "training_stability": {
+        "jaccard": 1.0,
+        "shared": 9,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "physics_consistency": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs8_n150",
+          "obs16_n200",
+          "obs10_n200",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "numerical_accuracy": {
+        "jaccard": 0.6363636363636364,
+        "shared": 7,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs12_n175",
+          "obs12_n150",
+          "obs8_n150",
+          "obs16_n200",
+          "obs10_n200",
+          "obs8_n200",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      },
+      "structural_stability": {
+        "jaccard": 0.8,
+        "shared": 8,
+        "k": 9,
+        "worst_a": [
+          "obs12_n175",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ],
+        "worst_b": [
+          "obs16_n125",
+          "obs16_n200",
+          "obs10_n200",
+          "obs16_n150",
+          "obs8_n200",
+          "obs16_n175",
+          "obs10_n175",
+          "obs8_n175",
+          "obs12_n200"
+        ]
+      }
+    },
+    "n_runs": 140,
+    "n_seeds": 5,
+    "n_cells": 28
+  }
+}

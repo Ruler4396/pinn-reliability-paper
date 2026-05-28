@@ -1,0 +1,15 @@
+{
+  "probe_name": "burgers_multiseed_anomaly_v1",
+  "case": "burgers",
+  "seeds": [41, 42, 43, 44, 45],
+  "threshold_rel_l2": 0.025992700830101967,
+  "points": [
+    {"label": "obs16_noise000", "num_observation": 16, "noise_std": 0.0},
+    {"label": "obs96_noise005", "num_observation": 96, "noise_std": 0.05},
+    {"label": "obs32_noise005", "num_observation": 32, "noise_std": 0.05},
+    {"label": "obs12_noise0075", "num_observation": 12, "noise_std": 0.075},
+    {"label": "obs64_noise015", "num_observation": 64, "noise_std": 0.15},
+    {"label": "obs32_noise0175", "num_observation": 32, "noise_std": 0.175}
+  ],
+  "overrides": {}
+}

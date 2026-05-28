@@ -1,0 +1,31 @@
+{
+  "case": "advection_dominated_diffusion",
+  "scalar_metrics": {
+    "physics_rms": 1.4689364433288574,
+    "boundary_rms": 0.05269923061132431,
+    "rel_l2": 0.06387495249509811,
+    "structure_error": 0.0003170967102050781,
+    "loss_std": 0.0024990388657150898,
+    "loss_ratio": 0.0017867940310544888
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.06387495249509811
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 2.0789999600521133e-18,
+      "boundary_rms": 0.8032623717572986,
+      "rel_l2": 0.8918266067892288,
+      "structure_error": 0.9566651133316129,
+      "loss_std": 0.9029921054934966,
+      "loss_ratio": 0.9646312577454712
+    },
+    "dimension_scores": {
+      "physics_consistency": 8.962490567678711e-07,
+      "training_stability": 0.9333029574883082,
+      "numerical_accuracy": 0.8918266067892288,
+      "structural_stability": 0.9566651133316129
+    },
+    "reliability_raw": 0.6954488934645516
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "joint_failure": {
+    "n_exceedance_points": 59
+  },
+  "training_proxy": {
+    "n_keypoints": 8,
+    "spearman_failure_vs_training_mean": -0.7412493166611013,
+    "pearson_failure_vs_training_mean": -0.6373838072337958
+  }
+}

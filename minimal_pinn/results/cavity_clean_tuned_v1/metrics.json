@@ -1,0 +1,32 @@
+{
+  "case": "lid_driven_cavity",
+  "scalar_metrics": {
+    "physics_rms": 0.15664897859096527,
+    "boundary_rms": 0.07220828533172607,
+    "rel_l2": 0.3730901777744293,
+    "structure_error": 0.03541916608810425,
+    "loss_std": 0.0007232717814931232,
+    "loss_ratio": 0.029761555570804885
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.27223262190818787,
+    "rel_l2_v": 0.5777729153633118
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.15645523540746387,
+      "boundary_rms": 0.6956304223702756,
+      "rel_l2": 0.06402071361932628,
+      "structure_error": 0.9276082368639867,
+      "loss_std": 0.9404233643412881,
+      "loss_ratio": 0.9609453276316291
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.32990153301937686,
+      "training_stability": 0.9506289696613385,
+      "numerical_accuracy": 0.06402071361932628,
+      "structural_stability": 0.9276082368639867
+    },
+    "reliability_raw": 0.5680398632910071
+  }
+}

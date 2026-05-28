@@ -1,0 +1,660 @@
+{
+  "poisson": {
+    "10/90": {
+      "summary": {
+        "low_q": 0.1,
+        "high_q": 0.9,
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.6453837597330367,
+        "spearman_rel_l2_vs_physics_consistency_recal": 0.2582869855394883,
+        "spearman_rel_l2_vs_training_stability_recal": 0.0424916573971079,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.7273334119987607,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 4,
+          "structural_stability": 3
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.3105134814977646,
+          "fail": 0.3407324463129043,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.10570325627923007,
+          "fail": 0.10808140411972998,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.11290562301874155,
+          "fail": 0.11626014932990072,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00083638429641717,
+          "fail": 0.00128845572471613,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.00196269825590141,
+          "fail": 0.00272892215011764,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.00196913397966161,
+          "fail": 0.00221015164778929,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "15/85": {
+      "summary": {
+        "low_q": 0.15,
+        "high_q": 0.85,
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.5243604004449388,
+        "spearman_rel_l2_vs_physics_consistency_recal": 0.30411568409343714,
+        "spearman_rel_l2_vs_training_stability_recal": 0.015795328142380424,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.7273334119987607,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 5,
+          "structural_stability": 2
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.31635279506444924,
+          "fail": 0.34057041704654695,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.10572596266865728,
+          "fail": 0.10740329883992669,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.112968810275197,
+          "fail": 0.1159865584224462,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00092995166778562,
+          "fail": 0.0012816190719604,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.0021049089566372798,
+          "fail": 0.0026265261640698095,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.001980097847467365,
+          "fail": 0.00216158324625444,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "20/80": {
+      "summary": {
+        "low_q": 0.2,
+        "high_q": 0.8,
+        "selection_rule": "top_quartile_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.38776418242491656,
+        "spearman_rel_l2_vs_physics_consistency_recal": 0.41223581757508343,
+        "spearman_rel_l2_vs_training_stability_recal": 0.10878754171301445,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.7273334119987607,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 0,
+          "training_stability": 1,
+          "numerical_accuracy": 6,
+          "structural_stability": 1
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.32645426988601683,
+          "fail": 0.34041604995727537,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.10577935874462124,
+          "fail": 0.10703367888927452,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.11309264302253716,
+          "fail": 0.11550596654415123,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.0009801864624022802,
+          "fail": 0.00127937793731688,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.0023177080746533,
+          "fail": 0.00243741773831642,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.00199255753582858,
+          "fail": 0.0021444612798914,
+          "mode": "smaller_better"
+        }
+      }
+    }
+  },
+  "burgers": {
+    "10/90": {
+      "summary": {
+        "low_q": 0.1,
+        "high_q": 0.9,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9025082044069386,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9192686357243319,
+        "spearman_rel_l2_vs_training_stability_recal": -0.5344350679793718,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.9101500234411627,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 19,
+          "structural_stability": 7
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.0617680750787258,
+          "fail": 0.0827585525810718,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.01496233101934191,
+          "fail": 0.02401303611695766,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.01978781577199689,
+          "fail": 0.06946491748094558,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00064170360565181,
+          "fail": 0.01230421662330621,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.00011153584531535001,
+          "fail": 0.002985732800822184,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.00156592869534012,
+          "fail": 0.01197977285343957,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "15/85": {
+      "summary": {
+        "low_q": 0.15,
+        "high_q": 0.85,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9211439287388654,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9207923112986404,
+        "spearman_rel_l2_vs_training_stability_recal": -0.526699484294421,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.9101500234411627,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 9,
+          "training_stability": 23,
+          "numerical_accuracy": 12,
+          "structural_stability": 15
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.06268232017755507,
+          "fail": 0.07964141555130477,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.015160906640812735,
+          "fail": 0.021456071082502574,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.021662641409784484,
+          "fail": 0.06092318091541525,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.0007724702358245049,
+          "fail": 0.008004307746887117,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.00012292984282155498,
+          "fail": 0.002622592940270934,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.00176165409723492,
+          "fail": 0.010350359924875903,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "20/80": {
+      "summary": {
+        "low_q": 0.2,
+        "high_q": 0.8,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 59,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9242850445382091,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9213783403656821,
+        "spearman_rel_l2_vs_training_stability_recal": -0.5346225972808252,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.9101500234411627,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 10,
+          "training_stability": 23,
+          "numerical_accuracy": 10,
+          "structural_stability": 16
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.06332658976316444,
+          "fail": 0.0761915490031242,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.015457617118954601,
+          "fail": 0.02048003710806362,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.02398906461894504,
+          "fail": 0.0564210318028926,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.0009945154190063,
+          "fail": 0.007298529148101761,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.00014164295078256,
+          "fail": 0.0021865201160990804,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.0021084838374650604,
+          "fail": 0.0094676580429966,
+          "mode": "smaller_better"
+        }
+      }
+    }
+  },
+  "stokes_poiseuille": {
+    "10/90": {
+      "summary": {
+        "low_q": 0.1,
+        "high_q": 0.9,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.8356117566643882,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9590567327409433,
+        "spearman_rel_l2_vs_training_stability_recal": -0.5168831168831168,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.37902219797396497,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.11233521625399584,
+          "fail": 0.1286780759692192,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.02476652152836315,
+          "fail": 0.034126436337828595,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.024939927272498552,
+          "fail": 0.043437710031867,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 3.826618194580078e-05,
+          "fail": 8.156895637512207e-05,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.0007548369986497,
+          "fail": 0.00096422932381705,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.0011346456983665,
+          "fail": 0.0032876885524311,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "15/85": {
+      "summary": {
+        "low_q": 0.15,
+        "high_q": 0.85,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.868215994531784,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9564593301435407,
+        "spearman_rel_l2_vs_training_stability_recal": -0.5334244702665756,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.37902219797396497,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 1,
+          "training_stability": 0,
+          "numerical_accuracy": 7,
+          "structural_stability": 0
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.11261240206658833,
+          "fail": 0.12341104820370667,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.02593157347291705,
+          "fail": 0.0328886760398745,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.026009537279605824,
+          "fail": 0.039053037762641823,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 3.9130449295043945e-05,
+          "fail": 7.861852645874023e-05,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.000783790548713125,
+          "fail": 0.0009450645963392751,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.001218695971502825,
+          "fail": 0.00312719428082765,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "20/80": {
+      "summary": {
+        "low_q": 0.2,
+        "high_q": 0.8,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 8,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.8745727956254272,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9544771018455229,
+        "spearman_rel_l2_vs_training_stability_recal": -0.5470266575529733,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.37902219797396497,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 2,
+          "training_stability": 0,
+          "numerical_accuracy": 6,
+          "structural_stability": 0
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.1128532588481903,
+          "fail": 0.1211246103048324,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.0260004755109548,
+          "fail": 0.031617559492588,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.0260965377092361,
+          "fail": 0.0373924821615219,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 3.9517879486083984e-05,
+          "fail": 7.450580596923828e-05,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 0.0007886169726295,
+          "fail": 0.0009225943262745,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.001282292417411,
+          "fail": 0.0029926347739864,
+          "mode": "smaller_better"
+        }
+      }
+    }
+  },
+  "fisher_kpp": {
+    "10/90": {
+      "summary": {
+        "low_q": 0.1,
+        "high_q": 0.9,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9016685205784205,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9096774193548387,
+        "spearman_rel_l2_vs_training_stability_recal": -0.6725250278086763,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.910567296996663,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 7,
+          "training_stability": 4,
+          "numerical_accuracy": 2,
+          "structural_stability": 0
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.01743362471461289,
+          "fail": 0.04373722150921821,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.0048441484570502895,
+          "fail": 0.02119100131094452,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.01188812553882591,
+          "fail": 0.07186502143740647,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00014386177062982,
+          "fail": 0.0032532811164855207,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 5.706598794697026e-06,
+          "fail": 3.9333240358606856e-05,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 9.069267361650255e-05,
+          "fail": 0.012021295572401471,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "15/85": {
+      "summary": {
+        "low_q": 0.15,
+        "high_q": 0.85,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9114571746384872,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9101223581757508,
+        "spearman_rel_l2_vs_training_stability_recal": -0.725027808676307,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.910567296996663,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 2,
+          "training_stability": 5,
+          "numerical_accuracy": 5,
+          "structural_stability": 1
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.0180175827816128,
+          "fail": 0.03845001626759759,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.0050266636069863195,
+          "fail": 0.017940876306965933,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.01227403106167908,
+          "fail": 0.05164744928479192,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00014706850051878498,
+          "fail": 0.0018190860748290398,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 6.291251377769857e-06,
+          "fail": 2.758499937061033e-05,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.00011508952993113501,
+          "fail": 0.01070359466768821,
+          "mode": "smaller_better"
+        }
+      }
+    },
+    "20/80": {
+      "summary": {
+        "low_q": 0.2,
+        "high_q": 0.8,
+        "selection_rule": "threshold_rel_l2",
+        "n_selected": 13,
+        "spearman_rel_l2_vs_reliability_raw_recal": -0.9101223581757508,
+        "spearman_rel_l2_vs_physics_consistency_recal": -0.9123470522803114,
+        "spearman_rel_l2_vs_training_stability_recal": -0.7334816462736373,
+        "spearman_rel_l2_vs_numerical_accuracy_recal": -1.0,
+        "spearman_rel_l2_vs_structural_stability_recal": -0.910567296996663,
+        "dominant_dimension_counts_recal": {
+          "physics_consistency": 1,
+          "training_stability": 5,
+          "numerical_accuracy": 3,
+          "structural_stability": 4
+        }
+      },
+      "thresholds": {
+        "physics_rms": {
+          "good": 0.01853594295680522,
+          "fail": 0.03215933814644813,
+          "mode": "smaller_better"
+        },
+        "boundary_rms": {
+          "good": 0.00549430884420868,
+          "fail": 0.01504733283072702,
+          "mode": "smaller_better"
+        },
+        "rel_l2": {
+          "good": 0.01250364240258924,
+          "fail": 0.04072069451212882,
+          "mode": "smaller_better"
+        },
+        "structure_error": {
+          "good": 0.00014951229095456,
+          "fail": 0.001075816154479902,
+          "mode": "smaller_better"
+        },
+        "loss_std": {
+          "good": 7.161904512335465e-06,
+          "fail": 1.7775817066932676e-05,
+          "mode": "smaller_better"
+        },
+        "loss_ratio": {
+          "good": 0.0003311757543652202,
+          "fail": 0.0066766604595767465,
+          "mode": "smaller_better"
+        }
+      }
+    }
+  },
+  "stability_checks": {
+    "poisson": {
+      "dominant_dimension_labels": [
+        "numerical_accuracy",
+        "numerical_accuracy",
+        "numerical_accuracy"
+      ],
+      "dominant_dimension_stable": true,
+      "multidim_majority": false
+    },
+    "burgers": {
+      "dominant_dimension_labels": [
+        "training_stability",
+        "training_stability",
+        "training_stability"
+      ],
+      "dominant_dimension_stable": true,
+      "multidim_majority": true
+    },
+    "stokes_poiseuille": {
+      "dominant_dimension_labels": [
+        "numerical_accuracy",
+        "numerical_accuracy",
+        "numerical_accuracy"
+      ],
+      "dominant_dimension_stable": true,
+      "multidim_majority": false
+    },
+    "fisher_kpp": {
+      "dominant_dimension_labels": [
+        "physics_consistency",
+        "training_stability",
+        "training_stability"
+      ],
+      "dominant_dimension_stable": false,
+      "multidim_majority": false
+    }
+  }
+}

@@ -1,0 +1,13 @@
+case,quantiles,low_q,high_q,selection_rule,n_selected,spearman_rel_l2_vs_reliability_raw_recal,dominant_dimension,physics_consistency_count,training_stability_count,numerical_accuracy_count,structural_stability_count
+poisson,10/90,0.1,0.9,top_quartile_rel_l2,8,-0.6453837597330367,numerical_accuracy,0,1,4,3
+poisson,15/85,0.15,0.85,top_quartile_rel_l2,8,-0.5243604004449388,numerical_accuracy,0,1,5,2
+poisson,20/80,0.2,0.8,top_quartile_rel_l2,8,-0.38776418242491656,numerical_accuracy,0,1,6,1
+burgers,10/90,0.1,0.9,threshold_rel_l2,59,-0.9025082044069386,training_stability,10,23,19,7
+burgers,15/85,0.15,0.85,threshold_rel_l2,59,-0.9211439287388654,training_stability,9,23,12,15
+burgers,20/80,0.2,0.8,threshold_rel_l2,59,-0.9242850445382091,training_stability,10,23,10,16
+stokes_poiseuille,10/90,0.1,0.9,threshold_rel_l2,8,-0.8356117566643882,numerical_accuracy,1,0,7,0
+stokes_poiseuille,15/85,0.15,0.85,threshold_rel_l2,8,-0.868215994531784,numerical_accuracy,1,0,7,0
+stokes_poiseuille,20/80,0.2,0.8,threshold_rel_l2,8,-0.8745727956254272,numerical_accuracy,2,0,6,0
+fisher_kpp,10/90,0.1,0.9,threshold_rel_l2,13,-0.9016685205784205,physics_consistency,7,4,2,0
+fisher_kpp,15/85,0.15,0.85,threshold_rel_l2,13,-0.9114571746384872,training_stability,2,5,5,1
+fisher_kpp,20/80,0.2,0.8,threshold_rel_l2,13,-0.9101223581757508,training_stability,1,5,3,4

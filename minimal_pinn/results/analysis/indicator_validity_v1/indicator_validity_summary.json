@@ -1,0 +1,70 @@
+{
+  "correlation_summary": {
+    "poisson": {
+      "corr_rel_l2_reliability_raw": -0.5688542825361513,
+      "corr_rel_l2_physics_rms": 0.15150166852057842,
+      "corr_rel_l2_structure_error": 0.7273334119987607,
+      "corr_rel_l2_training_stability": 0.18309232480533927
+    },
+    "stokes_poiseuille": {
+      "corr_rel_l2_reliability_raw": -0.9308270676691729,
+      "corr_rel_l2_physics_rms": 0.8526999316473001,
+      "corr_rel_l2_structure_error": 0.37902219797396497,
+      "corr_rel_l2_training_stability": -0.3888585099111415
+    },
+    "burgers": {
+      "corr_rel_l2_reliability_raw": -0.9090951711204875,
+      "corr_rel_l2_physics_rms": 0.8519924988279418,
+      "corr_rel_l2_structure_error": 0.9101500234411627,
+      "corr_rel_l2_training_stability": -0.3358415377402719
+    },
+    "fisher_kpp": {
+      "corr_rel_l2_reliability_raw": -0.9657397107897664,
+      "corr_rel_l2_physics_rms": 0.92880978865406,
+      "corr_rel_l2_structure_error": 0.910567296996663,
+      "corr_rel_l2_training_stability": -0.6569521690767519
+    }
+  },
+  "failure_mode_summary": {
+    "poisson": {
+      "selection_rule": "top_quartile_rel_l2",
+      "n_selected": 8,
+      "dominant_dimension_counts": {
+        "physics_consistency": 8,
+        "training_stability": 0,
+        "numerical_accuracy": 0,
+        "structural_stability": 0
+      }
+    },
+    "stokes_poiseuille": {
+      "selection_rule": "threshold_rel_l2",
+      "n_selected": 8,
+      "dominant_dimension_counts": {
+        "physics_consistency": 8,
+        "training_stability": 0,
+        "numerical_accuracy": 0,
+        "structural_stability": 0
+      }
+    },
+    "burgers": {
+      "selection_rule": "threshold_rel_l2",
+      "n_selected": 59,
+      "dominant_dimension_counts": {
+        "physics_consistency": 59,
+        "training_stability": 0,
+        "numerical_accuracy": 0,
+        "structural_stability": 0
+      }
+    },
+    "fisher_kpp": {
+      "selection_rule": "threshold_rel_l2",
+      "n_selected": 13,
+      "dominant_dimension_counts": {
+        "physics_consistency": 11,
+        "training_stability": 0,
+        "numerical_accuracy": 2,
+        "structural_stability": 0
+      }
+    }
+  }
+}

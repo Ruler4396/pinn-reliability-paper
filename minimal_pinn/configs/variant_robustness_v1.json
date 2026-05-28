@@ -1,0 +1,126 @@
+{
+  "suite_name": "variant_robustness_v1",
+  "recalibration_path": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "threshold_tables": {
+    "poisson": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/poisson_recalibrated_table.csv",
+    "burgers": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/burgers_recalibrated_table.csv",
+    "stokes_poiseuille": "/root/dev/pinn-reliability-paper/minimal_pinn/results/analysis/recalibrated_dimensions_v1/stokes_poiseuille_recalibrated_table.csv"
+  },
+  "variants": {
+    "baseline": {},
+    "capacity_v1": {
+      "network": {
+        "hidden_layers": [96, 96, 96]
+      }
+    },
+    "weight_balanced_v2": {
+      "training": {
+        "weights": {
+          "data": 5.0,
+          "physics": 2.0,
+          "boundary": 15.0
+        }
+      }
+    }
+  },
+  "point_experiments": [
+    {
+      "case": "poisson",
+      "label": "safe_obs256_noise000",
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "poisson",
+      "label": "degraded_obs8_noise020",
+      "num_observation": 8,
+      "noise_std": 0.20,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "safe_obs64_noise000",
+      "num_observation": 64,
+      "noise_std": 0.0,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "critical_obs8_noise0125",
+      "num_observation": 8,
+      "noise_std": 0.125,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "stokes_poiseuille",
+      "label": "failure_obs8_noise0175",
+      "num_observation": 8,
+      "noise_std": 0.175,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "burgers",
+      "label": "safe_obs64_noise005",
+      "num_observation": 64,
+      "noise_std": 0.05,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "burgers",
+      "label": "transition_obs48_noise010",
+      "num_observation": 48,
+      "noise_std": 0.10,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "burgers",
+      "label": "seed_sensitive_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.10,
+      "seeds": [41, 42, 43]
+    },
+    {
+      "case": "burgers",
+      "label": "failure_obs32_noise0175",
+      "num_observation": 32,
+      "noise_std": 0.175,
+      "seeds": [41, 42, 43]
+    }
+  ],
+  "strategy_experiments": [
+    {
+      "case": "burgers",
+      "label": "critical_obs32_noise010",
+      "num_observation": 32,
+      "noise_std": 0.10,
+      "seeds": [41, 42, 43],
+      "variants": ["baseline", "capacity_v1", "weight_balanced_v2"],
+      "strategies": {
+        "baseline": {},
+        "naive_region_aware_v1": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.5,
+              "collocation_focus_ratio": 0.7,
+              "x_range": [-0.4, 0.4],
+              "t_range": [0.0, 0.5]
+            }
+          }
+        },
+        "dim_guided_v2": {
+          "data": {
+            "region_aware": {
+              "enabled": true,
+              "observation_focus_ratio": 0.0,
+              "collocation_focus_ratio": 0.3,
+              "x_range": [-0.6, 0.6],
+              "t_range": [0.0, 0.35]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

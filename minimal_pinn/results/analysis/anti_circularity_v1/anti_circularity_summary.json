@@ -1,0 +1,46 @@
+{
+  "method": "random split-half calibration",
+  "n_splits": 100,
+  "calibration_quantiles": {
+    "low_q": 0.15,
+    "high_q": 0.85
+  },
+  "case_results": {
+    "poisson": {
+      "n_total": 30,
+      "n_calibration": 15,
+      "full_dominant_dims": {
+        "physics_consistency": 6,
+        "training_stability": 4,
+        "numerical_accuracy": 5,
+        "structural_stability": 15
+      },
+      "full_dominant": "structural_stability",
+      "agreement_rate": 0.74
+    },
+    "stokes_poiseuille": {
+      "n_total": 30,
+      "n_calibration": 15,
+      "full_dominant_dims": {
+        "physics_consistency": 6,
+        "training_stability": 14,
+        "numerical_accuracy": 4,
+        "structural_stability": 6
+      },
+      "full_dominant": "training_stability",
+      "agreement_rate": 0.81
+    },
+    "burgers": {
+      "n_total": 30,
+      "n_calibration": 15,
+      "full_dominant_dims": {
+        "physics_consistency": 7,
+        "training_stability": 10,
+        "numerical_accuracy": 4,
+        "structural_stability": 9
+      },
+      "full_dominant": "training_stability",
+      "agreement_rate": 0.63
+    }
+  }
+}

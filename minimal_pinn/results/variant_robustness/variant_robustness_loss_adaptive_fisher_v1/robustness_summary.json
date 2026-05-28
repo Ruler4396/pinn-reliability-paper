@@ -1,0 +1,68 @@
+{
+  "suite_name": "variant_robustness_loss_adaptive_fisher_v1",
+  "n_point_runs": 12,
+  "n_strategy_runs": 0,
+  "point_summary": [
+    {
+      "case": "fisher_kpp",
+      "label": "safe_obs64_noise000",
+      "variant": "loss_adaptive_uncertainty_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.005521285502860944,
+      "rel_l2_std": 0.0007837999409078425,
+      "cross_rate": 0,
+      "reliability_raw_recal_mean": 0.8860046026744239,
+      "reliability_raw_recal_std": 0.11373308766250091,
+      "physics_consistency_recal_mean": 0.9765404366314985,
+      "training_stability_recal_mean": 0.6402433534709071,
+      "numerical_accuracy_recal_mean": 0.9691656590210515,
+      "structural_stability_recal_mean": 0.9580689615742385
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "edge_obs16_noise005",
+      "variant": "loss_adaptive_uncertainty_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.01666979833195607,
+      "rel_l2_std": 0.001878737709373316,
+      "cross_rate": 0.3333333333333333,
+      "reliability_raw_recal_mean": 0.7807471960605069,
+      "reliability_raw_recal_std": 0.11572569534761287,
+      "physics_consistency_recal_mean": 0.9272381341826029,
+      "training_stability_recal_mean": 0.32018493837136613,
+      "numerical_accuracy_recal_mean": 0.9313232141641955,
+      "structural_stability_recal_mean": 0.9442424975238632
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "transition_obs128_noise020",
+      "variant": "loss_adaptive_uncertainty_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.01039822492748499,
+      "rel_l2_std": 0.0018217450138933425,
+      "cross_rate": 0,
+      "reliability_raw_recal_mean": 0.8533769255298571,
+      "reliability_raw_recal_std": 0.09539485683489851,
+      "physics_consistency_recal_mean": 0.9633810485590735,
+      "training_stability_recal_mean": 0.5411545251102308,
+      "numerical_accuracy_recal_mean": 0.9559067796842424,
+      "structural_stability_recal_mean": 0.9530653487658817
+    },
+    {
+      "case": "fisher_kpp",
+      "label": "failure_obs16_noise030",
+      "variant": "loss_adaptive_uncertainty_v1",
+      "n_seed": 3,
+      "rel_l2_mean": 0.04041728563606739,
+      "rel_l2_std": 0.017747989822228152,
+      "cross_rate": 1,
+      "reliability_raw_recal_mean": 0.5290961033754025,
+      "reliability_raw_recal_std": 0.19303089287964628,
+      "physics_consistency_recal_mean": 0.7043650289446401,
+      "training_stability_recal_mean": 0.12236882193241554,
+      "numerical_accuracy_recal_mean": 0.6555423246760959,
+      "structural_stability_recal_mean": 0.6341082379484584
+    }
+  ],
+  "strategy_summary": []
+}

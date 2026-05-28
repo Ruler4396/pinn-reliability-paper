@@ -1,0 +1,205 @@
+{
+  "poisson": {
+    "baseline": {
+      "case": "poisson",
+      "tag": "baseline",
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "rel_l2": 0.11385225504636765,
+      "reliability_raw": 0.6751423513184179,
+      "physics_rms": 0.34102150797843933,
+      "boundary_rms": 0.10569172352552414,
+      "structure_error": 0.0012587308883666992
+    },
+    "degradation_factor": 1.5,
+    "boundary_candidate": null,
+    "all_rows": [
+      {
+        "case": "poisson",
+        "tag": "s8_n20",
+        "num_observation": 8,
+        "noise_std": 0.2,
+        "rel_l2": 0.11291244626045227,
+        "reliability_raw": 0.6748407496631956,
+        "physics_rms": 0.33634233474731445,
+        "boundary_rms": 0.10887369513511658,
+        "structure_error": 0.0007683038711547852
+      },
+      {
+        "case": "poisson",
+        "tag": "s8_n40",
+        "num_observation": 8,
+        "noise_std": 0.4,
+        "rel_l2": 0.11333662271499634,
+        "reliability_raw": 0.6734428120088171,
+        "physics_rms": 0.3395138084888458,
+        "boundary_rms": 0.1123543381690979,
+        "structure_error": 0.000592350959777832
+      },
+      {
+        "case": "poisson",
+        "tag": "s16_n20",
+        "num_observation": 16,
+        "noise_std": 0.2,
+        "rel_l2": 0.11312144249677658,
+        "reliability_raw": 0.6770785099269512,
+        "physics_rms": 0.3258940577507019,
+        "boundary_rms": 0.1096661314368248,
+        "structure_error": 0.000710606575012207
+      },
+      {
+        "case": "poisson",
+        "tag": "s64_n10",
+        "num_observation": 64,
+        "noise_std": 0.1,
+        "rel_l2": 0.11584524810314178,
+        "reliability_raw": 0.6744586945575061,
+        "physics_rms": 0.3348819315433502,
+        "boundary_rms": 0.10635329782962799,
+        "structure_error": 0.0012614130973815918
+      }
+    ]
+  },
+  "burgers": {
+    "baseline": {
+      "case": "burgers",
+      "tag": "baseline",
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "rel_l2": 0.018792152404785156,
+      "reliability_raw": 0.9217179487182001,
+      "physics_rms": 0.0637611448764801,
+      "boundary_rms": 0.016032380983233452,
+      "structure_error": 0.0005310177803039551
+    },
+    "degradation_factor": 1.5,
+    "boundary_candidate": {
+      "case": "burgers",
+      "tag": "s8_n20",
+      "num_observation": 8,
+      "noise_std": 0.2,
+      "rel_l2": 0.07589858770370483,
+      "reliability_raw": 0.8733315236549659,
+      "physics_rms": 0.09080488234758377,
+      "boundary_rms": 0.021329184994101524,
+      "structure_error": 0.017079174518585205
+    },
+    "all_rows": [
+      {
+        "case": "burgers",
+        "tag": "s8_n20",
+        "num_observation": 8,
+        "noise_std": 0.2,
+        "rel_l2": 0.07589858770370483,
+        "reliability_raw": 0.8733315236549659,
+        "physics_rms": 0.09080488234758377,
+        "boundary_rms": 0.021329184994101524,
+        "structure_error": 0.017079174518585205
+      },
+      {
+        "case": "burgers",
+        "tag": "s16_n20",
+        "num_observation": 16,
+        "noise_std": 0.2,
+        "rel_l2": 0.08216018229722977,
+        "reliability_raw": 0.8749778522571764,
+        "physics_rms": 0.08228430896997452,
+        "boundary_rms": 0.026177918538451195,
+        "structure_error": 0.018337488174438477
+      },
+      {
+        "case": "burgers",
+        "tag": "s32_n10",
+        "num_observation": 32,
+        "noise_std": 0.1,
+        "rel_l2": 0.03256562352180481,
+        "reliability_raw": 0.9156532003736755,
+        "physics_rms": 0.06660375744104385,
+        "boundary_rms": 0.015849072486162186,
+        "structure_error": 0.0027045011520385742
+      },
+      {
+        "case": "burgers",
+        "tag": "s64_n10",
+        "num_observation": 64,
+        "noise_std": 0.1,
+        "rel_l2": 0.02443893812596798,
+        "reliability_raw": 0.9187431445220328,
+        "physics_rms": 0.06540229916572571,
+        "boundary_rms": 0.014964904636144638,
+        "structure_error": 0.002106785774230957
+      }
+    ]
+  },
+  "stokes_poiseuille": {
+    "baseline": {
+      "case": "stokes_poiseuille",
+      "tag": "baseline",
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "rel_l2": 0.02565421722829342,
+      "reliability_raw": 0.8631241216744137,
+      "physics_rms": 0.11266125738620758,
+      "boundary_rms": 0.02487444318830967,
+      "structure_error": 4.1961669921875e-05
+    },
+    "degradation_factor": 1.5,
+    "boundary_candidate": {
+      "case": "stokes_poiseuille",
+      "tag": "s8_n20",
+      "num_observation": 8,
+      "noise_std": 0.2,
+      "rel_l2": 0.05261814221739769,
+      "reliability_raw": 0.8331443080464018,
+      "physics_rms": 0.12623734772205353,
+      "boundary_rms": 0.042408932000398636,
+      "structure_error": 7.450580596923828e-05
+    },
+    "all_rows": [
+      {
+        "case": "stokes_poiseuille",
+        "tag": "s8_n20",
+        "num_observation": 8,
+        "noise_std": 0.2,
+        "rel_l2": 0.05261814221739769,
+        "reliability_raw": 0.8331443080464018,
+        "physics_rms": 0.12623734772205353,
+        "boundary_rms": 0.042408932000398636,
+        "structure_error": 7.450580596923828e-05
+      },
+      {
+        "case": "stokes_poiseuille",
+        "tag": "s16_n20",
+        "num_observation": 16,
+        "noise_std": 0.2,
+        "rel_l2": 0.02881637215614319,
+        "reliability_raw": 0.8575225119029883,
+        "physics_rms": 0.11490387469530106,
+        "boundary_rms": 0.03166932985186577,
+        "structure_error": 0.00011074542999267578
+      },
+      {
+        "case": "stokes_poiseuille",
+        "tag": "s32_n10",
+        "num_observation": 32,
+        "noise_std": 0.1,
+        "rel_l2": 0.02423373982310295,
+        "reliability_raw": 0.863273829022989,
+        "physics_rms": 0.11277657747268677,
+        "boundary_rms": 0.02449013851583004,
+        "structure_error": 4.118680953979492e-05
+      },
+      {
+        "case": "stokes_poiseuille",
+        "tag": "s64_n10",
+        "num_observation": 64,
+        "noise_std": 0.1,
+        "rel_l2": 0.026065001264214516,
+        "reliability_raw": 0.8619127146076953,
+        "physics_rms": 0.11320897191762924,
+        "boundary_rms": 0.02610146626830101,
+        "structure_error": 4.220008850097656e-05
+      }
+    ]
+  }
+}

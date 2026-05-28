@@ -1,0 +1,29 @@
+{
+  "run_name": "helmholtz_smoke",
+  "case": {
+    "name": "helmholtz",
+    "mode": 3
+  },
+  "seed": 42,
+  "network": {
+    "hidden_layers": [32, 32],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 50,
+    "lr": 0.001,
+    "print_every": 25,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    }
+  },
+  "data": {
+    "num_observation": 64,
+    "num_collocation": 256,
+    "num_boundary": 64,
+    "num_eval": 41,
+    "noise_std": 0.0
+  }
+}
