@@ -1,6 +1,7 @@
 from .advection_diffusion import AdvectionDiffusionCase
 from .advection_dominated_diffusion import AdvectionDominatedDiffusionCase
 from .allen_cahn import AllenCahnCase
+from .allen_cahn_circular import AllenCahnCircularCase
 from .burgers import BurgersCase
 from .fisher_kpp import FisherKPPCase
 from .heat_equation import HeatEquationCase
@@ -21,6 +22,7 @@ def build_case(case_spec):
 
     table = {
         "allen_cahn": AllenCahnCase,
+        "allen_cahn_circular": AllenCahnCircularCase,
         "heat_equation": HeatEquationCase,
         "poisson": PoissonCase,
         "fisher_kpp": FisherKPPCase,
