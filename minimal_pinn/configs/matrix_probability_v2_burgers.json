@@ -1,0 +1,10 @@
+{
+  "matrix_name": "probability_v2_burgers",
+  "case": "burgers",
+  "observation_counts": [64, 48, 32, 24, 16],
+  "noise_levels": [0.05, 0.10, 0.125, 0.15, 0.175],
+  "seeds": [41, 42, 43, 44, 45],
+  "threshold_rel_l2": 0.02668845998123288,
+  "recalibration_path": "minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "overrides": {}
+}

@@ -5,9 +5,7 @@ __pycache__/
 *.ckpt
 *.pt
 *.pth
-minimal_pinn/results/**/runs/
-minimal_pinn/results/**/plots/
-minimal_pinn/results/**/best_model/
+minimal_pinn/results/
 logs/
 wandb/
 *.log

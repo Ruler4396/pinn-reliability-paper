@@ -1,0 +1,145 @@
+name: Convergence Verification (1500 epoch)
+
+on:
+  workflow_dispatch:
+    inputs:
+      epochs:
+        description: "Training epochs"
+        default: "1500"
+        required: false
+      seeds:
+        description: "Comma-separated seeds"
+        default: "41,42,43"
+        required: false
+
+jobs:
+  convergence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install numpy matplotlib pandas
+
+      - name: Run convergence experiments
+        env:
+          EPOCHS: ${{ github.event.inputs.epochs || '1500' }}
+          SEEDS: ${{ github.event.inputs.seeds || '41,42,43' }}
+        run: |
+          python -c "
+          import json, csv, subprocess, sys, os
+          from pathlib import Path
+
+          EPOCHS = int(os.environ['EPOCHS'])
+          SEEDS = [int(s) for s in os.environ['SEEDS'].split(',')]
+
+          CASES = ['poisson', 'burgers', 'allen_cahn']
+
+          BASELINE_POINTS = [{'num_observation': 128, 'noise_std': 0.0}]
+          DEGRADED_POINTS = {
+              'poisson': [{'num_observation': 16, 'noise_std': 0.20}],
+              'burgers': [{'num_observation': 32, 'noise_std': 0.10}],
+              'allen_cahn': [{'num_observation': 16, 'noise_std': 0.15}],
+          }
+
+          def run_one(case_name, num_obs, noise_std, seed, epochs, output_dir):
+              config = {
+                  'case': {'name': case_name},
+                  'seed': seed,
+                  'run_name': output_dir.name,
+                  'network': {'hidden_layers': [64, 64, 64], 'activation': 'tanh'},
+                  'training': {
+                      'epochs': epochs,
+                      'lr': 0.001,
+                      'print_every': 500,
+                      'weights': {'data': 10.0, 'physics': 1.0, 'boundary': 10.0},
+                  },
+                  'data': {
+                      'num_observation': num_obs,
+                      'num_collocation': 2048,
+                      'num_boundary': 256,
+                      'num_eval': 51,
+                      'noise_std': noise_std,
+                  },
+                  'reliability': {
+                      'thresholds': {
+                          'physics_rms': {'good': 1e-3, 'fail': 1e-1, 'mode': 'smaller_better'},
+                          'boundary_rms': {'good': 1e-3, 'fail': 1e-1, 'mode': 'smaller_better'},
+                          'rel_l2': {'good': 1e-2, 'fail': 2e-1, 'mode': 'smaller_better'},
+                          'structure_error': {'good': 1e-2, 'fail': 2e-1, 'mode': 'smaller_better'},
+                          'loss_std': {'good': 1e-4, 'fail': 1e-2, 'mode': 'smaller_better'},
+                          'loss_ratio': {'good': 0.1, 'fail': 0.9, 'mode': 'smaller_better'},
+                      }
+                  },
+              }
+              config_path = output_dir / 'config.json'
+              output_dir.mkdir(parents=True, exist_ok=True)
+              config_path.write_text(json.dumps(config, indent=2))
+              cmd = [sys.executable, '-m', 'minimal_pinn.run_experiment',
+                     '--config', str(config_path), '--output-dir', str(output_dir)]
+              result = subprocess.run(cmd, capture_output=True, text=True, timeout=1200)
+              if result.returncode != 0:
+                  print(f'  FAILED: {result.stderr[:300]}')
+                  return None
+              mp = output_dir / 'metrics.json'
+              return json.loads(mp.read_text()) if mp.exists() else None
+
+          base_dir = Path('minimal_pinn/results/convergence_v1500')
+          base_dir.mkdir(parents=True, exist_ok=True)
+          rows = []
+
+          for case_name in CASES:
+              for pt in BASELINE_POINTS:
+                  for seed in SEEDS:
+                      tag = f'{case_name}_e{EPOCHS}_obs{pt[\"num_observation\"]}_noise000_seed{seed}'
+                      out = base_dir / tag
+                      print(f'[run] {tag}', flush=True)
+                      m = run_one(case_name, pt['num_observation'], pt['noise_std'], seed, EPOCHS, out)
+                      if m:
+                          rows.append({'case': case_name, 'point': 'baseline',
+                                       'num_observation': pt['num_observation'], 'noise_std': pt['noise_std'],
+                                       'seed': seed, 'epochs': EPOCHS,
+                                       'rel_l2': m['scalar_metrics']['rel_l2']})
+
+              for pt in DEGRADED_POINTS.get(case_name, []):
+                  for seed in SEEDS:
+                      noise_pct = int(round(pt['noise_std'] * 1000))
+                      tag = f'{case_name}_e{EPOCHS}_obs{pt[\"num_observation\"]}_noise{noise_pct:03d}_seed{seed}'
+                      out = base_dir / tag
+                      print(f'[run] {tag}', flush=True)
+                      m = run_one(case_name, pt['num_observation'], pt['noise_std'], seed, EPOCHS, out)
+                      if m:
+                          rows.append({'case': case_name, 'point': 'degraded',
+                                       'num_observation': pt['num_observation'], 'noise_std': pt['noise_std'],
+                                       'seed': seed, 'epochs': EPOCHS,
+                                       'rel_l2': m['scalar_metrics']['rel_l2']})
+
+          csv_path = base_dir / 'convergence_summary.csv'
+          with csv_path.open('w', newline='') as f:
+              w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+              w.writeheader()
+              w.writerows(rows)
+          (base_dir / 'convergence_summary.json').write_text(json.dumps(rows, indent=2))
+
+          print('\n=== CONVERGENCE SUMMARY ===')
+          for c in CASES:
+              cr = [r for r in rows if r['case'] == c]
+              print(f'\n{c}:')
+              for r in cr:
+                  print(f\"  {r['point']:10s} obs={r['num_observation']:3d} noise={r['noise_std']:.3f} seed={r['seed']} rel_l2={r['rel_l2']:.6f}\")
+          "
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: convergence-results-epoch${{ github.event.inputs.epochs || '1500' }}
+          path: minimal_pinn/results/convergence_v1500/
+          retention-days: 90

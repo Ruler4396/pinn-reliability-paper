@@ -13,7 +13,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -49,7 +49,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -67,7 +67,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -85,7 +85,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -103,7 +103,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -121,7 +121,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -139,7 +139,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
-            "epochs": 300,
+            "epochs": 500,
             "lr": 0.001,
             "print_every": 100,
             "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
@@ -149,6 +149,42 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
             "num_collocation": 2048,
             "num_boundary": 256,
             "num_eval": 41,
+            "noise_std": 0.0,
+        },
+    },
+    "heat_equation": {
+        "case": {"name": "heat_equation", "nu": 0.1},
+        "seed": 42,
+        "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
+        "training": {
+            "epochs": 500,
+            "lr": 0.001,
+            "print_every": 100,
+            "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
+        },
+        "data": {
+            "num_observation": 256,
+            "num_collocation": 2048,
+            "num_boundary": 256,
+            "num_eval": 51,
+            "noise_std": 0.0,
+        },
+    },
+    "allen_cahn": {
+        "case": {"name": "allen_cahn", "eps": 0.1},
+        "seed": 42,
+        "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
+        "training": {
+            "epochs": 500,
+            "lr": 0.001,
+            "print_every": 100,
+            "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
+        },
+        "data": {
+            "num_observation": 256,
+            "num_collocation": 2048,
+            "num_boundary": 256,
+            "num_eval": 51,
             "noise_std": 0.0,
         },
     },

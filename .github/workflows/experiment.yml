@@ -1,0 +1,43 @@
+name: Run PINN Experiment
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Python module to run (e.g. minimal_pinn.run_matrix)"
+        required: true
+      spec:
+        description: "Path to spec JSON (e.g. minimal_pinn/configs/matrix_coarse_v2.json)"
+        required: true
+      output_tag:
+        description: "Tag for output artifact"
+        default: "experiment"
+        required: false
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 720
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install numpy matplotlib pandas
+
+      - name: Run experiment
+        run: |
+          python -m ${{ github.event.inputs.script }} --spec ${{ github.event.inputs.spec }}
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.output_tag }}
+          path: minimal_pinn/results/
+          retention-days: 90

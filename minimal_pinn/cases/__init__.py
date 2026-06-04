@@ -1,9 +1,11 @@
-from .burgers import BurgersCase
-from .fisher_kpp import FisherKPPCase
-from .helmholtz import HelmholtzCase
-from .lid_driven_cavity import LidDrivenCavityCase
 from .advection_diffusion import AdvectionDiffusionCase
 from .advection_dominated_diffusion import AdvectionDominatedDiffusionCase
+from .allen_cahn import AllenCahnCase
+from .burgers import BurgersCase
+from .fisher_kpp import FisherKPPCase
+from .heat_equation import HeatEquationCase
+from .helmholtz import HelmholtzCase
+from .lid_driven_cavity import LidDrivenCavityCase
 from .poisson import PoissonCase
 from .stokes_poiseuille import StokesPoiseuilleCase
 from .variable_coefficient_diffusion import VariableCoefficientDiffusionCase
@@ -18,6 +20,8 @@ def build_case(case_spec):
         case_kwargs = {key: value for key, value in case_spec.items() if key != "name"}
 
     table = {
+        "allen_cahn": AllenCahnCase,
+        "heat_equation": HeatEquationCase,
         "poisson": PoissonCase,
         "fisher_kpp": FisherKPPCase,
         "helmholtz": HelmholtzCase,
