@@ -1,0 +1,78 @@
+name: Weight Sweep v1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [burgers, stokes_poiseuille, allen_cahn]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install matplotlib pandas numpy
+      - name: Run weight sweep for ${{ matrix.case }}
+        run: |
+          python -m minimal_pinn.run_weight_sweep \
+            --spec minimal_pinn/configs/weight_sweep_v1.json \
+            --output-dir results/weight_sweep_v1_${{ matrix.case }}
+        env:
+          PYTHONIOENCODING: utf-8
+      - name: Filter results for ${{ matrix.case }}
+        run: |
+          python -c "
+          import csv, json, pathlib
+          case = '${{ matrix.case }}'
+          src = pathlib.Path('results/weight_sweep_v1_' + case)
+          rows = list(csv.DictReader(open(src / 'weight_sweep_runs.csv')))
+          filtered = [r for r in rows if r['case'] == case]
+          if filtered:
+              fields = list(filtered[0].keys())
+              with open(src / 'weight_sweep_runs.csv', 'w', newline='') as f:
+                  w = csv.DictWriter(f, fieldnames=fields)
+                  w.writeheader()
+                  w.writerows(filtered)
+          print(f'{case}: {len(filtered)} rows')
+          "
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weight_sweep_${{ matrix.case }}
+          path: results/weight_sweep_v1_${{ matrix.case }}/
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: sweep
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: results/
+      - name: Merge results
+        run: |
+          python -c "
+          import csv, pathlib
+          all_rows = []
+          for p in sorted(pathlib.Path('results').rglob('weight_sweep_runs.csv')):
+              rows = list(csv.DictReader(open(p)))
+              all_rows.extend(rows)
+          if all_rows:
+              fields = list(all_rows[0].keys())
+              out = pathlib.Path('results')
+              with open(out / 'weight_sweep_v1_all.csv', 'w', newline='') as f:
+                  w = csv.DictWriter(f, fieldnames=fields)
+                  w.writeheader()
+                  w.writerows(all_rows)
+              print(f'Merged {len(all_rows)} rows')
+          "
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weight_sweep_v1_merged
+          path: results/weight_sweep_v1_all.csv
