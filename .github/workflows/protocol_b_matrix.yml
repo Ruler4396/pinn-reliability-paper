@@ -2,6 +2,14 @@ name: Protocol B Degradation Matrix
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'minimal_pinn/configs/matrix_protocol_b_*.json'
+      - 'minimal_pinn/run_matrix.py'
+      - 'minimal_pinn/matrix_specs.py'
+      - 'minimal_pinn/trainer.py'
+      - '.github/workflows/protocol_b_matrix.yml'
 
 jobs:
   matrix:
