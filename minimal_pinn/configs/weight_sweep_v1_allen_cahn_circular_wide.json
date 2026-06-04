@@ -1,0 +1,19 @@
+{
+  "sweep_name": "weight_sweep_v1_allen_cahn_circular_wide",
+  "epochs": 500,
+  "seeds": [41, 42, 43],
+  "weight_configs": {
+    "W1": {"data": 10, "physics": 1, "boundary": 10}
+  },
+  "cases": [
+    {
+      "case": "allen_cahn_circular",
+      "case_kwargs": {"eps": 0.3, "radius": 0.3},
+      "conditions": [
+        {"label": "safe", "num_observation": 128, "noise_std": 0.0},
+        {"label": "transition", "num_observation": 16, "noise_std": 0.10},
+        {"label": "failure", "num_observation": 8, "noise_std": 0.20}
+      ]
+    }
+  ]
+}

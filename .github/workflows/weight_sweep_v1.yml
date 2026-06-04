@@ -31,7 +31,7 @@ jobs:
       - name: Filter results for ${{ matrix.case }}
         run: |
           python -c "
-          import csv, pathlib
+          import csv, json, pathlib
           case = '${{ matrix.case }}'
           src = pathlib.Path('results/weight_sweep_v1_' + case)
           rows = list(csv.DictReader(open(src / 'weight_sweep_runs.csv')))
@@ -51,6 +51,14 @@ jobs:
 
   sweep-circular:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - spec: minimal_pinn/configs/weight_sweep_v1_allen_cahn_circular.json
+            name: allen_cahn_circular
+          - spec: minimal_pinn/configs/weight_sweep_v1_allen_cahn_circular_wide.json
+            name: allen_cahn_circular_wide
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -60,17 +68,17 @@ jobs:
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install matplotlib pandas numpy
-      - name: Run Allen-Cahn circular weight sweep
+      - name: Run ${{ matrix.name }} weight sweep
         run: |
           python -m minimal_pinn.run_weight_sweep \
-            --spec minimal_pinn/configs/weight_sweep_v1_allen_cahn_circular.json \
-            --output-dir results/weight_sweep_v1_allen_cahn_circular
+            --spec ${{ matrix.spec }} \
+            --output-dir results/weight_sweep_v1_${{ matrix.name }}
         env:
           PYTHONIOENCODING: utf-8
       - uses: actions/upload-artifact@v4
         with:
-          name: weight_sweep_allen_cahn_circular
-          path: results/weight_sweep_v1_allen_cahn_circular/
+          name: weight_sweep_${{ matrix.name }}
+          path: results/weight_sweep_v1_${{ matrix.name }}/
 
   merge:
     runs-on: ubuntu-latest

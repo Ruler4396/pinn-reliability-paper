@@ -38,13 +38,17 @@ def main() -> None:
 
     for case_spec in spec["cases"]:
         case_name = case_spec["case"]
+        case_kwargs = case_spec.get("case_kwargs", {})
         for cond in case_spec["conditions"]:
             label = cond["label"]
             num_obs = int(cond["num_observation"])
             noise = float(cond["noise_std"])
             for w_name, w_vals in weight_configs.items():
                 for seed in seeds:
-                    config = build_run_config(case_name, num_obs, noise)
+                    overrides = {}
+                    if case_kwargs:
+                        overrides["case"] = case_kwargs
+                    config = build_run_config(case_name, num_obs, noise, overrides=overrides)
                     config["training"]["epochs"] = epochs
                     config["training"]["weights"] = {
                         "data": float(w_vals["data"]),

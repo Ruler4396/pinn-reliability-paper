@@ -189,7 +189,7 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
         },
     },
     "allen_cahn_circular": {
-        "case": {"name": "allen_cahn_circular", "eps": 0.1, "radius": 0.3},
+        "case": {"name": "allen_cahn_circular", "eps": 0.3, "radius": 0.3},
         "seed": 42,
         "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
         "training": {
