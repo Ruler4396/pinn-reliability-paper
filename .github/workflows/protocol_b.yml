@@ -1,0 +1,82 @@
+name: Protocol B Experiments
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'minimal_pinn/cases/wave_equation.py'
+      - 'minimal_pinn/cases/nls_soliton.py'
+      - 'minimal_pinn/cases/kdv_soliton.py'
+      - 'minimal_pinn/cases/taylor_green.py'
+      - 'minimal_pinn/run_protocol_b.py'
+      - 'minimal_pinn/configs/protocol_b_v1.json'
+      - '.github/workflows/protocol_b.yml'
+
+jobs:
+  protocol-b:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [wave_equation, nls_soliton, kdv_soliton, taylor_green]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install matplotlib pandas numpy
+      - name: Run Protocol B for ${{ matrix.case }}
+        run: |
+          python -c "
+          import json, sys
+          from pathlib import Path
+          spec = json.load(open('minimal_pinn/configs/protocol_b_v1.json'))
+          case = '${{ matrix.case }}'
+          filtered = {k: v for k, v in spec.items() if k != 'experiments'}
+          filtered['experiments'] = [e for e in spec['experiments'] if e['case'] == case]
+          out = Path('minimal_pinn/configs/protocol_b_v1_' + case + '.json')
+          json.dump(filtered, out.open('w'), indent=2)
+          print(f'Filtered spec for {case}: {len(filtered[\"experiments\"])} experiments')
+          "
+          python -m minimal_pinn.run_protocol_b \
+            --spec minimal_pinn/configs/protocol_b_v1_${{ matrix.case }}.json \
+            --output-dir results/protocol_b_v1_${{ matrix.case }}
+        env:
+          PYTHONIOENCODING: utf-8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: protocol_b_${{ matrix.case }}
+          path: results/protocol_b_v1_${{ matrix.case }}/
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: protocol-b
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: results/
+      - name: Merge results
+        run: |
+          python -c "
+          import csv, pathlib
+          all_rows = []
+          for p in sorted(pathlib.Path('results').rglob('protocol_b_runs.csv')):
+              rows = list(csv.DictReader(open(p)))
+              all_rows.extend(rows)
+          if all_rows:
+              fields = list(all_rows[0].keys())
+              with open('results/protocol_b_v1_all.csv', 'w', newline='') as f:
+                  w = csv.DictWriter(f, fieldnames=fields)
+                  w.writeheader()
+                  w.writerows(all_rows)
+              print(f'Merged {len(all_rows)} rows')
+          "
+      - uses: actions/upload-artifact@v4
+        with:
+          name: protocol_b_v1_merged
+          path: results/protocol_b_v1_all.csv

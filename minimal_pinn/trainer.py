@@ -179,6 +179,15 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
     weights = config["training"]["weights"]
     adaptive_weighting = build_adaptive_weighting(config=config, device=device)
 
+    lr_schedule_cfg = config["training"].get("lr_schedule", {})
+    scheduler = None
+    if lr_schedule_cfg.get("type") == "cosine":
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimizer,
+            T_max=epochs,
+            eta_min=float(lr_schedule_cfg.get("eta_min", 1e-5)),
+        )
+
     region_cfg = config["data"].get("region_aware")
 
     x_obs, y_obs = case.sample_observations_with_region(
@@ -250,6 +259,8 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
             clamp_max = float(adaptive_cfg.get("clamp_max", 4.0))
             for param in adaptive_weighting["log_vars"].values():
                 param.data.clamp_(clamp_min, clamp_max)
+        if scheduler is not None:
+            scheduler.step()
 
         record = {
             "epoch": float(epoch),
