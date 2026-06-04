@@ -179,15 +179,6 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
     weights = config["training"]["weights"]
     adaptive_weighting = build_adaptive_weighting(config=config, device=device)
 
-    lr_schedule_cfg = config["training"].get("lr_schedule", {})
-    scheduler = None
-    if lr_schedule_cfg.get("type") == "cosine":
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            optimizer,
-            T_max=epochs,
-            eta_min=float(lr_schedule_cfg.get("eta_min", 1e-5)),
-        )
-
     region_cfg = config["data"].get("region_aware")
 
     x_obs, y_obs = case.sample_observations_with_region(
@@ -214,6 +205,15 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
     history: list[Dict[str, float]] = []
     epochs = int(config["training"]["epochs"])
     print_every = int(config["training"]["print_every"])
+
+    lr_schedule_cfg = config["training"].get("lr_schedule", {})
+    scheduler = None
+    if lr_schedule_cfg.get("type") == "cosine":
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimizer,
+            T_max=epochs,
+            eta_min=float(lr_schedule_cfg.get("eta_min", 1e-5)),
+        )
 
     for epoch in range(1, epochs + 1):
         x_col = maybe_refresh_collocation(
