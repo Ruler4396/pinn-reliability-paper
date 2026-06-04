@@ -24,22 +24,45 @@ class AllenCahnCase(BaseCase):
         self.eps = eps
         self._inv_sqrt2_eps = 1.0 / (math.sqrt(2.0) * eps)
 
-    def _sample_interior(self, num_points: int, seed: int, device: torch.device) -> torch.Tensor:
+    def _sample_interior(
+        self,
+        num_points: int,
+        seed: int,
+        device: torch.device,
+    ) -> torch.Tensor:
         gen = torch.Generator(device=device).manual_seed(seed)
         return torch.rand((num_points, 2), generator=gen, device=device)
 
-    def sample_observations(self, num_points: int, noise_std: float, seed: int, device: torch.device) -> Tuple[torch.Tensor, torch.Tensor]:
+    def sample_observations(
+        self,
+        num_points: int,
+        noise_std: float,
+        seed: int,
+        device: torch.device,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
         x = self._sample_interior(num_points, seed, device)
         y = self.truth(x)
         if noise_std > 0:
             gen = torch.Generator(device=device).manual_seed(seed + 17)
-            y = y + noise_std * torch.std(y, dim=0, keepdim=True) * torch.randn(y.shape, generator=gen, device=device)
+            y = y + noise_std * torch.std(y, dim=0, keepdim=True) * torch.randn(
+                y.shape, generator=gen, device=device
+            )
         return x, y
 
-    def sample_collocation(self, num_points: int, seed: int, device: torch.device) -> torch.Tensor:
+    def sample_collocation(
+        self,
+        num_points: int,
+        seed: int,
+        device: torch.device,
+    ) -> torch.Tensor:
         return self._sample_interior(num_points, seed, device)
 
-    def sample_boundary(self, num_points: int, seed: int, device: torch.device) -> Tuple[torch.Tensor, torch.Tensor]:
+    def sample_boundary(
+        self,
+        num_points: int,
+        seed: int,
+        device: torch.device,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
         gen = torch.Generator(device=device).manual_seed(seed)
         side = torch.randint(0, 4, (num_points, 1), generator=gen, device=device)
         coord = torch.rand((num_points, 1), generator=gen, device=device)

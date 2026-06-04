@@ -1,11 +1,6 @@
-from .burgers import BurgersCase
-from .fisher_kpp import FisherKPPCase
-from .helmholtz import HelmholtzCase
-from .lid_driven_cavity import LidDrivenCavityCase
 from .advection_diffusion import AdvectionDiffusionCase
 from .advection_dominated_diffusion import AdvectionDominatedDiffusionCase
 from .allen_cahn import AllenCahnCase
-from .allen_cahn_circular import AllenCahnCircularCase
 from .burgers import BurgersCase
 from .fisher_kpp import FisherKPPCase
 from .heat_equation import HeatEquationCase
@@ -29,22 +24,21 @@ def build_case(case_spec):
         case_kwargs = {key: value for key, value in case_spec.items() if key != "name"}
 
     table = {
-        "allen_cahn": AllenCahnCase,
-        "allen_cahn_circular": AllenCahnCircularCase,
-        "heat_equation": HeatEquationCase,
-        "kdv_soliton": KdVSolitonCase,
-        "nls_soliton": NLSSolitonCase,
-        "poisson": PoissonCase,
-        "fisher_kpp": FisherKPPCase,
-        "helmholtz": HelmholtzCase,
         "advection_diffusion": AdvectionDiffusionCase,
         "advection_dominated_diffusion": AdvectionDominatedDiffusionCase,
-        "variable_coefficient_diffusion": VariableCoefficientDiffusionCase,
+        "allen_cahn": AllenCahnCase,
         "burgers": BurgersCase,
+        "fisher_kpp": FisherKPPCase,
+        "heat_equation": HeatEquationCase,
+        "helmholtz": HelmholtzCase,
+        "kdv_soliton": KdVSolitonCase,
+        "lid_driven_cavity": LidDrivenCavityCase,
+        "nls_soliton": NLSSolitonCase,
+        "poisson": PoissonCase,
         "stokes_poiseuille": StokesPoiseuilleCase,
         "taylor_green": TaylorGreenCase,
+        "variable_coefficient_diffusion": VariableCoefficientDiffusionCase,
         "wave_equation": WaveEquationCase,
-        "lid_driven_cavity": LidDrivenCavityCase,
     }
     if case_name not in table:
         raise ValueError(f"Unsupported case: {case_name}")

@@ -176,6 +176,7 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
         activation=config["network"]["activation"],
     ).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=float(config["training"]["lr"]))
+
     weights = config["training"]["weights"]
     adaptive_weighting = build_adaptive_weighting(config=config, device=device)
 
@@ -206,13 +207,12 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
     epochs = int(config["training"]["epochs"])
     print_every = int(config["training"]["print_every"])
 
-    lr_schedule_cfg = config["training"].get("lr_schedule", {})
+    lr_schedule_cfg = config["training"].get("lr_schedule")
     scheduler = None
-    if lr_schedule_cfg.get("type") == "cosine":
+    if lr_schedule_cfg and lr_schedule_cfg.get("type") == "cosine":
+        eta_min = float(lr_schedule_cfg.get("eta_min", 1e-5))
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-            optimizer,
-            T_max=epochs,
-            eta_min=float(lr_schedule_cfg.get("eta_min", 1e-5)),
+            optimizer, T_max=epochs, eta_min=eta_min
         )
 
     for epoch in range(1, epochs + 1):
@@ -252,6 +252,8 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
         )
         objective_total.backward()
         optimizer.step()
+        if scheduler is not None:
+            scheduler.step()
         if adaptive_weighting is not None:
             adaptive_weighting["optimizer"].step()
             adaptive_cfg = config["training"]["adaptive_weighting"]
@@ -259,8 +261,6 @@ def run_training(config: Dict[str, Any], output_dir: Path) -> Dict[str, Any]:
             clamp_max = float(adaptive_cfg.get("clamp_max", 4.0))
             for param in adaptive_weighting["log_vars"].values():
                 param.data.clamp_(clamp_min, clamp_max)
-        if scheduler is not None:
-            scheduler.step()
 
         record = {
             "epoch": float(epoch),

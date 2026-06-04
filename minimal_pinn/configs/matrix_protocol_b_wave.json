@@ -1,0 +1,27 @@
+{
+  "matrix_name": "protocol_b_wave",
+  "cases": ["wave_equation"],
+  "observation_counts": [256, 128, 64, 32, 16, 8],
+  "noise_levels": [0.0, 0.05, 0.10, 0.15, 0.20],
+  "seeds": [1, 2, 3],
+  "overrides": {
+    "wave_equation": {
+      "network": {
+        "hidden_layers": [128, 128, 128, 128],
+        "activation": "sin"
+      },
+      "training": {
+        "epochs": 2000,
+        "lr": 0.001,
+        "lr_schedule": {"type": "cosine", "eta_min": 1e-5},
+        "print_every": 200,
+        "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0}
+      },
+      "data": {
+        "num_collocation": 4096,
+        "num_boundary": 256,
+        "num_eval": 51
+      }
+    }
+  }
+}
