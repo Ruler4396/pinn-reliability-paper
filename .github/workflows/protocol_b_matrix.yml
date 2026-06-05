@@ -48,39 +48,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Download all matrix artifacts via API
+      - name: Download artifacts using gh CLI
         run: |
-          python -c "
-          import urllib.request, json, zipfile, io, os
-          token = '${{ github.token }}'
-          repo = '${{ github.repository }}'
-          headers = {'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json'}
-
-          # Find all completed workflow runs
-          url = f'https://api.github.com/repos/{repo}/actions/workflows/protocol_b_matrix.yml/runs?per_page=20&status=completed'
-          req = urllib.request.Request(url, headers=headers)
-          resp = urllib.request.urlopen(req, timeout=15)
-          runs = json.load(resp)['workflow_runs']
-
-          os.makedirs('downloaded', exist_ok=True)
-          count = 0
-          for run in runs:
-              art_url = run['artifacts_url']
-              req2 = urllib.request.Request(art_url, headers=headers)
-              resp2 = urllib.request.urlopen(req2, timeout=15)
-              for art in json.load(resp2)['artifacts']:
-                  if art['name'].startswith('protocol_b_matrix_') and not art['expired']:
-                      dl_url = art['archive_download_url']
-                      req3 = urllib.request.Request(dl_url, headers=headers)
-                      resp3 = urllib.request.urlopen(req3, timeout=60)
-                      zf = zipfile.ZipFile(io.BytesIO(resp3.read()))
-                      dest = os.path.join('downloaded', art['name'])
-                      os.makedirs(dest, exist_ok=True)
-                      zf.extractall(dest)
-                      count += 1
-                      print(f'Downloaded: {art[\"name\"]} ({art[\"size_in_bytes\"]//1024}KB)')
-          print(f'Total artifacts downloaded: {count}')
-          "
+          mkdir -p downloaded
+          for name in protocol_b_matrix_kdv_batch1 protocol_b_matrix_kdv_batch2 protocol_b_matrix_nls protocol_b_matrix_wave; do
+            echo "Downloading $name..."
+            gh run download --name "$name" --dir "downloaded/$name" --repo ${{ github.repository }} 2>&1 || echo "  (not found, skipping)"
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Merge summary CSVs
         run: |
           python -c "
