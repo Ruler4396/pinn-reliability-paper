@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       case:
-        description: 'PDE case to run'
+        description: 'PDE case to run (or "merge" to combine results)'
         required: true
         type: choice
         options:
@@ -12,9 +12,11 @@ on:
           - kdv_batch2
           - nls
           - wave
+          - merge
 
 jobs:
   matrix:
+    if: inputs.case != 'merge'
     runs-on: ubuntu-latest
     timeout-minutes: 420
     steps:
@@ -35,4 +37,42 @@ jobs:
         with:
           name: protocol_b_matrix_${{ inputs.case }}
           path: minimal_pinn/results/matrices/protocol_b_${{ inputs.case }}/
+          retention-days: 90
+
+  merge:
+    if: inputs.case == 'merge'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        with:
+          path: downloaded_artifacts/
+          pattern: protocol_b_matrix_*
+      - name: Merge summary CSVs
+        run: |
+          python -c "
+          import csv, pathlib
+          all_rows = []
+          for p in sorted(pathlib.Path('downloaded_artifacts').rglob('matrix_summary.csv')):
+              rows = list(csv.DictReader(open(p, encoding='utf-8')))
+              all_rows.extend(rows)
+          if all_rows:
+              fields = list(all_rows[0].keys())
+              out = pathlib.Path('protocol_b_merged_summary.csv')
+              with out.open('w', encoding='utf-8', newline='') as f:
+                  w = csv.DictWriter(f, fieldnames=fields)
+                  w.writeheader()
+                  w.writerows(all_rows)
+              print(f'Merged {len(all_rows)} rows into protocol_b_merged_summary.csv')
+          else:
+              print('No rows found')
+          "
+      - uses: actions/upload-artifact@v4
+        with:
+          name: protocol_b_merged
+          path: protocol_b_merged_summary.csv
           retention-days: 90
