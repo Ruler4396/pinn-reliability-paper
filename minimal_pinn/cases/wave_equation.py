@@ -72,7 +72,7 @@ class WaveEquationCase(BaseCase):
 
     def structure_error(self, model: torch.nn.Module, device: torch.device) -> float:
         x = torch.linspace(-1.0, 1.0, 256, device=device).unsqueeze(1)
-        t = torch.ones_like(x) * 0.5
+        t = torch.ones_like(x) * 0.25
         pts = torch.cat([x, t], dim=1)
         with torch.no_grad():
             pred = model(pts)
