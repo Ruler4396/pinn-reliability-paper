@@ -1,0 +1,27 @@
+{
+  "matrix_name": "protocol_b_kdv_batch1",
+  "cases": ["kdv_soliton"],
+  "observation_counts": [512, 256, 128],
+  "noise_levels": [0.0, 0.05, 0.10, 0.15, 0.20],
+  "seeds": [1, 2, 3],
+  "overrides": {
+    "kdv_soliton": {
+      "network": {
+        "hidden_layers": [128, 128, 128, 128],
+        "activation": "sin"
+      },
+      "training": {
+        "epochs": 2000,
+        "lr": 0.001,
+        "lr_schedule": {"type": "cosine", "eta_min": 1e-5},
+        "print_every": 200,
+        "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0}
+      },
+      "data": {
+        "num_collocation": 4096,
+        "num_boundary": 256,
+        "num_eval": 51
+      }
+    }
+  }
+}

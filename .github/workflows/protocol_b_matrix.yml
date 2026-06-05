@@ -8,7 +8,8 @@ on:
         required: true
         type: choice
         options:
-          - kdv
+          - kdv_batch1
+          - kdv_batch2
           - nls
           - wave
 
