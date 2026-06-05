@@ -2,22 +2,20 @@ name: Protocol B Degradation Matrix
 
 on:
   workflow_dispatch:
-  push:
-    branches: [master]
-    paths:
-      - 'minimal_pinn/configs/matrix_protocol_b_*.json'
-      - 'minimal_pinn/run_matrix.py'
-      - 'minimal_pinn/matrix_specs.py'
-      - 'minimal_pinn/trainer.py'
-      - '.github/workflows/protocol_b_matrix.yml'
+    inputs:
+      case:
+        description: 'PDE case to run'
+        required: true
+        type: choice
+        options:
+          - kdv
+          - nls
+          - wave
 
 jobs:
   matrix:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        case: [kdv, nls, wave]
+    timeout-minutes: 420
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,43 +25,13 @@ jobs:
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install matplotlib pandas numpy
-      - name: Run degradation matrix for ${{ matrix.case }}
-        run: python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_protocol_b_${{ matrix.case }}.json
+      - name: Run degradation matrix for ${{ inputs.case }}
+        run: python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_protocol_b_${{ inputs.case }}.json
         env:
           PYTHONIOENCODING: utf-8
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: protocol_b_matrix_${{ matrix.case }}
-          path: minimal_pinn/results/matrices/protocol_b_${{ matrix.case }}/
-          retention-days: 90
-
-  merge:
-    runs-on: ubuntu-latest
-    needs: matrix
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          path: minimal_pinn/results/matrices/
-      - name: Merge summary CSVs
-        run: |
-          python -c "
-          import csv, pathlib
-          all_rows = []
-          for p in sorted(pathlib.Path('minimal_pinn/results/matrices').rglob('matrix_summary.csv')):
-              rows = list(csv.DictReader(open(p, encoding='utf-8')))
-              all_rows.extend(rows)
-          if all_rows:
-              fields = list(all_rows[0].keys())
-              out = pathlib.Path('minimal_pinn/results/matrices/protocol_b_merged_summary.csv')
-              with out.open('w', encoding='utf-8', newline='') as f:
-                  w = csv.DictWriter(f, fieldnames=fields)
-                  w.writeheader()
-                  w.writerows(all_rows)
-              print(f'Merged {len(all_rows)} rows')
-          "
-      - uses: actions/upload-artifact@v4
-        with:
-          name: protocol_b_merged
-          path: minimal_pinn/results/matrices/protocol_b_merged_summary.csv
+          name: protocol_b_matrix_${{ inputs.case }}
+          path: minimal_pinn/results/matrices/protocol_b_${{ inputs.case }}/
           retention-days: 90
