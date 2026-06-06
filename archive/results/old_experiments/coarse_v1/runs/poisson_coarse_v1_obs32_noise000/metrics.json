@@ -1,0 +1,31 @@
+{
+  "case": "poisson",
+  "scalar_metrics": {
+    "physics_rms": 0.31121519207954407,
+    "boundary_rms": 0.10638841241598129,
+    "rel_l2": 0.11223806440830231,
+    "structure_error": 0.0010876655578613281,
+    "loss_std": 0.001994904558447319,
+    "loss_ratio": 0.0019101306458985411
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.11223806440830231
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.0018663143659778463,
+      "boundary_rms": 0.4526416547705342,
+      "rel_l2": 0.7957679642244143,
+      "structure_error": 0.9561673445785163,
+      "loss_std": 0.9153560985067415,
+      "loss_ratio": 0.964615766827823
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.029064955237162033,
+      "training_stability": 0.9396631975775176,
+      "numerical_accuracy": 0.7957679642244143,
+      "structural_stability": 0.9561673445785163
+    },
+    "reliability_raw": 0.6801658654044025
+  }
+}

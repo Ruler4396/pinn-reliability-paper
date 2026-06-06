@@ -1,0 +1,31 @@
+{
+  "case": "allen_cahn",
+  "scalar_metrics": {
+    "physics_rms": 0.14106063544750214,
+    "boundary_rms": 0.05117204040288925,
+    "rel_l2": 0.09477145969867706,
+    "structure_error": 0.0045122504234313965,
+    "loss_std": 0.00029775822616375034,
+    "loss_ratio": 0.010243821064506121
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.09477145969867706
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.22772225879470506,
+      "boundary_rms": 0.8103416714882115,
+      "rel_l2": 0.8362698444865345,
+      "structure_error": 0.9538884332297259,
+      "loss_std": 0.9471310925389755,
+      "loss_ratio": 0.9635537945654541
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.42957285275814666,
+      "training_stability": 0.9553071538342284,
+      "numerical_accuracy": 0.8362698444865345,
+      "structural_stability": 0.9538884332297259
+    },
+    "reliability_raw": 0.7937595710771589
+  }
+}

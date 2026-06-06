@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-06-01T13:49:42",
+  "total_time_minutes": 4.8,
+  "description": "P0敏感性分析实验结果（从控制台输出重建）",
+  "collocation_sensitivity": [
+    {"n_col": 2048, "success": true, "rel_l2": 0.0298, "elapsed": 22},
+    {"n_col": 4096, "success": true, "rel_l2": 0.0278, "elapsed": 33},
+    {"n_col": 8192, "success": true, "rel_l2": 0.0301, "elapsed": 58}
+  ],
+  "epochs_sensitivity": [
+    {"epochs": 300, "success": true, "rel_l2": 0.0326, "elapsed": 13},
+    {"epochs": 500, "success": true, "rel_l2": 0.0298, "elapsed": 18},
+    {"epochs": 1000, "success": true, "rel_l2": 0.0301, "elapsed": 29},
+    {"epochs": 2000, "success": true, "rel_l2": 0.0299, "elapsed": 50}
+  ],
+  "nonlinearity_ablation": [
+    {"nu": 0.001, "success": true, "rel_l2": 0.0299, "elapsed": 16},
+    {"nu": 0.01, "success": true, "rel_l2": 0.0319, "elapsed": 16},
+    {"nu": 0.1, "success": true, "rel_l2": 0.0278, "elapsed": 14},
+    {"nu": 1.0, "success": true, "rel_l2": 0.0165, "elapsed": 15}
+  ],
+  "conclusions": {
+    "collocation": "N_col=2048足够，增加到8192后rel_l2变化<7%",
+    "epochs": "epochs=500足够，500轮后已收敛",
+    "nonlinearity": "ν从0.001增加到1.0，rel_l2降低45%，直接证明非线性是关键因素"
+  }
+}

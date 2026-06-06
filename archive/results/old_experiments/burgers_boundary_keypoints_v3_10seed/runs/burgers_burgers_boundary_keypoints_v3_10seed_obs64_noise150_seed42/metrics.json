@@ -1,0 +1,31 @@
+{
+  "case": "burgers",
+  "scalar_metrics": {
+    "physics_rms": 0.07058142870664597,
+    "boundary_rms": 0.02441048063337803,
+    "rel_l2": 0.056325800716876984,
+    "structure_error": 0.007332861423492432,
+    "loss_std": 0.00705026572208649,
+    "loss_ratio": 0.010985883245525163
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.056325800716876984
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.7057770321605595,
+      "boundary_rms": 0.9044924764618484,
+      "rel_l2": 0.902606380504839,
+      "structure_error": 0.9519271871432388,
+      "loss_std": 0.7062632948798527,
+      "loss_ratio": 0.9634577592263968
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.7989806103084093,
+      "training_stability": 0.8248968732567695,
+      "numerical_accuracy": 0.902606380504839,
+      "structural_stability": 0.9519271871432388
+    },
+    "reliability_raw": 0.8696027628033142
+  }
+}

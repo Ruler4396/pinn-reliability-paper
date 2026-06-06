@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Research code for a PINN (Physics-Informed Neural Networks) reliability paper. Studies how PINN prediction reliability degrades under sparse/noisy observations across 4 PDE systems. Python + PyTorch.
+Research code for a PINN (Physics-Informed Neural Networks) reliability paper. Studies how PINN prediction reliability degrades under sparse/noisy observations across 10 PDE systems. Python + PyTorch.
 
 ## Key Commands
 
@@ -11,7 +11,10 @@ Research code for a PINN (Physics-Informed Neural Networks) reliability paper. S
 python -m minimal_pinn.run_experiment --config minimal_pinn/configs/burgers_clean_baseline.json
 
 # Run matrix scan (2D grid of obs×noise)
-python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_coarse_v1.json
+python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_coarse_v2.json
+
+# Run Protocol B matrix (KdV, NLS, wave, KdV-double)
+python -m minimal_pinn.run_protocol_b --spec minimal_pinn/configs/matrix_protocol_b_kdv.json
 
 # Generate paper figures (v5 is current)
 python minimal_pinn/plot_figures_v5.py
@@ -22,11 +25,25 @@ python minimal_pinn/plot_figures_v5.py
 ## Architecture
 
 - `minimal_pinn/configs/` — JSON experiment configs (case, network, training, data params)
-- `minimal_pinn/cases/` — PDE implementations (poisson, stokes_poiseuille, burgers, fisher_kpp, etc.)
+- `minimal_pinn/cases/` — PDE implementations (10 active cases)
 - `minimal_pinn/results/` — Experiment outputs (metrics.json, config.json per run)
-- `minimal_pinn/analyze_*.py` — Analysis scripts, each produces a summary in results/analysis/
 - `notes/` — Markdown notes with experimental results and analysis conclusions
-- `paper_manuscript.docx` — The paper (use python-docx to modify)
+- `archive/` — Archived old experiments, unused cases, superseded configs
+
+## 10 Active PDE Cases
+
+| Case | File | Type | Key Properties |
+|------|------|------|----------------|
+| Poisson | `poisson.py` | Elliptic | Smooth, no degradation boundary |
+| Stokes-Poiseuille | `stokes_poiseuille.py` | Linear saddle-point | Sharp boundary |
+| Allen-Cahn | `allen_cahn.py` | Nonlinear parabolic | Straight-line interface |
+| Fisher-KPP | `fisher_kpp.py` | Weakly nonlinear | Traveling wave, medium boundary |
+| Burgers | `burgers.py` | Strongly nonlinear | Wide probabilistic boundary |
+| Heat Equation | `heat_equation.py` | Linear parabolic | Pure diffusion, narrow boundary |
+| KdV Soliton | `kdv_soliton.py` | Dispersive | Soliton propagation |
+| NLS Soliton | `nls_soliton.py` | Dispersive | Nonlinear Schrödinger |
+| Wave Equation | `wave_equation.py` | Hyperbolic | First-order wave propagation |
+| KdV Double Soliton | `kdv_double_soliton.py` | Dispersive | Two-soliton interaction |
 
 ## Config Structure
 
@@ -43,25 +60,36 @@ python minimal_pinn/plot_figures_v5.py
 
 Default values filled by `config.py:ensure_defaults()` — see that file for all defaults.
 
-## Four PDE Cases
+## Scan Hierarchy (v2)
 
-| Case | File | Key Properties |
-|------|------|----------------|
-| Poisson | `cases/poisson.py` | Elliptic, smooth, no degradation boundary |
-| Stokes-Poiseuille | `cases/stokes_poiseuille.py` | Linear saddle-point, sharp boundary |
-| Fisher-KPP | `cases/fisher_kpp.py` | Weakly nonlinear, traveling wave, medium boundary |
-| Burgers | `cases/burgers.py` | Strongly nonlinear, wide probabilistic boundary |
+| Level | Config | Seeds | Purpose |
+|-------|--------|-------|---------|
+| Coarse | `matrix_coarse_v2.json` | 1 | Phase diagram, boundary location |
+| Probability | `matrix_probability_v2_*.json` | 5 | Crossing rate + Wilson CI |
+| Keypoints | `matrix_keypoints_v2_*.json` | 30 | Precise probability + ranking stability |
 
-## Docx Manipulation
+## Directory Structure
 
-The paper is in `paper_manuscript.docx`. Key gotchas:
-
-- **python-docx cannot render OMML formulas** — formulas inserted as `m:oMath` tags may display as text in Word
-- **Image insertion** requires creating temp paragraphs then moving XML elements
-- **Always backup before editing** — `paper_manuscript_backup.docx` is the original
-- **Chinese text encoding** — use `sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')` for console output
-- **Table styles** — "Table Grid" may not exist in all documents; create tables without style first
-- **Section headings** — use `para.style = doc.styles['Heading 1']` etc.
+```
+pinn-reliability-paper/
+├── minimal_pinn/
+│   ├── cases/           # 10 active PDE case implementations
+│   ├── configs/         # Experiment config JSON files
+│   ├── results/         # Experiment outputs
+│   │   ├── matrices/    # Coarse scan results
+│   │   ├── probability_matrices/  # Probability boundary results
+│   │   ├── probes/      # Keypoint probe results
+│   │   ├── analysis/    # Analysis outputs
+│   │   └── paper_figures/v5/  # Generated figures
+│   ├── run_*.py         # Experiment runners
+│   ├── analyze_*.py     # Analysis scripts
+│   └── plot_figures_v5.py  # Current plotting script
+├── notes/               # Analysis notes and findings
+├── archive/             # Archived old experiments and unused code
+├── methods/             # Method definitions
+├── tools/               # Manuscript manipulation utilities
+└── paper_manuscript.docx  # The paper
+```
 
 ## Citation Numbering
 
@@ -79,14 +107,6 @@ Standard names — use these consistently:
 - Fisher-KPP方程 (not 费希尔方程)
 - Poisson方程 (not 泊松方程)
 - 越界率 (not 跨越率)
-
-## Key Results Reference
-
-Experimental results are in `notes/*.md` and `minimal_pinn/results/`. Key numbers:
-- Burgers baseline rel_l2: 0.018±0.010
-- Stokes baseline: 0.010±0.003
-- Fisher-KPP baseline: 0.0126
-- Sensitivity analysis: N_col=2048 sufficient, epochs=500 sufficient, ν ablation shows 45% rel_l2 reduction
 
 ## What NOT To Do
 

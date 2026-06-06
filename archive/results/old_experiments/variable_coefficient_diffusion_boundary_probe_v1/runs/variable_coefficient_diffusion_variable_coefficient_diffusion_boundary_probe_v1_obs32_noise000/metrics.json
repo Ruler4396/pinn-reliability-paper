@@ -1,0 +1,31 @@
+{
+  "case": "variable_coefficient_diffusion",
+  "scalar_metrics": {
+    "physics_rms": 0.2133912444114685,
+    "boundary_rms": 0.09860646724700928,
+    "rel_l2": 0.1042727455496788,
+    "structure_error": 0.0011273622512817383,
+    "loss_std": 0.0006767046206368987,
+    "loss_ratio": 0.0011144826365981138
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.1042727455496788
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.033167313305304695,
+      "boundary_rms": 0.5103600628615718,
+      "rel_l2": 0.8150991137307233,
+      "structure_error": 0.9561415542510164,
+      "loss_std": 0.9411946203046851,
+      "loss_ratio": 0.9647155843743951
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.13010485042243716,
+      "training_stability": 0.9528825311323905,
+      "numerical_accuracy": 0.8150991137307233,
+      "structural_stability": 0.9561415542510164
+    },
+    "reliability_raw": 0.7135570123841418
+  }
+}

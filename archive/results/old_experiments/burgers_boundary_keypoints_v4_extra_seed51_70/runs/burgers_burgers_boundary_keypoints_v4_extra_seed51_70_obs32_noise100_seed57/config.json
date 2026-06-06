@@ -1,0 +1,88 @@
+{
+  "case": {
+    "name": "burgers"
+  },
+  "seed": 57,
+  "network": {
+    "hidden_layers": [
+      64,
+      64,
+      64
+    ],
+    "activation": "tanh"
+  },
+  "training": {
+    "epochs": 300,
+    "lr": 0.001,
+    "print_every": 100,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    },
+    "adaptive_sampling": {
+      "enabled": false,
+      "method": "rar_topk_v1",
+      "warmup_epochs": 100,
+      "refresh_every": 50,
+      "candidate_factor": 4.0,
+      "replace_ratio": 0.25
+    },
+    "adaptive_weighting": {
+      "enabled": false,
+      "method": "uncertainty_v1",
+      "lr": 0.01,
+      "warmup_epochs": 0,
+      "regularizer_scale": 1.0,
+      "clamp_min": -4.0,
+      "clamp_max": 4.0,
+      "log_var_init": {
+        "data": 0.0,
+        "physics": 0.0,
+        "boundary": 0.0
+      }
+    }
+  },
+  "data": {
+    "num_observation": 32,
+    "num_collocation": 2048,
+    "num_boundary": 256,
+    "num_eval": 51,
+    "noise_std": 0.1
+  },
+  "run_name": "burgers_burgers_boundary_keypoints_v4_extra_seed51_70_obs32_noise100_seed57",
+  "reliability": {
+    "thresholds": {
+      "physics_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "boundary_rms": {
+        "good": 0.001,
+        "fail": 0.1,
+        "mode": "smaller_better"
+      },
+      "rel_l2": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "structure_error": {
+        "good": 0.01,
+        "fail": 0.2,
+        "mode": "smaller_better"
+      },
+      "loss_std": {
+        "good": 0.0001,
+        "fail": 0.01,
+        "mode": "smaller_better"
+      },
+      "loss_ratio": {
+        "good": 0.1,
+        "fail": 0.9,
+        "mode": "smaller_better"
+      }
+    }
+  }
+}

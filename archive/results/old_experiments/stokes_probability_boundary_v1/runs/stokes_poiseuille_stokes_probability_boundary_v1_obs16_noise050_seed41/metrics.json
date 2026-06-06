@@ -1,0 +1,33 @@
+{
+  "case": "stokes_poiseuille",
+  "scalar_metrics": {
+    "physics_rms": 0.030846726149320602,
+    "boundary_rms": 0.009015168063342571,
+    "rel_l2": 0.008847498334944248,
+    "structure_error": 7.152557373046875e-06,
+    "loss_std": 1.7843693460274736e-05,
+    "loss_ratio": 0.00030720464856345825
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.007932815700769424,
+    "abs_rmse_v": 0.0008923804853111506,
+    "rel_l2_p": 0.00914583820849657
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.8866272288743426,
+      "boundary_rms": 0.9373828971206303,
+      "rel_l2": 0.9508415814041953,
+      "structure_error": 0.956863804063025,
+      "loss_std": 0.9511479718059246,
+      "loss_ratio": 0.9648165836682119
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.9116519075109026,
+      "training_stability": 0.9579578992423106,
+      "numerical_accuracy": 0.9508415814041953,
+      "structural_stability": 0.956863804063025
+    },
+    "reliability_raw": 0.9443287980551084
+  }
+}

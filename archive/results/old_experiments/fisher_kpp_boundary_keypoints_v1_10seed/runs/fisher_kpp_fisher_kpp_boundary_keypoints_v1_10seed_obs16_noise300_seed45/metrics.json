@@ -1,0 +1,31 @@
+{
+  "case": "fisher_kpp",
+  "scalar_metrics": {
+    "physics_rms": 0.044134244322776794,
+    "boundary_rms": 0.018836738541722298,
+    "rel_l2": 0.07775820791721344,
+    "structure_error": 0.0046765804290771484,
+    "loss_std": 5.405398480321543e-05,
+    "loss_ratio": 0.01541071707875945
+  },
+  "per_output_metrics": {
+    "rel_l2_u": 0.07775820791721344
+  },
+  "reliability": {
+    "indicator_scores": {
+      "physics_rms": 0.8404457708949858,
+      "boundary_rms": 0.9178843006775093,
+      "rel_l2": 0.8692549053565469,
+      "structure_error": 0.9537762894113528,
+      "loss_std": 0.9506451187528963,
+      "loss_ratio": 0.9628800382783128
+    },
+    "dimension_scores": {
+      "physics_consistency": 0.8783120053120725,
+      "training_stability": 0.9567430210531352,
+      "numerical_accuracy": 0.8692549053565469,
+      "structural_stability": 0.9537762894113528
+    },
+    "reliability_raw": 0.9145215552832768
+  }
+}

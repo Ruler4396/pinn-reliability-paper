@@ -1,0 +1,30 @@
+{
+  "matrix_name": "probability_v2_poisson",
+  "case": "poisson",
+  "observation_counts": [
+    16,
+    12,
+    10,
+    8,
+    6,
+    4
+  ],
+  "noise_levels": [
+    0.05,
+    0.1,
+    0.125,
+    0.15,
+    0.175,
+    0.2
+  ],
+  "seeds": [
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "threshold_rel_l2": 0.112968810275197,
+  "recalibration_path": "minimal_pinn/results/analysis/recalibrated_dimensions_v1/recalibrated_summary.json",
+  "overrides": {}
+}
