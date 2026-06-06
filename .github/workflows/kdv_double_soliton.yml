@@ -1,24 +1,21 @@
-name: Protocol B Degradation Matrix
+name: KdV Double Soliton - Protocol B
 
 on:
   workflow_dispatch:
     inputs:
-      case:
-        description: 'PDE case to run (or "merge" to combine results)'
+      action:
+        description: 'What to do'
         required: true
         type: choice
         options:
-          - kdv_batch1
-          - kdv_batch2
-          - kdv_double_batch1
-          - kdv_double_batch2
-          - nls
-          - wave
+          - run_all
+          - run_batch1
+          - run_batch2
           - merge
 
 jobs:
-  matrix:
-    if: inputs.case != 'merge'
+  run-batch1:
+    if: inputs.action == 'run_all' || inputs.action == 'run_batch1'
     runs-on: ubuntu-latest
     timeout-minutes: 420
     steps:
@@ -30,30 +27,55 @@ jobs:
         run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install matplotlib pandas numpy
-      - name: Run degradation matrix for ${{ inputs.case }}
-        run: python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_protocol_b_${{ inputs.case }}.json
+      - name: Run KdV double soliton batch 1 (high obs)
+        run: python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_protocol_b_kdv_double_batch1.json
         env:
           PYTHONIOENCODING: utf-8
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: protocol_b_matrix_${{ inputs.case }}
-          path: minimal_pinn/results/matrices/protocol_b_${{ inputs.case }}/
+          name: protocol_b_matrix_kdv_double_batch1
+          path: minimal_pinn/results/matrices/protocol_b_kdv_double_batch1/
+          retention-days: 90
+
+  run-batch2:
+    if: inputs.action == 'run_all' || inputs.action == 'run_batch2'
+    runs-on: ubuntu-latest
+    timeout-minutes: 420
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install matplotlib pandas numpy
+      - name: Run KdV double soliton batch 2 (low obs)
+        run: python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_protocol_b_kdv_double_batch2.json
+        env:
+          PYTHONIOENCODING: utf-8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: protocol_b_matrix_kdv_double_batch2
+          path: minimal_pinn/results/matrices/protocol_b_kdv_double_batch2/
           retention-days: 90
 
   merge:
-    if: inputs.case == 'merge'
+    if: inputs.action == 'merge'
     runs-on: ubuntu-latest
+    needs: []
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Download artifacts using gh CLI
+      - name: Download artifacts
         run: |
           mkdir -p downloaded
-          for name in protocol_b_matrix_kdv_batch1 protocol_b_matrix_kdv_batch2 protocol_b_matrix_kdv_double_batch1 protocol_b_matrix_kdv_double_batch2 protocol_b_matrix_nls protocol_b_matrix_wave; do
+          for name in protocol_b_matrix_kdv_double_batch1 protocol_b_matrix_kdv_double_batch2; do
             echo "Downloading $name..."
             gh run download --name "$name" --dir "downloaded/$name" --repo ${{ github.repository }} 2>&1 || echo "  (not found, skipping)"
           done
@@ -70,7 +92,7 @@ jobs:
               print(f'  {p}: {len(rows)} rows')
           if all_rows:
               fields = list(all_rows[0].keys())
-              out = pathlib.Path('protocol_b_merged_summary.csv')
+              out = pathlib.Path('kdv_double_merged_summary.csv')
               with out.open('w', encoding='utf-8', newline='') as f:
                   w = csv.DictWriter(f, fieldnames=fields)
                   w.writeheader()
@@ -81,6 +103,6 @@ jobs:
           "
       - uses: actions/upload-artifact@v4
         with:
-          name: protocol_b_merged
-          path: protocol_b_merged_summary.csv
+          name: kdv_double_merged
+          path: kdv_double_merged_summary.csv
           retention-days: 90

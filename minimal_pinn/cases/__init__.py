@@ -5,6 +5,7 @@ from .burgers import BurgersCase
 from .fisher_kpp import FisherKPPCase
 from .heat_equation import HeatEquationCase
 from .helmholtz import HelmholtzCase
+from .kdv_double_soliton import KdVDoubleSolitonCase
 from .kdv_soliton import KdVSolitonCase
 from .lid_driven_cavity import LidDrivenCavityCase
 from .nls_soliton import NLSSolitonCase
@@ -31,6 +32,7 @@ def build_case(case_spec):
         "fisher_kpp": FisherKPPCase,
         "heat_equation": HeatEquationCase,
         "helmholtz": HelmholtzCase,
+        "kdv_double_soliton": KdVDoubleSolitonCase,
         "kdv_soliton": KdVSolitonCase,
         "lid_driven_cavity": LidDrivenCavityCase,
         "nls_soliton": NLSSolitonCase,

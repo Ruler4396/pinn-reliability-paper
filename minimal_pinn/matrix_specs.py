@@ -224,6 +224,24 @@ BASE_CONFIGS: Dict[str, Dict[str, Any]] = {
             "noise_std": 0.0,
         },
     },
+    "kdv_double_soliton": {
+        "case": {"name": "kdv_double_soliton", "k1": 1.5, "k2": 0.8, "delta1": 6.0, "delta2": -6.0},
+        "seed": 42,
+        "network": {"hidden_layers": [64, 64, 64], "activation": "tanh"},
+        "training": {
+            "epochs": 500,
+            "lr": 0.001,
+            "print_every": 100,
+            "weights": {"data": 10.0, "physics": 1.0, "boundary": 10.0},
+        },
+        "data": {
+            "num_observation": 512,
+            "num_collocation": 4096,
+            "num_boundary": 256,
+            "num_eval": 51,
+            "noise_std": 0.0,
+        },
+    },
     "nls_soliton": {
         "case": {"name": "nls_soliton", "eta": 1.0, "xi": 0.0},
         "seed": 42,
