@@ -56,10 +56,9 @@ CASES = {
     "allen_cahn": {
         "display": "Allen-Cahn",
         "display_zh": "Allen-Cahn方程",
-        "probe": None,
+        "probe": "keypoints_v2_allen_cahn",
         "probability": None,
-        "coarse": "coarse_v2_allen_cahn",
-        "threshold": None,
+        "threshold": 0.02,
     },
     "fisher_kpp": {
         "display": "Fisher-KPP",
@@ -78,52 +77,42 @@ CASES = {
     "heat_equation": {
         "display": "Heat Equation",
         "display_zh": "热方程",
-        "probe": None,
+        "probe": "keypoints_v2_heat_equation",
         "probability": None,
-        "coarse": "coarse_v2_heat",
-        "threshold": None,
+        "threshold": 0.03,
     },
     "kdv_soliton": {
         "display": "KdV Soliton",
         "display_zh": "KdV孤子",
-        "probe": None,
+        "probe": "keypoints_v2_kdv_soliton",
         "probability": None,
-        "coarse": "coarse_v2_kdv_soliton",
-        "threshold": None,
+        "threshold": 0.05,
     },
     "nls_soliton": {
         "display": "NLS Soliton",
         "display_zh": "NLS孤子",
-        "probe": None,
+        "probe": "keypoints_v2_nls_soliton",
         "probability": None,
-        "coarse": "coarse_v2_nls_soliton",
-        "threshold": None,
+        "threshold": 0.05,
     },
     "wave_equation": {
         "display": "Wave Equation",
         "display_zh": "波动方程",
-        "probe": None,
+        "probe": "keypoints_v2_wave_equation",
         "probability": None,
-        "coarse": "coarse_v2_wave",
-        "threshold": None,
+        "threshold": 0.25,
     },
     "kdv_double_soliton": {
         "display": "KdV Double Soliton",
         "display_zh": "KdV双孤子",
-        "probe": None,
+        "probe": "keypoints_v2_kdv_double_soliton",
         "probability": None,
-        "coarse": "protocol_b_matrix_kdv_double_batch1",
-        "threshold": None,
+        "threshold": 0.05,
     },
 }
 
 # Additional cases from coarse matrices
-ADDITIONAL_CASES = {
-    "allen_cahn": "coarse_v2_allen_cahn",
-    "heat_equation": "coarse_v2_heat",
-    "wave_equation": "coarse_v2_wave",
-    "kdv_double_soliton": "protocol_b_matrix_kdv_double_batch1",
-}
+ADDITIONAL_CASES = {}
 
 
 # ═══════════════════════════════════════════════════════════
