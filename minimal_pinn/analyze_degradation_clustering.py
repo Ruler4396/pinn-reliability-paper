@@ -53,6 +53,14 @@ CASES = {
         "probability": "probability_v2_stokes",
         "threshold": 0.015379,
     },
+    "allen_cahn": {
+        "display": "Allen-Cahn",
+        "display_zh": "Allen-Cahn方程",
+        "probe": None,
+        "probability": None,
+        "coarse": "coarse_v2_allen_cahn",
+        "threshold": None,
+    },
     "fisher_kpp": {
         "display": "Fisher-KPP",
         "display_zh": "Fisher-KPP方程",
@@ -67,12 +75,54 @@ CASES = {
         "probability": "probability_v2_burgers",
         "threshold": 0.026688,
     },
+    "heat_equation": {
+        "display": "Heat Equation",
+        "display_zh": "热方程",
+        "probe": None,
+        "probability": None,
+        "coarse": "coarse_v2_heat",
+        "threshold": None,
+    },
+    "kdv_soliton": {
+        "display": "KdV Soliton",
+        "display_zh": "KdV孤子",
+        "probe": None,
+        "probability": None,
+        "coarse": "coarse_v2_kdv_soliton",
+        "threshold": None,
+    },
+    "nls_soliton": {
+        "display": "NLS Soliton",
+        "display_zh": "NLS孤子",
+        "probe": None,
+        "probability": None,
+        "coarse": "coarse_v2_nls_soliton",
+        "threshold": None,
+    },
+    "wave_equation": {
+        "display": "Wave Equation",
+        "display_zh": "波动方程",
+        "probe": None,
+        "probability": None,
+        "coarse": "coarse_v2_wave",
+        "threshold": None,
+    },
+    "kdv_double_soliton": {
+        "display": "KdV Double Soliton",
+        "display_zh": "KdV双孤子",
+        "probe": None,
+        "probability": None,
+        "coarse": "protocol_b_matrix_kdv_double_batch1",
+        "threshold": None,
+    },
 }
 
 # Additional cases from coarse matrices
 ADDITIONAL_CASES = {
     "allen_cahn": "coarse_v2_allen_cahn",
     "heat_equation": "coarse_v2_heat",
+    "wave_equation": "coarse_v2_wave",
+    "kdv_double_soliton": "protocol_b_matrix_kdv_double_batch1",
 }
 
 

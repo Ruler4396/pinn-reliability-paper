@@ -1,0 +1,46 @@
+name: Run Missing Coarse Scans
+
+on:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: "PDE case to run"
+        required: true
+        type: choice
+        options:
+          - kdv_soliton
+          - nls_soliton
+          - both
+
+jobs:
+  coarse_scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 720
+    strategy:
+      matrix:
+        case: ${{ fromJson(format('["{0}"]', inputs.case == 'both' && 'kdv_soliton,nls_soliton' || inputs.case)) }}
+      fail-fast: false
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install numpy matplotlib pandas
+
+      - name: Run coarse scan
+        run: |
+          python -m minimal_pinn.run_matrix --spec minimal_pinn/configs/matrix_coarse_v2_${{ matrix.case }}.json
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: coarse_scan_${{ matrix.case }}
+          path: minimal_pinn/results/matrices/coarse_v2_${{ matrix.case }}/
+          retention-days: 90
