@@ -1,0 +1,17 @@
+{
+  "probe_name": "keypoints_v2_kdv_soliton",
+  "case": "kdv_soliton",
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+  "threshold_rel_l2": 0.05,
+  "points": [
+    {"label": "safe_clean_obs256_noise000", "num_observation": 256, "noise_std": 0.0},
+    {"label": "safe_edge_obs128_noise005", "num_observation": 128, "noise_std": 0.05},
+    {"label": "edge_obs64_noise010", "num_observation": 64, "noise_std": 0.1},
+    {"label": "transition_obs32_noise010", "num_observation": 32, "noise_std": 0.1},
+    {"label": "transition_obs16_noise015", "num_observation": 16, "noise_std": 0.15},
+    {"label": "failure_obs16_noise020", "num_observation": 16, "noise_std": 0.2},
+    {"label": "failure_obs8_noise015", "num_observation": 8, "noise_std": 0.15},
+    {"label": "failure_obs8_noise020", "num_observation": 8, "noise_std": 0.2}
+  ],
+  "overrides": {}
+}
