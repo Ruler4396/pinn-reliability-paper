@@ -42,34 +42,82 @@ OUTPUT_DIR = RESULTS_DIR / "analysis" / "null_space_hessian_v1"
 CASES = {
     "poisson": {
         "display": "Poisson",
+        "display_zh": "Poisson方程",
         "probe": "keypoints_v2_poisson",
         "conditions": [
             ("obs64_noise000", "safe_clean_obs64_noise000"),
-            ("obs16_noise100", "edge_obs16_noise100"),
         ],
     },
     "stokes_poiseuille": {
         "display": "Stokes-Poiseuille",
+        "display_zh": "斯托克斯-泊肃叶流",
         "probe": "keypoints_v2_stokes",
         "conditions": [
             ("obs128_noise000", "safe_clean_obs128_noise000"),
-            ("obs16_noise050", "edge_obs16_noise005"),
+        ],
+    },
+    "allen_cahn": {
+        "display": "Allen-Cahn",
+        "display_zh": "Allen-Cahn方程",
+        "probe": "keypoints_v2_allen_cahn",
+        "conditions": [
+            ("obs256_noise000", "safe_clean_obs256_noise000"),
         ],
     },
     "fisher_kpp": {
         "display": "Fisher-KPP",
+        "display_zh": "Fisher-KPP方程",
         "probe": "keypoints_v2_fisher_kpp",
         "conditions": [
             ("obs64_noise000", "safe_clean_obs64_noise000"),
-            ("obs32_noise100", "edge_obs32_noise010"),
         ],
     },
     "burgers": {
         "display": "Burgers",
+        "display_zh": "Burgers方程",
         "probe": "keypoints_v2_burgers",
         "conditions": [
             ("obs128_noise000", "safe_clean_obs128_noise000"),
-            ("obs32_noise100", "seed_sensitive_obs32_noise010"),
+        ],
+    },
+    "heat_equation": {
+        "display": "Heat Equation",
+        "display_zh": "热方程",
+        "probe": "keypoints_v2_heat_equation",
+        "conditions": [
+            ("obs256_noise000", "safe_clean_obs256_noise000"),
+        ],
+    },
+    "kdv_soliton": {
+        "display": "KdV Soliton",
+        "display_zh": "KdV孤子",
+        "probe": "keypoints_v2_kdv_soliton",
+        "conditions": [
+            ("obs256_noise000", "safe_clean_obs256_noise000"),
+        ],
+    },
+    "nls_soliton": {
+        "display": "NLS Soliton",
+        "display_zh": "NLS孤子",
+        "probe": "keypoints_v2_nls_soliton",
+        "conditions": [
+            ("obs256_noise000", "safe_clean_obs256_noise000"),
+        ],
+    },
+    "wave_equation": {
+        "display": "Wave Equation",
+        "display_zh": "波动方程",
+        "probe": "keypoints_v2_wave_equation",
+        "conditions": [
+            ("obs256_noise000", "safe_clean_obs256_noise000"),
+        ],
+    },
+    "kdv_double_soliton": {
+        "display": "KdV Double Soliton",
+        "display_zh": "KdV双孤子",
+        "probe": "keypoints_v2_kdv_double_soliton",
+        "conditions": [
+            ("obs512_noise000", "safe_clean_obs512_noise000"),
         ],
     },
 }

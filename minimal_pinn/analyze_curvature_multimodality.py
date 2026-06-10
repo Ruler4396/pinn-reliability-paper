@@ -45,27 +45,73 @@ OUTPUT_DIR = RESULTS_DIR / "analysis" / "curvature_multimodality_v1"
 CASES = {
     "poisson": {
         "display": "Poisson",
+        "display_zh": "Poisson方程",
         "probe": "keypoints_v2_poisson",
         "safe_condition": "obs64_noise000",
-        "boundary_width": 1.33,  # from previous analysis
+        "boundary_width": 1.33,
     },
     "stokes_poiseuille": {
         "display": "Stokes-Poiseuille",
+        "display_zh": "斯托克斯-泊肃叶流",
         "probe": "keypoints_v2_stokes",
         "safe_condition": "obs128_noise000",
         "boundary_width": 3.67,
     },
+    "allen_cahn": {
+        "display": "Allen-Cahn",
+        "display_zh": "Allen-Cahn方程",
+        "probe": "keypoints_v2_allen_cahn",
+        "safe_condition": "obs256_noise000",
+        "boundary_width": None,
+    },
     "fisher_kpp": {
         "display": "Fisher-KPP",
+        "display_zh": "Fisher-KPP方程",
         "probe": "keypoints_v2_fisher_kpp",
         "safe_condition": "obs64_noise000",
         "boundary_width": 5.13,
     },
     "burgers": {
         "display": "Burgers",
+        "display_zh": "Burgers方程",
         "probe": "keypoints_v2_burgers",
         "safe_condition": "obs128_noise000",
         "boundary_width": 4.77,
+    },
+    "heat_equation": {
+        "display": "Heat Equation",
+        "display_zh": "热方程",
+        "probe": "keypoints_v2_heat_equation",
+        "safe_condition": "obs256_noise000",
+        "boundary_width": None,
+    },
+    "kdv_soliton": {
+        "display": "KdV Soliton",
+        "display_zh": "KdV孤子",
+        "probe": "keypoints_v2_kdv_soliton",
+        "safe_condition": "obs256_noise000",
+        "boundary_width": None,
+    },
+    "nls_soliton": {
+        "display": "NLS Soliton",
+        "display_zh": "NLS孤子",
+        "probe": "keypoints_v2_nls_soliton",
+        "safe_condition": "obs256_noise000",
+        "boundary_width": None,
+    },
+    "wave_equation": {
+        "display": "Wave Equation",
+        "display_zh": "波动方程",
+        "probe": "keypoints_v2_wave_equation",
+        "safe_condition": "obs256_noise000",
+        "boundary_width": None,
+    },
+    "kdv_double_soliton": {
+        "display": "KdV Double Soliton",
+        "display_zh": "KdV双孤子",
+        "probe": "keypoints_v2_kdv_double_soliton",
+        "safe_condition": "obs512_noise000",
+        "boundary_width": None,
     },
 }
 
@@ -430,38 +476,40 @@ def run_full_analysis() -> Dict[str, Any]:
         result = analyze_single_case(case_name)
         results[case_name] = result
 
-    # Compute correlations
+    # Compute correlations - only for cases with boundary_width
     case_names = list(results.keys())
-    boundary_widths = [results[c]["boundary_width"] for c in case_names]
+    cases_with_width = [c for c in case_names if results[c]["boundary_width"] is not None]
+    boundary_widths = [results[c]["boundary_width"] for c in cases_with_width]
 
     # Curvature correlations
     curvature_corr = {}
-    if results[case_names[0]].get("curvature"):
+    if cases_with_width and results[cases_with_width[0]].get("curvature"):
         for metric in ["lambda_max", "effective_curvature_k5", "effective_curvature_k10"]:
-            values = [results[c]["curvature"].get(metric, 0) for c in case_names]
-            if any(v > 0 for v in values):
+            values = [results[c]["curvature"].get(metric, 0) for c in cases_with_width]
+            if any(v > 0 for v in values) and len(values) >= 3:
                 corr, p_val = sp_stats.spearmanr(boundary_widths, values)
                 curvature_corr[metric] = {"correlation": float(corr), "p_value": float(p_val)}
 
     # Entropy correlations
     entropy_corr = {}
-    if results[case_names[0]].get("hessian_entropy"):
+    if cases_with_width and results[cases_with_width[0]].get("hessian_entropy"):
         for metric in ["entropy", "normalized_entropy"]:
-            values = [results[c]["hessian_entropy"].get(metric, 0) for c in case_names]
-            if any(v > 0 for v in values):
+            values = [results[c]["hessian_entropy"].get(metric, 0) for c in cases_with_width]
+            if any(v > 0 for v in values) and len(values) >= 3:
                 corr, p_val = sp_stats.spearmanr(boundary_widths, values)
                 entropy_corr[metric] = {"correlation": float(corr), "p_value": float(p_val)}
 
     # Seed variance correlations
     seed_var_corr = {}
     for metric in ["std", "variance", "cv"]:
-        values = [results[c]["seed_variance"].get(metric, 0) for c in case_names]
-        if any(v > 0 for v in values):
+        values = [results[c]["seed_variance"].get(metric, 0) for c in cases_with_width]
+        if any(v > 0 for v in values) and len(values) >= 3:
             corr, p_val = sp_stats.spearmanr(boundary_widths, values)
             seed_var_corr[metric] = {"correlation": float(corr), "p_value": float(p_val)}
 
     return {
         "cases": results,
+        "cases_with_boundary_width": cases_with_width,
         "correlations": {
             "curvature_vs_width": curvature_corr,
             "entropy_vs_width": entropy_corr,
@@ -483,6 +531,11 @@ def plot_curvature_vs_width(
     displays = [results["cases"][c]["display"] for c in cases]
     widths = [results["cases"][c]["boundary_width"] for c in cases]
 
+    # Filter to cases with boundary_width
+    cases_with_width = [c for c in cases if results["cases"][c]["boundary_width"] is not None]
+    displays_with_width = [results["cases"][c]["display"] for c in cases_with_width]
+    widths_with_width = [results["cases"][c]["boundary_width"] for c in cases_with_width]
+
     fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
     metrics = [
@@ -491,16 +544,17 @@ def plot_curvature_vs_width(
         ("effective_curvature_k10", "Effective Curvature (k=10)"),
     ]
 
-    colors = ["#1f4e79", "#2c7a5a", "#b64040", "#8B4513"]
+    colors = ["#1f4e79", "#2c7a5a", "#b64040", "#8B4513", "#6A5ACD",
+              "#FF6347", "#4169E1", "#32CD32", "#FF8C00", "#9370DB"]
 
     for ax, (metric, label) in zip(axes, metrics):
-        values = [results["cases"][c]["curvature"].get(metric, 0) for c in cases]
+        values = [results["cases"][c]["curvature"].get(metric, 0) for c in cases_with_width]
 
-        ax.scatter(widths, values, c=colors[:len(cases)], s=120, alpha=0.8,
+        ax.scatter(widths_with_width, values, c=colors[:len(cases_with_width)], s=120, alpha=0.8,
                    edgecolors="white", linewidth=1.5, zorder=5)
 
         # Add case labels
-        for i, (w, v, d) in enumerate(zip(widths, values, displays)):
+        for i, (w, v, d) in enumerate(zip(widths_with_width, values, displays_with_width)):
             ax.annotate(d, (w, v), fontsize=8, ha="center", va="bottom",
                        xytext=(0, 8), textcoords="offset points")
 
@@ -514,10 +568,10 @@ def plot_curvature_vs_width(
                     bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.5))
 
         # Fit line
-        if len(widths) > 2:
-            z = np.polyfit(widths, values, 1)
+        if len(widths_with_width) > 2:
+            z = np.polyfit(widths_with_width, values, 1)
             p_line = np.poly1d(z)
-            x_line = np.linspace(min(widths), max(widths), 100)
+            x_line = np.linspace(min(widths_with_width), max(widths_with_width), 100)
             ax.plot(x_line, p_line(x_line), "--", color="gray", alpha=0.5)
 
         ax.set_xlabel("Boundary Width", fontsize=11)
@@ -612,7 +666,9 @@ def plot_multimodality_metrics(
         sv = results["cases"][c]["seed_variance"].get("std", 0)
         he = results["cases"][c]["hessian_entropy"].get("normalized_entropy", 0)
         w = results["cases"][c]["boundary_width"]
-        ax.scatter(sv, he, c=colors[i], s=w * 50, alpha=0.8,
+        # Use default size if boundary_width is None
+        size = w * 50 if w is not None else 100
+        ax.scatter(sv, he, c=colors[i % len(colors)], s=size, alpha=0.8,
                    edgecolors="white", linewidth=1.5, label=d, zorder=5)
 
     ax.set_xlabel("Seed Std (Multi-Modality)", fontsize=11)
@@ -708,8 +764,9 @@ def generate_summary(results: Dict[str, Any]) -> str:
         width = result["boundary_width"]
         curv = result.get("curvature", {})
 
+        width_str = f"{width:.2f}" if width is not None else "N/A"
         lines.append(
-            f"| {display} | {width:.2f} | "
+            f"| {display} | {width_str} | "
             f"{curv.get('lambda_max', 0):.2e} | "
             f"{curv.get('effective_curvature_k5', 0):.2e} | "
             f"{curv.get('effective_curvature_k10', 0):.2e} | "
@@ -748,8 +805,9 @@ def generate_summary(results: Dict[str, Any]) -> str:
         bd = result.get("basin_diversity", {})
         he = result.get("hessian_entropy", {})
 
+        width_str = f"{width:.2f}" if width is not None else "N/A"
         lines.append(
-            f"| {display} | {width:.2f} | "
+            f"| {display} | {width_str} | "
             f"{sv.get('std', 0):.4f} | {sv.get('cv', 0):.4f} | "
             f"{bd.get('n_clusters', 1)} | {bd.get('silhouette_score', 0):.3f} | "
             f"{he.get('entropy', 0):.4f} | {he.get('normalized_entropy', 0):.4f} |"

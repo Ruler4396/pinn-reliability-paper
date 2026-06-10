@@ -34,28 +34,8 @@ OUTPUT_DIR = RESULTS_DIR / "analysis" / "statistical_significance_v1"
 CASES = {
     "poisson": {"display": "Poisson", "probe": "keypoints_v2_poisson"},
     "stokes_poiseuille": {"display": "Stokes-Poiseuille", "probe": "keypoints_v2_stokes"},
-    "allen_cahn": {"display": "Allen-Cahn", "probe": None},
     "fisher_kpp": {"display": "Fisher-KPP", "probe": "keypoints_v2_fisher_kpp"},
     "burgers": {"display": "Burgers", "probe": "keypoints_v2_burgers"},
-    "heat_equation": {"display": "Heat Equation", "probe": None},
-    "kdv_soliton": {"display": "KdV Soliton", "probe": None},
-    "nls_soliton": {"display": "NLS Soliton", "probe": None},
-    "wave_equation": {"display": "Wave Equation", "probe": None},
-    "kdv_double_soliton": {"display": "KdV Double Soliton", "probe": None},
-}
-
-# Information density CV from previous analysis (all 10 PDEs)
-INFO_CV = {
-    "poisson": 0.3035,
-    "stokes_poiseuille": 0.1938,
-    "allen_cahn": 1.1782,
-    "fisher_kpp": 0.8504,
-    "burgers": 0.4512,
-    "heat_equation": 0.4506,
-    "kdv_soliton": 1.6765,
-    "nls_soliton": 1.6215,
-    "wave_equation": 0.3033,
-    "kdv_double_soliton": 2.0035,
 }
 
 
@@ -66,8 +46,6 @@ INFO_CV = {
 def load_probe_runs(case_name: str) -> Optional[pd.DataFrame]:
     info = CASES.get(case_name)
     if info is None:
-        return None
-    if info.get("probe") is None:
         return None
     csv_path = PROBES_DIR / info["probe"] / "probe_runs.csv"
     if not csv_path.exists():
@@ -82,8 +60,6 @@ def load_probe_runs(case_name: str) -> Optional[pd.DataFrame]:
 def load_probe_summary(case_name: str) -> Optional[pd.DataFrame]:
     info = CASES.get(case_name)
     if info is None:
-        return None
-    if info.get("probe") is None:
         return None
     csv_path = PROBES_DIR / info["probe"] / "probe_summary.csv"
     if not csv_path.exists():
@@ -522,171 +498,6 @@ def test_ablation_spearman():
 
 
 # ═══════════════════════════════════════════════════════════
-#  Test 4: Information Density CV Comparison (All 10 PDEs)
-# ═══════════════════════════════════════════════════════════
-
-def test_information_density_cv():
-    """
-    Test if information density CV differs significantly across PDE systems.
-    Uses Kruskal-Wallis test.
-    """
-    print("\n" + "=" * 70)
-    print("TEST 4: Information Density CV Comparison (All 10 PDEs)")
-    print("=" * 70)
-
-    # Group PDEs by type
-    elliptic = ["poisson"]
-    parabolic = ["heat_equation", "allen_cahn"]
-    hyperbolic = ["wave_equation"]
-    dispersive = ["kdv_soliton", "nls_soliton", "kdv_double_soliton"]
-    nonlinear = ["burgers", "fisher_kpp"]
-    saddle_point = ["stokes_poiseuille"]
-
-    groups = {
-        "Elliptic": elliptic,
-        "Parabolic": parabolic,
-        "Hyperbolic": hyperbolic,
-        "Dispersive": dispersive,
-        "Nonlinear": nonlinear,
-        "Saddle-point": saddle_point,
-    }
-
-    # Print CV values
-    print("\n  Information Density CV by PDE:")
-    for case, cv in sorted(INFO_CV.items(), key=lambda x: x[1]):
-        display = CASES.get(case, {}).get("display", case)
-        print(f"    {display:<25} CV = {cv:.4f}")
-
-    # Group comparison
-    print("\n  CV by PDE Type:")
-    group_values = {}
-    for group_name, cases in groups.items():
-        cvs = [INFO_CV[c] for c in cases if c in INFO_CV]
-        if cvs:
-            group_values[group_name] = cvs
-            print(f"    {group_name:<15} mean = {np.mean(cvs):.4f}, std = {np.std(cvs):.4f}, n = {len(cvs)}")
-
-    # Kruskal-Wallis test across all 10 PDEs
-    all_cvs = list(INFO_CV.values())
-    # Create groups for Kruskal-Wallis
-    kw_groups = []
-    for group_name, cases in groups.items():
-        for case in cases:
-            if case in INFO_CV:
-                kw_groups.append(INFO_CV[case])
-
-    # Since we only have one value per PDE, we can't do Kruskal-Wallis
-    # Instead, compute descriptive statistics
-    print("\n  Descriptive Statistics:")
-    print(f"    Mean CV: {np.mean(all_cvs):.4f}")
-    print(f"    Std CV: {np.std(all_cvs):.4f}")
-    print(f"    Min CV: {np.min(all_cvs):.4f} ({CASES[min(INFO_CV, key=INFO_CV.get)]['display']})")
-    print(f"    Max CV: {np.max(all_cvs):.4f} ({CASES[max(INFO_CV, key=INFO_CV.get)]['display']})")
-    print(f"    Range: {np.max(all_cvs) - np.min(all_cvs):.4f}")
-
-    # Correlation with PDE type (ordinal encoding)
-    type_encoding = {
-        "poisson": 1,  # elliptic
-        "wave_equation": 2,  # hyperbolic
-        "heat_equation": 3,  # parabolic
-        "stokes_poiseuille": 4,  # saddle-point
-        "allen_cahn": 5,  # parabolic nonlinear
-        "fisher_kpp": 6,  # nonlinear
-        "burgers": 7,  # strongly nonlinear
-        "kdv_soliton": 8,  # dispersive
-        "nls_soliton": 9,  # dispersive
-        "kdv_double_soliton": 10,  # dispersive
-    }
-
-    cases_ordered = list(INFO_CV.keys())
-    cvs_ordered = [INFO_CV[c] for c in cases_ordered]
-    types_ordered = [type_encoding[c] for c in cases_ordered]
-
-    corr, p_val = sp_stats.spearmanr(types_ordered, cvs_ordered)
-    print(f"\n  Spearman correlation (PDE type vs CV): r = {corr:.3f}, p = {p_val:.4f}")
-    if p_val < 0.05:
-        print("  [SIG] Significant correlation between PDE type and information density CV")
-    else:
-        print("  [NS] No significant correlation")
-
-    return {
-        "test": "Information density CV comparison",
-        "n_cases": len(INFO_CV),
-        "descriptive": {
-            "mean": float(np.mean(all_cvs)),
-            "std": float(np.std(all_cvs)),
-            "min": float(np.min(all_cvs)),
-            "max": float(np.max(all_cvs)),
-            "range": float(np.max(all_cvs) - np.min(all_cvs)),
-        },
-        "group_means": {g: float(np.mean(v)) for g, v in group_values.items()},
-        "spearman_correlation": {"r": float(corr), "p": float(p_val)},
-        "cv_values": INFO_CV,
-    }
-
-
-def plot_information_density_cv(
-    test4_results: Dict[str, Any],
-    output_dir: Path,
-):
-    """Plot information density CV comparison for all 10 PDEs."""
-    cv_values = test4_results["cv_values"]
-    
-    # Sort by CV
-    sorted_cases = sorted(cv_values.items(), key=lambda x: x[1])
-    cases = [c for c, _ in sorted_cases]
-    cvs = [v for _, v in sorted_cases]
-    displays = [CASES[c]["display"] for c in cases]
-    
-    # Color by PDE type
-    type_colors = {
-        "poisson": "#1f4e79",
-        "wave_equation": "#4169E1",
-        "heat_equation": "#FF6347",
-        "stokes_poiseuille": "#2c7a5a",
-        "allen_cahn": "#FF8C00",
-        "fisher_kpp": "#b64040",
-        "burgers": "#8B4513",
-        "kdv_soliton": "#6A5ACD",
-        "nls_soliton": "#32CD32",
-        "kdv_double_soliton": "#9370DB",
-    }
-    
-    fig, ax = plt.subplots(figsize=(12, 6))
-    
-    colors = [type_colors[c] for c in cases]
-    bars = ax.bar(range(len(cases)), cvs, color=colors, alpha=0.8, edgecolor="white", linewidth=1.5)
-    
-    ax.set_xticks(range(len(cases)))
-    ax.set_xticklabels(displays, rotation=45, ha="right", fontsize=10)
-    ax.set_ylabel("Information Density CV", fontsize=12)
-    ax.set_title("Information Density Uniformity Across All 10 PDE Systems", fontsize=14)
-    ax.grid(True, alpha=0.3, axis="y")
-    
-    # Add value labels
-    for bar, val in zip(bars, cvs):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.02,
-                f"{val:.2f}", ha="center", fontsize=9)
-    
-    # Add legend for PDE types
-    from matplotlib.patches import Patch
-    legend_elements = [
-        Patch(facecolor="#1f4e79", label="Elliptic"),
-        Patch(facecolor="#4169E1", label="Hyperbolic"),
-        Patch(facecolor="#FF6347", label="Parabolic"),
-        Patch(facecolor="#2c7a5a", label="Saddle-point"),
-        Patch(facecolor="#b64040", label="Nonlinear"),
-        Patch(facecolor="#6A5ACD", label="Dispersive"),
-    ]
-    ax.legend(handles=legend_elements, fontsize=9, loc="upper left")
-    
-    fig.tight_layout()
-    fig.savefig(output_dir / "fig_information_density_cv_all10.png", dpi=220, bbox_inches="tight")
-    plt.close(fig)
-    print(f"  Saved: fig_information_density_cv_all10.png")
-
-
-# ═══════════════════════════════════════════════════════════
 #  Visualization
 # ═══════════════════════════════════════════════════════════
 
@@ -809,14 +620,13 @@ def generate_summary(
     test1_results: Optional[Dict],
     test2_results: Optional[Dict],
     test3_results: Optional[Dict],
-    test4_results: Optional[Dict],
 ) -> str:
     lines = [
         "# 统计显著性分析报告",
         "",
         "## 概述",
         "",
-        "本分析包含四组统计检验，用于验证论文核心主张的统计显著性。",
+        "本分析包含三组统计检验，用于验证论文核心主张的统计显著性。",
         "",
         "---",
         "",
@@ -960,57 +770,13 @@ def generate_summary(
         "",
         "---",
         "",
-        "## 检验四：信息密度均匀性比较（全部10个PDE）",
-        "",
-        "**方法:** 描述性统计 + Spearman 相关",
-        "",
-        "**指标:** 信息密度变异系数 CV(|gradu|)",
-        "",
-    ])
-
-    if test4_results:
-        desc = test4_results["descriptive"]
-        corr = test4_results["spearman_correlation"]
-
-        lines.extend([
-            "### 描述性统计",
-            "",
-            f"- 样本数: {test4_results['n_cases']} 个 PDE 系统",
-            f"- 均值: {desc['mean']:.4f}",
-            f"- 标准差: {desc['std']:.4f}",
-            f"- 范围: [{desc['min']:.4f}, {desc['max']:.4f}]",
-            f"- 极差: {desc['range']:.4f}",
-            "",
-            "### 各PDE类型均值",
-            "",
-            "| PDE 类型 | 平均 CV |",
-            "|----------|---------|",
-        ])
-
-        for group, mean_cv in test4_results["group_means"].items():
-            lines.append(f"| {group} | {mean_cv:.4f} |")
-
-        lines.extend([
-            "",
-            "### Spearman 相关（PDE类型 vs CV）",
-            "",
-            f"- r = {corr['r']:.3f}",
-            f"- p = {corr['p']:.4f}",
-            f"- {'**显著相关**' if corr['p'] < 0.05 else '不显著'}",
-            "",
-        ])
-
-    lines.extend([
-        "---",
-        "",
         "## 总结",
         "",
-        "四组统计检验共同支持以下结论：",
+        "三组统计检验共同支持以下结论：",
         "",
         "1. **边界宽度存在显著的系统差异**：不同 PDE 的失效边界宽度显著不同",
         "2. **种子敏感性不是随机波动**：不同 PDE 的种子方差存在显著差异",
         "3. **多维框架有独立贡献**：R_full 的排序一致性显著优于单一指标",
-        "4. **信息密度分布具有系统差异**：不同 PDE 类型的信息密度均匀性不同",
         "",
     ])
 
@@ -1036,9 +802,6 @@ def main():
 
     # Test 3: Ablation Spearman
     test3 = test_ablation_spearman()
-
-    # Test 4: Information density CV (all 10 PDEs)
-    test4 = test_information_density_cv()
 
     # Generate plots
     print("\n" + "=" * 70)
@@ -1072,9 +835,6 @@ def main():
     if test3:
         plot_ablation_comparison(test3["results"], OUTPUT_DIR)
 
-    if test4:
-        plot_information_density_cv(test4, OUTPUT_DIR)
-
     # Save results
     print("\n" + "=" * 70)
     print("Saving Results")
@@ -1084,14 +844,13 @@ def main():
         "test1_boundary_width": test1,
         "test2_seed_sensitivity": test2,
         "test3_ablation_spearman": test3,
-        "test4_information_density": test4,
     }
 
     with open(OUTPUT_DIR / "statistical_results.json", "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, default=str)
     print(f"  Saved: statistical_results.json")
 
-    summary = generate_summary(test1, test2, test3, test4)
+    summary = generate_summary(test1, test2, test3)
     (OUTPUT_DIR / "statistical_summary.md").write_text(summary, encoding="utf-8")
     print(f"  Saved: statistical_summary.md")
 

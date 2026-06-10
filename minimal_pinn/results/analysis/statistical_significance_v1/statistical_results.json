@@ -315,40 +315,5 @@
         }
       ]
     }
-  },
-  "test4_information_density": {
-    "test": "Information density CV comparison",
-    "n_cases": 10,
-    "descriptive": {
-      "mean": 0.9032499999999999,
-      "std": 0.6352117682316661,
-      "min": 0.1938,
-      "max": 2.0035,
-      "range": 1.8096999999999999
-    },
-    "group_means": {
-      "Elliptic": 0.3035,
-      "Parabolic": 0.8144,
-      "Hyperbolic": 0.3033,
-      "Dispersive": 1.7671666666666666,
-      "Nonlinear": 0.6508,
-      "Saddle-point": 0.1938
-    },
-    "spearman_correlation": {
-      "r": 0.8545454545454544,
-      "p": 0.0016368033159867156
-    },
-    "cv_values": {
-      "poisson": 0.3035,
-      "stokes_poiseuille": 0.1938,
-      "allen_cahn": 1.1782,
-      "fisher_kpp": 0.8504,
-      "burgers": 0.4512,
-      "heat_equation": 0.4506,
-      "kdv_soliton": 1.6765,
-      "nls_soliton": 1.6215,
-      "wave_equation": 0.3033,
-      "kdv_double_soliton": 2.0035
-    }
   }
 }

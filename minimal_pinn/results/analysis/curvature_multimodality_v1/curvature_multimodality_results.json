@@ -106,6 +106,59 @@
         "n_eigenvalues": 100
       }
     },
+    "allen_cahn": {
+      "case": "allen_cahn",
+      "display": "Allen-Cahn",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 554.8068199112348,
+        "lambda_min": 5.8709748889159415e-05,
+        "effective_curvature_k5": 554.8059762788566,
+        "effective_curvature_k10": 554.8055568924439,
+        "curvature_ratio": 9449994.76933001,
+        "spectral_gap": 0.0005632880539678808
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.008332135342061519,
+        "std": 0.0025456239025131336,
+        "variance": 6.480201053046195e-06,
+        "cv": 0.30551878936273985
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.3899617732432725,
+        "inter_cluster_distance": 0.13705124869657492,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.7366406893868573,
+        "normalized_entropy": 0.8114012161279374,
+        "n_eigenvalues": 100
+      }
+    },
     "fisher_kpp": {
       "case": "fisher_kpp",
       "display": "Fisher-KPP",
@@ -209,6 +262,271 @@
       "hessian_entropy": {
         "entropy": 3.784646196694349,
         "normalized_entropy": 0.8218254795902423,
+        "n_eigenvalues": 100
+      }
+    },
+    "heat_equation": {
+      "case": "heat_equation",
+      "display": "Heat Equation",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 902.9137714409668,
+        "lambda_min": 6.258190207472559e-05,
+        "effective_curvature_k5": 902.9131800950967,
+        "effective_curvature_k10": 902.9129875472275,
+        "curvature_ratio": 14427713.78797096,
+        "spectral_gap": 0.00048720238623900514
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.01687812296052774,
+        "std": 0.007791467417538091,
+        "variance": 6.0706964518557685e-05,
+        "cv": 0.46163115624644496
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.6383248684291147,
+        "inter_cluster_distance": 0.33995986667010897,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.7835464917778827,
+        "normalized_entropy": 0.8215866817017707,
+        "n_eigenvalues": 100
+      }
+    },
+    "kdv_soliton": {
+      "case": "kdv_soliton",
+      "display": "KdV Soliton",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 905.9536412302065,
+        "lambda_min": 1.3250967734207512e-05,
+        "effective_curvature_k5": 905.951168151325,
+        "effective_curvature_k10": 905.9499358660918,
+        "curvature_ratio": 68368866.2897788,
+        "spectral_gap": 0.0019464900846060118
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.030564082910617192,
+        "std": 0.014031415052075632,
+        "variance": 0.0001968806083636146,
+        "cv": 0.45908182794522756
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.6512111654464472,
+        "inter_cluster_distance": 0.46729129652477064,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.5509363049892197,
+        "normalized_entropy": 0.7710760214233703,
+        "n_eigenvalues": 100
+      }
+    },
+    "nls_soliton": {
+      "case": "nls_soliton",
+      "display": "NLS Soliton",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 472.5694239355681,
+        "lambda_min": 0.0009617475784707086,
+        "effective_curvature_k5": 472.5686262536025,
+        "effective_curvature_k10": 472.5682924424815,
+        "curvature_ratio": 491365.3379684188,
+        "spectral_gap": 0.0007555177119797918
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.05063070083657901,
+        "std": 0.016559233523036437,
+        "variance": 0.0002742082148704537,
+        "cv": 0.3270591409841386
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.6609183057263819,
+        "inter_cluster_distance": 0.6913674899651435,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.8558065761858296,
+        "normalized_entropy": 0.837277759661888,
+        "n_eigenvalues": 100
+      }
+    },
+    "wave_equation": {
+      "case": "wave_equation",
+      "display": "Wave Equation",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 1110.9237355313883,
+        "lambda_min": 0.001891241346447514,
+        "effective_curvature_k5": 1110.9235139165994,
+        "effective_curvature_k10": 1110.9232982653864,
+        "curvature_ratio": 587404.5306899274,
+        "spectral_gap": 0.00026778742585520376
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.06988941927750905,
+        "std": 0.023065194329966777,
+        "variance": 0.0005320031894791316,
+        "cv": 0.33002412337097975
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.6210979793300193,
+        "inter_cluster_distance": 1.4300589038668843,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.8829623771266446,
+        "normalized_entropy": 0.8431745669120175,
+        "n_eigenvalues": 100
+      }
+    },
+    "kdv_double_soliton": {
+      "case": "kdv_double_soliton",
+      "display": "KdV Double Soliton",
+      "boundary_width": null,
+      "curvature": {
+        "lambda_max": 2885.4287027052724,
+        "lambda_min": 0.00868164088174473,
+        "effective_curvature_k5": 2885.4186346913407,
+        "effective_curvature_k10": 2885.4120226746186,
+        "curvature_ratio": 332359.83174247516,
+        "spectral_gap": 0.006255368757138058
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.24058882494767506,
+        "std": 0.04675924291054009,
+        "variance": 0.0021864267975668936,
+        "cv": 0.1943533450512908
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.319465637490169,
+        "inter_cluster_distance": 0.8340737127410991,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.610382490024933,
+        "normalized_entropy": 0.7839845964889752,
         "n_eigenvalues": 100
       }
     }
