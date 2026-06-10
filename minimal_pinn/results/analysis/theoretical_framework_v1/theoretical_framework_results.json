@@ -26,6 +26,19 @@
       "boundary_irregularity": 0.367,
       "safe_cross_rate": 0.033
     },
+    "allen_cahn": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 1.1782,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
+    },
     "fisher_kpp": {
       "boundary_width": 5.13,
       "d_null": 34,
@@ -51,6 +64,71 @@
       "hessian_entropy": 3.7846,
       "boundary_irregularity": 0.5,
       "safe_cross_rate": 0.1
+    },
+    "heat_equation": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 0.4506,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
+    },
+    "kdv_soliton": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 1.6765,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
+    },
+    "nls_soliton": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 1.6215,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
+    },
+    "wave_equation": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 0.3033,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
+    },
+    "kdv_double_soliton": {
+      "boundary_width": null,
+      "d_null": null,
+      "lambda_max": null,
+      "effective_curvature": null,
+      "inverse_curvature": null,
+      "basin_count": null,
+      "seed_cv": null,
+      "info_cv": 2.0035,
+      "hessian_entropy": null,
+      "boundary_irregularity": null,
+      "safe_cross_rate": null
     }
   },
   "predictive_model": {

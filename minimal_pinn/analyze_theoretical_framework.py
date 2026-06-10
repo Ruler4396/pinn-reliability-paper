@@ -41,7 +41,7 @@ OUTPUT_DIR = RESULTS_DIR / "analysis" / "theoretical_framework_v1"
 def collect_all_metrics() -> Dict[str, Dict[str, float]]:
     """Collect all computed metrics from previous analyses."""
     
-    # Boundary width from clustering analysis
+    # Boundary width from clustering analysis (only 4 cases have this)
     boundary_widths = {
         "poisson": 1.33,
         "stokes_poiseuille": 3.67,
@@ -49,7 +49,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 4.77,
     }
     
-    # Null space dimension from Hessian analysis
+    # Null space dimension from Hessian analysis (only 4 cases)
     d_null = {
         "poisson": 18,
         "stokes_poiseuille": 19,
@@ -57,7 +57,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 27,
     }
     
-    # Curvature (lambda_max) from Hessian analysis
+    # Curvature (lambda_max) from Hessian analysis (only 4 cases)
     lambda_max = {
         "poisson": 2540.0,
         "stokes_poiseuille": 446.0,
@@ -65,7 +65,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 1300.0,
     }
     
-    # Effective curvature (k=5)
+    # Effective curvature (k=5) (only 4 cases)
     effective_curvature = {
         "poisson": 2540.0,
         "stokes_poiseuille": 446.0,
@@ -73,7 +73,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 1300.0,
     }
     
-    # Multi-modality (basin count)
+    # Multi-modality (basin count) (only 4 cases)
     basin_count = {
         "poisson": 4,
         "stokes_poiseuille": 2,
@@ -81,7 +81,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 2,
     }
     
-    # Seed variance (CV)
+    # Seed variance (CV) (only 4 cases have probe data)
     seed_cv = {
         "poisson": 0.0477,
         "stokes_poiseuille": 0.2206,
@@ -89,15 +89,21 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 0.3727,
     }
     
-    # Information density CV
+    # Information density CV (all 10 cases)
     info_cv = {
         "poisson": 0.3035,
         "stokes_poiseuille": 0.1938,
+        "allen_cahn": 1.1782,
         "fisher_kpp": 0.8504,
         "burgers": 0.4512,
+        "heat_equation": 0.4506,
+        "kdv_soliton": 1.6765,
+        "nls_soliton": 1.6215,
+        "wave_equation": 0.3033,
+        "kdv_double_soliton": 2.0035,
     }
     
-    # Hessian entropy
+    # Hessian entropy (only 4 cases)
     hessian_entropy = {
         "poisson": 3.9679,
         "stokes_poiseuille": 3.9821,
@@ -105,7 +111,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 3.7846,
     }
     
-    # Boundary irregularity (jump rate)
+    # Boundary irregularity (jump rate) (only 4 cases)
     boundary_irregularity = {
         "poisson": 0.133,
         "stokes_poiseuille": 0.367,
@@ -113,7 +119,7 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 0.500,
     }
     
-    # Crossing rate at safest point
+    # Crossing rate at safest point (only 4 cases)
     safe_cross_rate = {
         "poisson": 0.000,
         "stokes_poiseuille": 0.033,
@@ -121,23 +127,23 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 0.100,
     }
     
-    # Combine all metrics
-    cases = ["poisson", "stokes_poiseuille", "fisher_kpp", "burgers"]
+    # Combine all metrics - include all cases that have info_cv
+    all_cases = list(info_cv.keys())
     data = {}
     
-    for case in cases:
+    for case in all_cases:
         data[case] = {
-            "boundary_width": boundary_widths[case],
-            "d_null": d_null[case],
-            "lambda_max": lambda_max[case],
-            "effective_curvature": effective_curvature[case],
-            "inverse_curvature": 1.0 / effective_curvature[case],
-            "basin_count": basin_count[case],
-            "seed_cv": seed_cv[case],
-            "info_cv": info_cv[case],
-            "hessian_entropy": hessian_entropy[case],
-            "boundary_irregularity": boundary_irregularity[case],
-            "safe_cross_rate": safe_cross_rate[case],
+            "boundary_width": boundary_widths.get(case, None),
+            "d_null": d_null.get(case, None),
+            "lambda_max": lambda_max.get(case, None),
+            "effective_curvature": effective_curvature.get(case, None),
+            "inverse_curvature": 1.0 / effective_curvature[case] if case in effective_curvature else None,
+            "basin_count": basin_count.get(case, None),
+            "seed_cv": seed_cv.get(case, None),
+            "info_cv": info_cv.get(case, None),
+            "hessian_entropy": hessian_entropy.get(case, None),
+            "boundary_irregularity": boundary_irregularity.get(case, None),
+            "safe_cross_rate": safe_cross_rate.get(case, None),
         }
     
     return data
@@ -214,12 +220,21 @@ def run_predictive_model(data: Dict[str, Dict[str, float]]) -> Dict[str, Any]:
     Build predictive model for boundary width.
     
     BoundaryWidth = a * d_null + b * kappa^{-1} + c * M + d * CV
+    
+    Only uses cases where all features are available.
     """
-    cases = list(data.keys())
-    n = len(cases)
+    # Filter to cases with complete data
+    complete_cases = [c for c in data if all(
+        data[c][k] is not None for k in ["boundary_width", "d_null", "inverse_curvature", "basin_count", "info_cv"]
+    )]
+    
+    if len(complete_cases) < 3:
+        return {"error": "Not enough complete cases for regression", "cases": complete_cases}
+    
+    n = len(complete_cases)
     
     # Extract features and target
-    y = np.array([data[c]["boundary_width"] for c in cases])
+    y = np.array([data[c]["boundary_width"] for c in complete_cases])
     
     # Feature matrix: [d_null, 1/kappa, M, CV]
     X = np.array([
@@ -229,7 +244,7 @@ def run_predictive_model(data: Dict[str, Dict[str, float]]) -> Dict[str, Any]:
             data[c]["basin_count"],
             data[c]["info_cv"],
         ]
-        for c in cases
+        for c in complete_cases
     ])
     
     # Feature names
@@ -245,8 +260,21 @@ def run_predictive_model(data: Dict[str, Dict[str, float]]) -> Dict[str, Any]:
         single_result = linear_regression(X_single, y)
         individual_results[fname] = single_result
     
+    # Also compute correlation with info_cv for all 10 cases
+    all_cases = [c for c in data if data[c]["info_cv"] is not None]
+    info_cv_correlation = {}
+    
+    if len(all_cases) >= 3:
+        cvs = [data[c]["info_cv"] for c in all_cases]
+        # For cases with boundary width
+        cases_with_width = [c for c in all_cases if data[c]["boundary_width"] is not None]
+        if len(cases_with_width) >= 3:
+            widths = [data[c]["boundary_width"] for c in cases_with_width]
+            cvs_width = [data[c]["info_cv"] for c in cases_with_width]
+            corr, p = sp_stats.spearmanr(cvs_width, widths)
+            info_cv_correlation["vs_boundary_width"] = {"correlation": float(corr), "p_value": float(p), "n": len(cases_with_width)}
+    
     # Try log-transformed model
-    # log(W) = a * log(d_null) + b * log(1/kappa) + c * log(M) + d * log(CV)
     X_log = np.log(X + 1e-10)
     y_log = np.log(y + 1e-10)
     log_result = linear_regression(X_log, y_log)
@@ -256,8 +284,10 @@ def run_predictive_model(data: Dict[str, Dict[str, float]]) -> Dict[str, Any]:
         "individual_models": individual_results,
         "log_model": log_result,
         "feature_names": feature_names,
-        "cases": cases,
+        "cases": complete_cases,
+        "all_cases": list(data.keys()),
         "target": y.tolist(),
+        "info_cv_correlation": info_cv_correlation,
     }
 
 
@@ -384,18 +414,27 @@ def run_reliability_boundary_model(
     Build reliability boundary model.
     
     P_fail = f(d_null, kappa, M, CV)
+    
+    Only uses cases where all features are available.
     """
-    cases = list(data.keys())
-    n = len(cases)
+    # Filter to cases with complete data
+    complete_cases = [c for c in data if all(
+        data[c][k] is not None for k in ["d_null", "inverse_curvature", "basin_count", "info_cv", "safe_cross_rate"]
+    )]
+    
+    if len(complete_cases) < 3:
+        return {"error": "Not enough complete cases", "cases": complete_cases}
+    
+    n = len(complete_cases)
     
     # Create binary failure labels based on safe crossing rate
     # If safe_cross_rate > 0.05, consider as "failure-prone"
     y_binary = np.array([1.0 if data[c]["safe_cross_rate"] > 0.05 else 0.0
-                         for c in cases])
+                         for c in complete_cases])
     
     # Also use continuous failure proxy: boundary width normalized
-    y_continuous = np.array([data[c]["boundary_width"] for c in cases])
-    y_continuous_norm = (y_continuous - y_continuous.min()) / (y_continuous.max() - y_continuous.min())
+    y_continuous = np.array([data[c]["boundary_width"] for c in complete_cases])
+    y_continuous_norm = (y_continuous - y_continuous.min()) / (y_continuous.max() - y_continuous.min() + 1e-10)
     
     # Feature matrix
     X = np.array([
@@ -405,7 +444,7 @@ def run_reliability_boundary_model(
             data[c]["basin_count"],
             data[c]["info_cv"],
         ]
-        for c in cases
+        for c in complete_cases
     ])
     
     feature_names = ["d_null", "1/kappa", "M (basin count)", "CV (info density)"]
@@ -413,12 +452,9 @@ def run_reliability_boundary_model(
     # Fit logit model
     logit_result = logit_model(X, y_binary)
     
-    # Fit probit model (using logit as proxy)
-    # P_fail = Phi(beta_0 + beta_1*x_1 + ...) where Phi is normal CDF
-    
     # Compute theoretical boundaries
     theoretical_boundaries = {}
-    for case in cases:
+    for case in complete_cases:
         d = data[case]
         p_fail = compute_theoretical_boundary(
             d["d_null"],
@@ -439,7 +475,8 @@ def run_reliability_boundary_model(
         "binary_labels": y_binary.tolist(),
         "continuous_labels": y_continuous_norm.tolist(),
         "theoretical_boundaries": theoretical_boundaries,
-        "cases": cases,
+        "cases": complete_cases,
+        "all_cases": list(data.keys()),
     }
 
 
@@ -627,64 +664,87 @@ def plot_theoretical_framework(
     displays = {
         "poisson": "Poisson",
         "stokes_poiseuille": "Stokes",
+        "allen_cahn": "Allen-Cahn",
         "fisher_kpp": "Fisher-KPP",
         "burgers": "Burgers",
+        "heat_equation": "Heat",
+        "kdv_soliton": "KdV",
+        "nls_soliton": "NLS",
+        "wave_equation": "Wave",
+        "kdv_double_soliton": "KdV2",
     }
-    colors = ["#1f4e79", "#2c7a5a", "#b64040", "#8B4513"]
+    colors = ["#1f4e79", "#2c7a5a", "#b64040", "#8B4513", "#6A5ACD",
+              "#FF6347", "#4169E1", "#32CD32", "#FF8C00", "#9370DB"]
     
     fig, axes = plt.subplots(2, 3, figsize=(18, 12))
     
+    # Filter cases with complete data for each subplot
+    cases_with_d_null = [c for c in cases if data[c]["d_null"] is not None and data[c]["boundary_width"] is not None]
+    cases_with_curvature = [c for c in cases if data[c]["inverse_curvature"] is not None and data[c]["boundary_width"] is not None]
+    cases_with_basin = [c for c in cases if data[c]["basin_count"] is not None and data[c]["boundary_width"] is not None]
+    cases_with_info_cv = [c for c in cases if data[c]["info_cv"] is not None and data[c]["boundary_width"] is not None]
+    cases_with_seed_cv = [c for c in cases if data[c]["seed_cv"] is not None and data[c]["boundary_width"] is not None]
+    
     # 1. d_null vs Boundary Width
     ax = axes[0, 0]
-    for i, case in enumerate(cases):
+    for case in cases_with_d_null:
+        i = cases.index(case)
         ax.scatter(data[case]["d_null"], data[case]["boundary_width"],
                    c=colors[i], s=150, alpha=0.8, edgecolors="white",
                    linewidth=1.5, label=displays[case], zorder=5)
     ax.set_xlabel("Null Space Dimension (d_null)", fontsize=11)
     ax.set_ylabel("Boundary Width", fontsize=11)
     ax.set_title("d_null vs Boundary Width", fontsize=12)
-    ax.legend(fontsize=9)
+    if cases_with_d_null:
+        ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
     
     # 2. Inverse Curvature vs Boundary Width
     ax = axes[0, 1]
-    for i, case in enumerate(cases):
+    for case in cases_with_curvature:
+        i = cases.index(case)
         ax.scatter(data[case]["inverse_curvature"] * 1000, data[case]["boundary_width"],
                    c=colors[i], s=150, alpha=0.8, edgecolors="white",
                    linewidth=1.5, label=displays[case], zorder=5)
     ax.set_xlabel("Inverse Curvature (1/kappa) x 1000", fontsize=11)
     ax.set_ylabel("Boundary Width", fontsize=11)
     ax.set_title("Curvature vs Boundary Width", fontsize=12)
-    ax.legend(fontsize=9)
+    if cases_with_curvature:
+        ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
     
     # 3. Basin Count vs Boundary Width
     ax = axes[0, 2]
-    for i, case in enumerate(cases):
+    for case in cases_with_basin:
+        i = cases.index(case)
         ax.scatter(data[case]["basin_count"], data[case]["boundary_width"],
                    c=colors[i], s=150, alpha=0.8, edgecolors="white",
                    linewidth=1.5, label=displays[case], zorder=5)
     ax.set_xlabel("Basin Count (M)", fontsize=11)
     ax.set_ylabel("Boundary Width", fontsize=11)
     ax.set_title("Multi-Modality vs Boundary Width", fontsize=12)
-    ax.legend(fontsize=9)
+    if cases_with_basin:
+        ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
     
     # 4. Info CV vs Boundary Width
     ax = axes[1, 0]
-    for i, case in enumerate(cases):
+    for case in cases_with_info_cv:
+        i = cases.index(case)
         ax.scatter(data[case]["info_cv"], data[case]["boundary_width"],
                    c=colors[i], s=150, alpha=0.8, edgecolors="white",
                    linewidth=1.5, label=displays[case], zorder=5)
     ax.set_xlabel("Information Density CV", fontsize=11)
     ax.set_ylabel("Boundary Width", fontsize=11)
     ax.set_title("Information Uniformity vs Boundary Width", fontsize=12)
-    ax.legend(fontsize=9)
+    if cases_with_info_cv:
+        ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
     
     # 5. Seed CV vs Boundary Width
     ax = axes[1, 1]
-    for i, case in enumerate(cases):
+    for case in cases_with_seed_cv:
+        i = cases.index(case)
         ax.scatter(data[case]["seed_cv"], data[case]["boundary_width"],
                    c=colors[i], s=150, alpha=0.8, edgecolors="white",
                    linewidth=1.5, label=displays[case], zorder=5)
@@ -694,33 +754,40 @@ def plot_theoretical_framework(
     ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
     
-    # 6. Summary radar chart
+    # 6. Summary radar chart - only for cases with complete data
     ax = axes[1, 2]
     metrics = ["d_null", "1/kappa", "M", "CV"]
     
-    # Normalize metrics for radar chart
-    max_vals = {
-        "d_null": max(data[c]["d_null"] for c in cases),
-        "1/kappa": max(data[c]["inverse_curvature"] for c in cases),
-        "M": max(data[c]["basin_count"] for c in cases),
-        "CV": max(data[c]["info_cv"] for c in cases),
-    }
+    # Filter cases with all metrics available
+    radar_cases = [c for c in cases if all(
+        data[c][k] is not None for k in ["d_null", "inverse_curvature", "basin_count", "info_cv"]
+    )]
     
-    angles = np.linspace(0, 2 * np.pi, len(metrics), endpoint=False).tolist()
-    angles += angles[:1]  # Close the polygon
-    
-    for i, case in enumerate(cases):
-        values = [
-            data[case]["d_null"] / max_vals["d_null"],
-            data[case]["inverse_curvature"] / max_vals["1/kappa"],
-            data[case]["basin_count"] / max_vals["M"],
-            data[case]["info_cv"] / max_vals["CV"],
-        ]
-        values += values[:1]
+    if radar_cases:
+        # Normalize metrics for radar chart
+        max_vals = {
+            "d_null": max(data[c]["d_null"] for c in radar_cases),
+            "1/kappa": max(data[c]["inverse_curvature"] for c in radar_cases),
+            "M": max(data[c]["basin_count"] for c in radar_cases),
+            "CV": max(data[c]["info_cv"] for c in radar_cases),
+        }
         
-        ax.plot(angles, values, "o-", color=colors[i], linewidth=2,
-                label=displays[case], alpha=0.8)
-        ax.fill(angles, values, color=colors[i], alpha=0.1)
+        angles = np.linspace(0, 2 * np.pi, len(metrics), endpoint=False).tolist()
+        angles += angles[:1]  # Close the polygon
+        
+        for case in radar_cases:
+            i = cases.index(case)
+            values = [
+                data[case]["d_null"] / max_vals["d_null"],
+                data[case]["inverse_curvature"] / max_vals["1/kappa"],
+                data[case]["basin_count"] / max_vals["M"],
+                data[case]["info_cv"] / max_vals["CV"],
+            ]
+            values += values[:1]
+            
+            ax.plot(angles, values, "o-", color=colors[i], linewidth=2,
+                    label=displays[case], alpha=0.8)
+            ax.fill(angles, values, color=colors[i], alpha=0.1)
     
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(metrics, fontsize=10)

@@ -36,24 +36,35 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RESULTS_DIR = PROJECT_ROOT / "minimal_pinn" / "results"
 OUTPUT_DIR = RESULTS_DIR / "analysis" / "information_density_v1"
 
-# All cases with their properties
+# All 10 active cases with their properties
 CASES = {
     "poisson": {
         "display": "Poisson",
+        "display_zh": "Poisson方程",
         "input_dim": 2,
         "output_dim": 1,
         "boundary_width": 1.33,
-        "boundary_irregularity": 0.133,  # jump_rate from clustering
+        "boundary_irregularity": 0.133,
     },
     "stokes_poiseuille": {
         "display": "Stokes-Poiseuille",
+        "display_zh": "斯托克斯-泊肃叶流",
         "input_dim": 2,
         "output_dim": 3,
         "boundary_width": 3.67,
         "boundary_irregularity": 0.367,
     },
+    "allen_cahn": {
+        "display": "Allen-Cahn",
+        "display_zh": "Allen-Cahn方程",
+        "input_dim": 2,
+        "output_dim": 1,
+        "boundary_width": None,
+        "boundary_irregularity": None,
+    },
     "fisher_kpp": {
         "display": "Fisher-KPP",
+        "display_zh": "Fisher-KPP方程",
         "input_dim": 2,
         "output_dim": 1,
         "boundary_width": 5.13,
@@ -61,6 +72,7 @@ CASES = {
     },
     "burgers": {
         "display": "Burgers",
+        "display_zh": "Burgers方程",
         "input_dim": 2,
         "output_dim": 1,
         "boundary_width": 4.77,
@@ -68,13 +80,39 @@ CASES = {
     },
     "heat_equation": {
         "display": "Heat Equation",
+        "display_zh": "热方程",
         "input_dim": 2,
         "output_dim": 1,
         "boundary_width": None,
         "boundary_irregularity": None,
     },
-    "allen_cahn": {
-        "display": "Allen-Cahn",
+    "kdv_soliton": {
+        "display": "KdV Soliton",
+        "display_zh": "KdV孤子",
+        "input_dim": 2,
+        "output_dim": 1,
+        "boundary_width": None,
+        "boundary_irregularity": None,
+    },
+    "nls_soliton": {
+        "display": "NLS Soliton",
+        "display_zh": "NLS孤子",
+        "input_dim": 2,
+        "output_dim": 1,  # complex-valued, but output_dim=2 (real, imag)
+        "boundary_width": None,
+        "boundary_irregularity": None,
+    },
+    "wave_equation": {
+        "display": "Wave Equation",
+        "display_zh": "波动方程",
+        "input_dim": 2,
+        "output_dim": 1,
+        "boundary_width": None,
+        "boundary_irregularity": None,
+    },
+    "kdv_double_soliton": {
+        "display": "KdV Double Soliton",
+        "display_zh": "KdV双孤子",
         "input_dim": 2,
         "output_dim": 1,
         "boundary_width": None,

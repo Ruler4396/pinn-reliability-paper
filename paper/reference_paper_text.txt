@@ -1,0 +1,1471 @@
+
+=== PAGE 1 ===
+基于PINN的二维剪切流圆柱绕流场重构
+苑光耀，王俊淞，赵玄烈，耿    敬
+RECONSTRUCTION OF THE FLOW FIELD AROUND A CYLINDER IN A TWO-DIMENSIONAL SHEAR FLOW
+BASED ON PINN
+Yuan Guangyao, Wang Junsong, Zhao Xuanlie, and Geng Jing
+在线阅读 View online: https://doi.org/10.6052/0459-1879-24-417
+您可能感兴趣的其他文章
+Articles you may be interested in
+FD-PINN: 频域物理信息神经网络
+FD-PINN: FREQUENCY DOMAIN PHYSICS-INFORMED NEURAL NETWORK
+力学学报. 2023, 55(5): 1195-1205
+基于龙格库塔法的多输出物理信息神经网络模型
+MULTI-OUTPUT PHYSICS-INFORMED NEURAL NETWORKS MODEL BASED ON THE RUNGE-KUTTA METHOD
+力学学报. 2023, 55(10): 2405-2416
+基于Runge-Kutta的自回归物理信息神经网络求解偏微分方程
+SELF-REGRESSIVE PHYSICS-INFORMED NEURAL NETWORK BASED ON RUNGE-KUTTA METHOD FOR SOLVING
+PARTIAL DIFFERENTIAL EQUATIONS
+力学学报. 2024, 56(8): 2482-2493
+卷积神经网络在流场重构研究中的进展
+PROGRESS OF CONVOLUTION NEURAL NETWORKS IN FLOW FIELD RECONSTRUCTION
+力学学报. 2022, 54(9): 2343-2360
+物理信息神经网络的一种自适应配置点算法
+AN ADAPTIVE COLLOCATION POINT ALGORITHM FOR PHYSICS-INFORMED NEURAL NETWORKS
+力学学报. 2024, 56(10): 3069-3083
+基于NTK理论和改进时间因果的物理信息神经网络加速收敛算法
+ACCELERATING CONVERGENCE ALGORITHM FOR PHYSICS-INFORMED NEURAL NETWORKS BASED ON NTK
+THEORY AND MODIFIED CAUSALITY
+力学学报. 2024, 56(7): 1943-1958
+ 
+关注微信公众号，获得更多资讯信息
+
+=== PAGE 2 ===
+ 
+基于PINN的二维剪切流圆柱绕流场重构1)
+苑光耀 *    王俊淞 *    赵玄烈 *, †, 2)    耿    敬 *, †
+* (哈尔滨工程大学船舶工程学院, 哈尔滨 150000)
+ † (哈尔滨工程大学三亚南海创新发展基地, 海南三亚 572024)
+摘要　随着机器学习方法的发展, 基于数据驱动的流场预测成为研究热点. 相比于传统神经网络对大量训练数
+据的依赖以及可解释性较差等问题, 物理信息神经网络(PINN)通过将物理约束直接嵌入神经网络损失函数,
+仅需少量训练数据即可实现流场预测. 文章探究了基于PINN的低雷诺数条件下剪切流圆柱绕流场重构方法.
+基于开源CFD软件OpenFOAM生成的数值模拟数据构建训练集, 构建引入剪切流边界条件的圆柱绕流PINN
+模型, 利用流场采样点的速度和压强信息对PINN模型进行训练, 以预测不同区域内的流速和压强分布. 通过
+将PINN预测结果与数值模拟数据进行对比, 评估了PINN在重构复杂流场中的表现. 同时, 研究了神经网络层
+数、网络节点数和监测点位置等参数变化对预测结果的影响, 分析了参数调整对流场预测精度的优化作用. 研
+究结果表明, PINN不仅能有效重构剪切流绕流场的流速和压强分布, 其预测精度也与数值模拟结果较为吻合,
+验证了PINN在剪切流圆柱绕流场重构中的实用性和准确性. 对比分析表明, 监测点位置对预测结果的影响较
+为显著, 合理选取监测点位置可使PINN预测精度提升1 ~ 2个数量级.
+关键词　物理信息神经网络, Navier-Stokes方程, 剪切流场重构, 圆柱绕流
+中图分类号 : O352, TP183 
+DOI: 10.6052/0459 -1879-24-417 文献标识码 : A 
+CSTR: 32045.14.0459 -1879-24-417 
+RECONSTRUCTION OF THE FLOW FIELD AROUND A CYLINDER IN A TWO-
+DIMENSIONAL SHEAR FLOW BASED ON PINN1)
+Yuan Guangyao *    Wang Junsong *    Zhao Xuanlie *, †, 2)    Geng Jing *, †
+* (College of Shipbuilding Engineering, Harbin Engineering University, Harbin 150000, China)
+ † (Sanya Nanhai Innovation and Development Base of Harbin Engineering University, Sanya 572024, Hainan, China)
+Abstract     With the advancement of machine learning techniques, data-driven flow field prediction has become a
+significant research focus in fluid mechanics. Compared with traditional neural networks, which often require large
+amounts of training data and suffer from poor interpretability, physics-informed neural networks (PINN) embed physical
+constraints directly into the loss function. This enables accurate flow field predictions with only minimal training data.
+This study investigates the reconstruction of shear flow around a circular cylinder under low Reynolds number conditions
+using a PINN-based approach. Numerical simulation data generated by the open-source computational fluid dynamics
+(CFD) software OpenFOAM were used to construct the training dataset. A PINN model incorporating shear flow
+boundary conditions for circular cylinder flow was developed, and velocity and pressure information from sampling第  57  卷 第  2  期 力      学      学      报 Vol. 57,  No. 2 
+2025  年  2  月 Chinese Journal of Theoretical and Applied Mechanics Feb.,  2025 
+流体力学
+ 
+    2024–08–28 收稿, 2025–01–03 录用, 2025–01–09 网络版发表.
+1) 海南省重点研发项目(ZDYF2023GXJS017)和中央高校优秀青年团队项目(3072023JC0101)资助.
+2) 通讯作者: 赵玄烈, 副教授, 主要研究方向为海洋工程水动力学、海洋可再生能源开发利用. E-mail: xlzhao@hrbeu.edu.cn 
+引用格式 :  苑光耀, 王俊淞, 赵玄烈, 耿敬. 基于PINN的二维剪切流圆柱绕流场重构 . 力学学报 , 2025, 57(2): 436 -452 
+Yuan Guangyao, Wang Junsong, Zhao Xuanlie, Geng Jing. Reconstruction of flow field around two -dimensional shear flow cylinder 
+based on PINN.  Chinese Journal of Theoretical and Applied Mechanics , 2025, 57(2): 436 -452 
+
+=== PAGE 3 ===
+points within the flow field were employed to train the model. The goal was to predict the velocity and pressure
+distributions across various regions of the flow field. To evaluate the performance of the PINN model, its predictions
+were compared with results from numerical simulations, demonstrating the model's ability to effectively reconstruct
+complex flow fields. Furthermore, this study investigated the impact of neural network parameters, such as the number of
+layers, the number of nodes per layer, and the spatial location of monitoring points, on the prediction accuracy. The
+mechanisms underlying the optimization of these parameters were analyzed in detail. The results indicate that the PINN
+model can accurately reconstruct the velocity and pressure distributions of shear flow around a circular cylinder,
+achieving a prediction accuracy that closely aligns with numerical simulation results. This validates the practical
+applicability and accuracy of PINN for reconstructing flow fields in low Reynolds number shear flows. Moreover,
+comparative analyses revealed that the location of monitoring points has a significant influence on the prediction results.
+Proper selection of monitoring points can enhance the prediction accuracy by 1 to 2 orders of magnitude.
+Key words    physical information neural network, Navier-Stokes equation, shear flow field reconstruction, flow around
+a cylinder
+ 
+引 言
+计算流体力学(CFD)等数值模拟方法被广泛应
+用于水动力学求解及空气动力学求解等领域[1]. 在
+研究流场问题时, 基于Navier-Stokes (N-S)方程的强
+非线性与多尺度特性, 常采用CFD方法对该方程进
+行数值求解实现流场重构, 但随着CFD网格精细化,
+巨大的计算量使得时间成本呈几何递增趋势, 难以
+满足快速高效求解的实际需求, 制约了CFD发展[2-4].
+近年来, 随着深度学习技术的快速发展及其在
+各领域的广泛应用, 基于深度学习的流场预测方法
+研究受到广大学者关注[5]. 传统深度学习网络求解
+方程时, 是通过从大量训练集采样数据中反复迭代
+训练, 使得深度学习网络识别数据中隐藏的内在规
+律, 从而实现以任意精度对微分方程的逼近拟合[6].
+如Jin等[7]提出了一种基于圆柱体压力场的融合卷
+积神经网络(CNN)的数据驱动模型预测了圆柱体
+周围速度场. 但传统深度学习网络存在“黑箱”问题[8],
+虽然引入了大量的训练数据, 但是没有考虑样本数
+据所包含的先验物理信息, 仅是对微分方程的输入
+和输出数据的拟合, 可解释性较差, 且计算结果受限
+于训练集的数量.
+为了提高深度学习网络的可解释性以及求解的
+适用性, Raissi等[9]在深度学习模型的误差计算中引
+入物理控制方程, 提出一种基于物理信息的神经网
+络模型(physics-informed neural networks, PINN), 并
+应用于偏微分方程的正/反问题的求解. 近年来众多
+学者在各领域中广泛应用PINN, 并取得了一些成
+果. 刘霞等[10]基于PINN对机翼空气动力学问题进行了求解, 提出了PINN气动数据融合方法, 结果表
+明融合了气动CFD数据的PINN可以较好拟合机
+翼周围流场, 提高预测精度. 侯先瑞等[11]应用PINN
+对船舶螺旋桨尾流场进行了求解重构, 结果验证了
+PINN在螺旋桨尾流场重建中的可靠性. 赵暾等[12]
+建立了一种基于PINN的热传导方程的正问题及逆
+问题求解方法, 通过求解一维热传导方程以及对方
+程中的未知导热系数进行辨识, 验证了基于PINN求
+解正问题的收敛精度以及参数辨识的鲁棒性. Ang
+等[13]通过求解低雷诺数圆柱绕流问题, 验证了
+PINN在没有仿真或实验数据时对流场重构的可行
+性, 并讨论了影响PINN预测性能的几种关键因素.
+同样地, Sun等[14]在不使用任何模拟数据的情况下,
+设计了一个结构化的深度神经网络架构并融入流体
+质量与动量守恒方程, 成功模拟出了心血管的3种
+流动情况(圆管流动、狭窄流动和动脉瘤流动), 对
+比CFD模拟结果误差较小, 证明了无标签学习对少
+数血管流动的有效性.
+同时, 为了提高PINN在不同领域问题的求解
+效率以及增加PINN的普适性, 各学者都对经典PINN
+的基础上进行不断改进创新.
+在传统试验中可能存在无法进行直接测量的定
+量信息, 为此Maziar等[15]提出隐藏流体力学(HFM)
+概念, 在初始/边界条件及流速/压力场未知的情况
+下, 通过在深度学习模型中引入一系列控制方程(N-S
+方程等), 成功将流场进行了预测重建, 且结果表明
+HFM在低分辨率及大量噪声数据的情况下具有优
+秀的预测性能. Jagtap等[16]通过在神经网络激活函第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 437
+
+=== PAGE 4 ===
+数中引入一个可变化的超参数, 提出自适应激活函
+数PINN模型, 大大提高了训练收敛速度. Chen等[17]
+提出了结合Resnet (残差网络)的物理信息神经网
+络(Res-PINN)来求解流体流动问题, 结果表明Res-
+PINN比传统的深度学习方法具有更强的预测能力
+且精度更高, 均方误差数量级达到10−5. 针对涡激振
+动(VIV)问题, Chen等[18]将雷诺平均Navier-Stokes
+(RANS)方程与耦合结构的动力运动方程嵌入到损
+失函数中, 分别采用基于FCNN和LSTM的PINN
+方法, 求解了高雷诺数/湍流流动下气缸的二自由度
+涡激振动与尾迹激振问题, 结果表明PINN对于求
+解更复杂的涡激振动问题(圆柱后的尾迹诱发振
+动)具有很强的适用性. 宋家豪等[19]通过从周期性
+空间维度对偏微分方程进行离散傅里叶变换, 将时
+域方程转换为频域方程, 提出频域物理信息神经网
+络(FD-PINN), 求解结果表明FD-PINN可以将求解
+误差降低1 ~ 2个数量级, 同时将训练效率提升6 ~
+20倍.
+剪切流作为一种典型的流动模式, 在许多工程
+应用中广泛存在, 如风机、机翼周围的气流、管道
+内的流动等, 其在航空航天、汽车设计等领域具有
+重要应用[20]. 本研究采用PINN处理剪切流问题时,
+不仅依赖于数据拟合, 还充分考虑流体的物理约束,
+从而增强了模型的预测能力和稳定性. 通过PINN,
+神经网络能够有效识别并重构剪切流场中的涡旋结
+构, 进而精确预测剪切流的动态演化过程. 本工作采
+用PINN方法, 探讨了二维剪切流下圆柱绕流的流
+态变化及神经网络参数对预测精度的影响机制, 以
+期为进一步预测流场提供参考数据. 
+1     PINN
+物理神经网络(PINN)是近几年发展起来的一
+种结合了物理定律和神经网络的深度学习方法, 用
+于求解物理模型中的偏微分方程或非线性方程. 其
+核心思想是将物理定律方程中的偏微分算子(如梯
+度、散度和拉普拉斯算子等)嵌入到神经网络结构
+中, 通过对输入数据的处理和约束条件的设置, 使神
+经网络能够近似满足物理方程, 从而提高对物理过
+程的建模和求解能力[21]. PINN通过神经网络的高度
+非线性表达能力和自适应学习的特性[22], 能够更好
+地捕捉到复杂物理现象的特征, 并在较少的样本训
+练数据下进行高效求解[23].假设需要求解的偏微分方程形式如下
+ut+N[u]=0;x2Ω;t2[0;T]
+u(x;0)=g(x)
+B[u]=0;x2@Ω9>>>>=>>>>;(1)
+ 
+N[]
+Ω
+B[]
+其中,   为非线性微分算子, u(x, t)为偏微分方程 
+的待解函数, g(x)为初始条件函数,   为定义域,  
+为边界条件算子.
+ˆu(x)
+PINN的训练过程就是构建神经网络模型  
+去逼近偏微分方程的解ut的过程, 如下式所示
+ˆu(x;t)u(x;t) (2)
+ 
+ˆu(x;t)
+其中, θ为神经网络可调参数, 在全连接网络中就是
+网络各层的权重ω和偏置b;   为神经网络通 
+过参数θ确定的函数. 这样就使得求解过程变成一
+个优化问题, 本质就是求解最优θ*, 使得模型误差最
+小化, 即
+2argmin
+L(ˆu) (3)
+ 
+PINN结构如图1所示, 主要由神经网络NN、
+残差网络RN组成. 神经网络用来逼近偏微分方程
+的解, 残差网络用来将物理信息作为约束编码到损
+失函数中进行训练. PINN的损失函数主要包括4个
+部分: 偏微分方程损失(PDE loss)、边值条件损失
+(BC loss)、初值条件损失(IC loss)及真实数据条件
+损失(data loss). 因此损失函数定义为
+Ltotal()=!FLPDE(;TF)+!BCLBC(;TBC)+
+!ICLIC(;TIC)+!DLData(;TD) (4)
+ 
+其中
+LPDE(;TF)=1
+NfNf∑
+i=1@u
+@t(xi
+f;ti
+f)+N[u(xi
+f;ti
+f)]2
+(5)
+ 
+LBC(;TBC)=1
+NBCNBC∑
+i=1B[u(xi
+BC;ti
+BC)]2(6)
+ 
+LIC(;TIC)=1
+NICNIC∑
+i=1u(xi
+IC;0) g(xi
+IC)2(7)
+ 
+LData(;TD)=1
+NDND∑
+i=1u(xi
+D;ti
+D) u(xi
+D;ti
+D)]2(8)
+ 
+式中, ωF, ωBC, ωIC和ωD为各项损失权重; TF, TBC,438 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 5 ===
+TIC, TD分别为偏微分方程、边界值、初始值及真值
+的残差点. 在网络训练中, LBC, LIC和LData保证网络
+预测解与边界条件、初始条件及采样数据匹配,
+LPDE则约束网络满足偏微分控制方程.
+具体而言, PINN通过两个关键模块来实现物理
+信息驱动的训练过程. 第一个是物理约束项. 在训练
+过程中, 通过将物理方程中的偏微分算子作为约束项
+添加到损失函数中, 强制神经网络输出的预测结果满
+足物理方程, 可以通过对预测结果进行求导、应用梯
+度等方式实现. 物理方程的约束项将对网络参数的更
+新方向进行规范, 使网络尽可能拟合物理方程. 第二
+个是数据拟合项. 除了物理约束项外, PINN也要求网
+络能够对给定的初始条件和边界条件进行准确拟合,
+可以通过在损失函数中添加对初始条件和边界条件
+的惩罚项来实现. 通过数据拟合项, 网络可以更好地
+学习数据中的模式和特征, 以提高预测和泛化能力.
+PINN的训练过程通常采用梯度下降法或其他
+优化算法来最小化损失函数, 并调整神经网络的参
+数[24-25]. 在训练过程中, 可以使用梯度下降算法
+(SGD, Adam, L-BFGS等)、自适应学习率等技术来
+提高收敛速度和稳定性[26]. Sirignano等[27]证明了当
+神经网络的各层神经元个数足够多时, PINN能够以
+任意精度逼近偏微分方程的解. 因此通过应用训练
+样本对建立的PINN模型进行训练, 使得PINN能够
+逼近偏微分方程的精确解, 从而实现对偏微分方程
+的拟合与求解.
+通过将物理定律嵌入到神经网络中, PINN可以
+有效地求解各种物理问题, 如流体力学、热传导和
+结构力学等[28-30]. 它具有较好的适应性和泛化能力,
+能够处理高维、非线性和不规则边界条件等复杂情况. 然而, 也需要注意到PINN的训练过程可能需要
+更多的计算资源和训练时间, 以及对网络结构和超
+参数的调优. 因此, 在具体应用中, 需要根据问题的
+特点和需求权衡PINN的优缺点, 并对模型进行相
+应的设计和优化. 
+2     PINN可行性验证
+Burgers方程是模拟激波传播和反射的非线性
+偏微分方程[31]. 在求解Burgers方程时, 通常需要使
+用数值或解析解法. 常用的数值解法包括有限差分
+法、有限元法等, 常用的解析解法包括渐进解法、
+尺度解法等. 为验证PINN在求解偏微分方程的可
+行性, 应用PINN对一维Burgers进行求解. 一维
+Burgers方程表达式为
+@u
+@t+u@u
+@x=@2u
+@x2(9)
+ 
+式中, u为流体速度; μ为动力黏度系数, 取为0.01/π.
+定义初始条件和边界条件
+u(0;x)= sin(πx);x2[ 1;1];t2[0;1]
+u(t; 1)=u(t;1)=09>=>;(10)
+ 
+本文应用CFD开源软件OpenFOAM构造
+PINN所需训练集, 计算域内共25 600个采样点, 计
+算结果如图2(a)所示.
+基于一维Burgers方程的数值结果, 构造PINN
+训练集. 在x∈[1,1], t∈[0,1]内采样数据点, 上下边
+界点各取100个采样点, 初始时刻取256个采样点.
+应用Python语言进行编程, 编译环境Python 3.8.3
+和TensorFlow-gpu 2.10.0, 基于Pycharm进行编译.
+验证PINN可行性时, 采用全连接神经网络, 包 
+xσ
+σσ
+σ
+σ σu
+tˆ
+adjust weights and bias termsloss of partial
+differemtial equations
+loss of boundary
+conditions
+loss of initial
+condition
+loss of dataLPDE:
+LBC: B [uθ (x)]
+LIC: uθ (x, 0 ) − g (x)
+LData: uθ (x, t) − u* (x, t)
+Ltotal (θ) = ωFLPDE + ωBCLBC + ωICLIC + ωDLData∂uθ
+∂t
+error backpropagation
+physical laws data supervisiontotal lossminimize
+θ*(x, t) +  [uθ (x, t)]
+ 
+ 
+图 1   PINN模型
+Fig. 1    PINN model第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 439
+
+=== PAGE 6 ===
+含1个输入层、8个隐藏层和1个输出层, 其中每
+个隐藏层包含20个神经元节点. PINN各层网络权
+重ω和偏置b采用Xavier初始化, 各层神经元激活
+函数选取tanh函数, 网络迭代寻优采用Adam优化算法. PINN总训练50 000步, PINN的损失函数值随
+训练变化见图3, 训练好后其损失函数值约为1.031 ×
+10−4. 应用训练好的PINN模型对一维Burgers方程
+进行求解, 得到计算域内各点处速度随时间分布, 如
+图2(b)所示.
+  
+0.25
+0.20
+0.15
+0.10
+0.05
+0
+0 10 000 20 000 30 000
+iterationsiterations
+40 000 50 000loss
+loss0.004
+0.003
+0.002
+0.001
+0
+28 000 29 000 30 000 31 000 32 000loss
+ 
+ 
+图 3   PINN损失函数变化
+Fig. 3    Variation of the loss function in PINN model
+ 
+从图2(b)和图2(c)对比可看出, 训练好的
+PINN模型成功求解出一维Burgers方程, 且与数值
+结果误差较小, 说明应用PINN求解偏微分方程是
+可行的. PINN求解结果在x = 0附近误差偏大, 原因
+在于0点为速度突变点, PINN模型对于突变奇点的
+拟合效果相对一般, 因此结果误差相对偏大. 
+3     基于PINN的二维剪切流圆柱绕流场重构
+本节基于构造的PINN对二维剪切流圆柱绕流
+场进行重构研究. 
+3.1    数据集获取
+本文利用CFD开源软件OpenFOAM[32]对剪切
+流情况下的圆柱绕流进行数值模拟, 计算域的设
+置、网格划分及采样点分布情况如图4所示.
+为验证计算结果的网格无关性, 选取圆柱前后
+两点, 即点A(0.550, 0.500)与点B(0.410, 0.457)的压
+强与流速数据进行分析, 见图5. 分别采用3种不同
+疏密程度的网格(详见表1)进行计算, 对比结果表
+明, 这3种网格的求解结果较为接近(如图6所示).
+因此, 在兼顾计算精度与效率的基础上, 本文选用中
+等网格尺寸用于后续工况模拟.
+本文采用OpenFOAM-v1912的不可压缩流求
+解器icoFoam, 并使用Laminar层流模型进行计算模 
+1.0OpenFOAM
+0.8
+0.6T
+0.4
+0.2
+0−1.0 −0.5 0
+X0.5 1.0
+1.0PINN
+0.8
+0.6T
+0.4
+0.2
+0−1.0 −0.5 0
+X0.5 1.01.0u/(m·s−1)
+0.5
+0
+−0.5
+−1.0(a) OpenFOAM 计算结果
+(a) OpenFOAM results
+1.0OpenFOAM
+0.007
+0.004
+0
+−0.004
+−0.0070.8
+0.6T
+0.4
+0.2
+0−1.0 −0.5 0
+X0.5 1.0
+(c) OpenFOAM 与 PINN 计算结果绝对误差
+(c) Absolute error between OpenFOAM and PINN results(b) PINN 预测结果
+(b) PINN results1.0u/(m·s−1)
+0.5
+0
+−1.0
+ 
+ 
+图 2   OpenFOAM与PINN求解结果对比
+Fig. 2    Comparison of solution results between OpenFOAM and PINN440 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 7 ===
+拟, 网格尺寸设定为0.005 m, 网格总数量为79 840,
+计算域的边界条件设置如下: 入口边界采用梯度速
+度入口模型, 上边界入口处速度为1 m/s, 线性递减
+至下边界入口速度为0; 出口边界采用压强出口边
+界条件, 出口处压强固定为0; 上下边界及圆柱表面设置为无滑移边界条件, 速度为0. 求解器时间步长
+设为t = 0.000 1 s, 计算时间域为0 ~ 1 s, 流体运动黏
+度系数为0.02 m2/s. 通过OpenFOAM模拟得到采样
+ 
+u = 1 m/s
+r = 0.051
+0.5
+0.5
+2unit: m
+y
+x O
+(a) 计算域
+(a) Computational domain
+(b) ຩٳ߃۬
+(b) Computational mesh
+(c) 采样点  (20 000)
+(c) Sampling point (20 000)
+ 
+ 
+图 4   OpenFOAM计算网格及数据采样点
+Fig. 4    Computational mesh and sampling points of OpenFOAM 
+表 1   网格收敛性验证信息
+Table 1    Information on mesh convergence
+Mesh density Mesh size/m Number of mseh 
+coarse mesh 0.006 7 44 916
+medium mesh 0.005 0 79 840
+fine mesh 0.003 3 179 536
+ 
+1.0
+0.9
+0.8
+0.7y0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+00 0.2 0.4 0.6 0.8 1.0
+x1.2 1.4 1.6 1.8 2.0unit: m
+ 
+ 
+图 5   监测点(带有数据标签)位置
+Fig. 5    Location of monitoring points (with data labels) 
+0.6
+0.4
+0.2
+0
+0.2
+0
+−0.2
+−0.40 0.2 0.4 0.6
+(a)
+(b)t/s0.8 1.0
+0 0.2 0.4 0.6
+t/s0.8 1.0u/(m·s−1)v/(m·s−1)
+coarse mesh (point A)
+coarse mesh (point B)
+medium mesh (point A)
+medium mesh (point B)
+fine mesh (point A)
+fine mesh (point B)
+coarse mesh (point A)
+coarse mesh (point B)
+medium mesh (point A)
+medium mesh (point B)
+fine mesh (point A)
+fine mesh (point B)
+0 0.2 0.4 0.6
+(c)t/s0.8 1.0
+8
+6
+4p/Pa
+2
+0
+coarse mesh (point A)
+coarse mesh (point B)
+medium mesh (point A)
+medium mesh (point B)
+fine mesh (point A)
+fine mesh (point B)
+ 
+ 
+图 6   3种网格密度x和y方向速度u, v及压强p收敛性对比
+Fig. 6    Convergence comparison of x- and y-direction velocities u, v and
+pressure p for three grid densities第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 441
+
+=== PAGE 8 ===
+点x及y方向速度u, v及压强p的数据. 
+3.2    基于PINN的流场重构
+应用PINN对低雷诺数下的剪切流圆柱绕流场
+进行重构时, 不可压缩流体流动的控制方程即连续
+性方程与N-S方程作为损失函数加入神经网络求解
+过程
+@u
+@x+@v
+@y=0 (11)
+ 
+@u
+@t+u@u
+@x+v@u
+@y= 1
+@p
+@x+(@2u
+@x2+@2u
+@y2)
+(12)
+ 
+@v
+@t+u@v
+@x+v@v
+@y= 1
+@p
+@y+(@2v
+@x2+@2v
+@y2)
+(13)
+ 
+式中, u和v分别为x和y方向上的流体速度; p为
+压强; ρ和υ分别为流体密度和运动黏度系数.
+f1(x;y;t)
+f2(x;y;t)
+f3(x;y;t)
+定义  ,  和   为 
+f1=@u
+@x+@v
+@y(14)
+ 
+f2=@u
+@t+u@u
+@x+v@u
+@y+1
+@p
+@x (@2u
+@x2+@2u
+@y2)
+(15)
+ 
+f3=@v
+@t+u@v
+@x+v@v
+@y+1
+@p
+@y (@2v
+@x2+@2v
+@y2)
+(16)
+ 
+[u;v;p]
+定义神经网络   逼近速度场和压强场, 神 
+经网络损失函数
+Ltotal=!PDELPDE()+!BCLBC()+
+!ICLIC()+!DataLData() (17)
+ 
+其中
+LPDE()=1
+NfNf∑
+i=1[f1(xi;yi;ti)2+
+f2(xi;yi;ti)2+f3(xi;yi;ti)2]
+(18)
+ 
+LBC()=1
+NBNB∑
+i=1[uB(xi;yi;ti) uBi2+
+vB(xi;yi;ti) vBi2+pB(xi;yi;ti) pBi2]
+(19)
+ 
+LIC()=1
+NINI∑
+i=1[uI(xi;yi;0) uIi2+
+vI(xi;yi;0) vIi2+pI(xi;yi;0) pIi2]
+(20)
+ 
+LData()=1
+NDND∑
+i=1[uD(xi;yi;ti) uDi2+
+vD(xi;yi;ti) vDi2+pD(xi;yi;ti) pDi2]
+(21) 
+fxi;yi;tigNf
+i=1
+f1;f2;f3
+{
+xi;yi;ti}NB
+i=1
+{
+xi;yi;ti}NI
+i=1
+{
+xi;yi;ti}ND
+i=1
+式中,   表示流场中随机采取用于计算 
+ 的数据点;   表示边界点数据; 
+  表示初始时刻的数据点;   表示 
+融合CFD流场数据的点集.
+本文PINN结构如图7所示, 由全连接神经网
+络FCNN与残差网络RN组成, 其中FCNN由12层
+神经网络构成, 分别为1个输出层、10个隐藏层和
+1个输出层. 输入层包括3个神经元, 对应采样点坐
+标(x, y, t), 每层隐藏层包含20个神经元, 层与层之
+间采取全连接策略, 输出层包含3个神经元, 对应输
+出采样点的速度u, v及压强p. 编程时定义loss_f为
+方程损失, loss_WALL为上下边界损失, loss_
+INLET为入口损失, loss_OUTLET为出口损失,
+loss_IC为初始值损失, loss_point为监测点损失.
+PINN各层网络权重ω和偏置b采用Xavier初
+始化, 各层神经元激活函数选取tanh函数, 网络迭代
+寻优采用Adam优化算法. Adam算法学习率设置为
+随迭代次数阶梯性递减, 初始学习率设置为0.001,
+迭代至60%时调整学习率变为之前的50%, 即0.005,
+迭代至90%时调整学习率变为0.000 1, 直至50 000
+步停止. 通过Adam算法对PINN的损失函数进行迭
+代寻优, 更新权重ω与偏置b.
+为验证PINN对剪切流流场重构的准确性, 使
+用训练好的PINN模型对测试集数据进行预测, 即
+输入测试集中各点的空间时间坐标(x, y, t), PINN输
+出采样域内预测的流速与压强. 将PINN预测结果
+与OpenFOAM数值模拟结果分别在0.05, 0.3和
+0.5 s时刻进行对比(如图8), 第1列为CFD数值结
+果, 第2列为PINN求解结果. 第1 ~ 3行分为流场
+x方向速度u和y方向速度v及流场内压强p.
+从图8可以看出, PINN在初始及中间时刻的预
+测结果与数值模拟结果在速度和压强分布上基本一
+致, 证明了PINN在剪切流场预测问题上的可行性.
+在流场预测中, 由于训练集加入了压强数据, 因此实
+现了对压强的定量而不是定性预测.
+在剪切流中, 流体的速度梯度导致圆柱上下的
+压强差不对称, 上下表面的速度不同使得升力不再442 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 9 ===
+为零, 圆柱上部流速大于下部流速, 使得圆柱升力方向
+朝下(为负), 如图9所示. 其中, 升/阻力由CFD模拟结
+果及PINN压强预测结果计算得出, 升/阻力系数为
+CL=2FL
+U2D(22)
+ 
+CD=2FD
+U2D(23) 
+式中, CL和CD为升力和阻力系数; FL和FD为圆柱
+所受升力和阻力; ρ为流体密度, 取1000 kg/m3; U为
+速度, 取圆柱中心处来流速度; D为圆柱直径.
+ 
+xσ
+σ
+σσ
+uIinitial residual
+boundary
+reidual
+monitoeing
+point residual
+governing equation
+residualsupervised
+learning
+unsupervised
+learning
+error backpropagation
+adjust ( ω, b)lossB
+∂x ∂u
+∂x
+∂y
+∂tv
+pσ
+σ
+σ σy
+tuI (x, y, t) − uI*
+uB (x, y, t) − uB*
+uθ (x, y, t) − u*
+f1 = +∂v
+∂y
+∂u
+∂xf2 = + u∂v
+∂y+ v + + − υ∂v
+∂y∂p
+∂x∂2u
+∂x2∂2u
+∂y21
+ρ
+∂u
+∂tf2 = + u∂v
+∂x+ v + + − υ∂v
+∂y∂p
+∂y∂2v
+∂x2∂2v
+∂y21
+ρ10 layers, 20 nodes
+ 
+ 
+图 7   圆柱绕流场PINN模型
+Fig. 7    PINN model of flow field around cylinder
+ 
+1.0
+0.5
+00 0.5 1.0CFD
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0PINN u/(m·s−1)
+xy
+1.51.0
+0.5
+0
+2.0
+1.0
+0.5
+00 0.5 1.0
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0v/(m·s−1)
+x
+x x
+y
+1.5−0.10
+−0.15
+−0.40
+2.0
+1.0
+0.5
+00 0.5 1.0y
+1.5 2.01.0
+0.5
+00 0.5 1.0p/Pay
+1.510.0
+4.5
+−1.0
+2.0
+(a) 速度及压强结果  (t = 0.05 s)
+(a) Velocity and pressure results ( t = 0.05 s)
+ 
+ 
+图 8   CFD与PINN求解速度及压强分布对比
+Fig. 8    Comparison of velocity and pressure distribution between CFD and PINN results第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 443
+
+=== PAGE 10 ===
+ 
+1.0
+0.5
+00 0.5 1.0CFD
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0PINN u/(m·s−1)
+xy
+1.51.0
+0.5
+0
+2.0
+1.0
+0.5
+00 0.5 1.0
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0v/(m·s−1)
+xy
+1.5−0.10
+−0.15
+−0.40
+2.0
+x x1.0
+0.5
+00 0.5 1.0y
+1.5 2.01.0
+0.5
+00 0.5 1.0p/Pay
+1.510.0
+4.5
+−1.0
+2.0
+(b) 速度及压强结果  (t = 0.30 s)
+(b) Velocity and pressure results ( t = 0.30 s)
+1.0
+0.5
+00 0.5 1.0CFD
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0PINN u/(m·s−1)
+xy
+1.51.0
+0.5
+0
+2.0
+1.0
+0.5
+00 0.5 1.0
+xy
+1.5 2.01.0
+0.5
+00 0.5 1.0v/(m·s−1)
+xy
+1.5−0.10
+−0.15
+−0.40
+2.0
+x x1.0
+0.5
+00 0.5 1.0y
+1.5 2.01.0
+0.5
+00 0.5 1.0p/Pay
+1.510.0
+4.5
+−1.0
+2.0
+(c) 速度及压强结果  (t = 0.50 s)
+(c) Velocity and pressure results ( t = 0.50 s)
+ 
+ 
+图 8   CFD与PINN求解速度及压强分布对比 (续)
+Fig. 8    Comparison of velocity and pressure distribution between CFD and PINN results (continued)444 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 11 ===
+本文还研究了无监督采样点数N、迭代次数
+N_iter、监测点损失权重ω、网络层数N_layer、节
+点数N_node、监测点位置选取策略对预测结果的
+影响, 具体参数如表2所示, 其中N与N_iter单位为
+万, 损失权重表示方程损失loss_f: 上下边界损失loss_WALL: 入口损失loss_INLET: 出口损失
+loss_OUTLET: 初始值损失loss_IC: 监测点损失
+loss_point的权重比, 监测点位置表示矩形采样
+100点(S100)、圆形采样40点(C40)及圆形采样
+100点(C100).
+  
+表 2   工况参数对比
+Table 2    Comparison of parameters for different cases
+Sampling point Iteration Loss weight Layers Nodes Location
+(1) 0.1, 0.2, 1, 2 5 1:1:1:1:1:5 10 20 S100
+(2) 1 1, 2, 5, 10 1:1:1:1:1:5 10 20 S100
+(3) 1 5 1:1:1:1:1:1/5/10 10 20 S100
+(4) 1 5 1:1:1:1:1:5 5, 10, 15, 20 20 S100
+(5) 1 5 1:1:1:1:1:5 10 10, 15, 20, 30 S100
+(6) 1 5 1:1:1:1:1:5 10 20 S100, C40, C100 
+  
+3.2.1    无监督采样点数对比
+采样点数量(N)直接影响预测结果的精细度,
+但过多的采样点可能显著降低神经网络的训练速
+度, 甚至导致模型难以收敛. 为探究无监督采样点数
+对模型性能的影响, 本文采用控制变量法进行研究.
+测试参数设置见表1中(1), 分别对1000, 5000,10 000和20 000个采样点进行测试. 通过数值计算
+结果发现, 流场在0.3 s左右趋于稳定状态, 故取计算
+时间域内中间时刻0.3 s进行分析, 比较不同采样点
+数的计算结果, 如表3所示. 其中, T表示PINN模型
+训练总时间, Step表示单步训练时间, Loss表示模型
+总误差值, Error_u, Error_v和Error_p分别表示流 
+0
+−2
+−4
+−6
+−8FL/N45
+40
+35
+30
+25
+20
+15
+10FD/N
+0 0.1 0.20.30.4 0.5
+t/s0.60.70.80.9 1.0 0 0.1 0.20.30.4 0.5
+t/s0.60.70.80.9 1.0CFD
+PINN
+CFD
+PINN
+0
+−0.2
+−0.4
+−0.6CL
+0 0.1 0.20.30.4 0.5
+t/s0.60.70.80.9 1.0CFD
+PINN
+4
+3
+2
+1
+0CD
+0 0.1 0.20.30.4 0.5
+t/s0.60.70.80.9 1.0CFD
+PINN
+ 
+ 
+图 9   CFD与PINN求解升/阻力及系数结果对比
+Fig. 9    Comparison of lift/drag and coefficient obtained by CFD and PINN model第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 445
+
+=== PAGE 12 ===
+场内x方向速度u, y方向速度v和压强p的预测误
+差值.
+采样点较少时(如N = 1000), PINN对流场的重
+构效果不佳, 表明在无监督采样点较为稀疏的情况
+下, PINN难以准确捕捉速度场与压强场的分布特
+征. 当采样点数量提升到10 000时(见图10), PINN
+对剪切流场的整体预测和重构效果显著提升, 但仍
+可观察到圆柱壁面附近的误差相对较大, 这可能与监督点的选取位置有关, 导致PINN对近壁区域的
+拟合效果欠佳. 此外, 在上边界也存在局部误差较大
+的区域, 主要是由于上边界的入口流速设定为1 m/s,
+而边界被设置为无滑移条件(即速度为0), 这种边界
+条件的设置引发了速度的突变, 进而影响了PINN
+的预测精度. 相比之下, 由于下边界入口流速为0, 未
+出现速度突变情况, 因此PINN在下边界的预测结
+果与数值结果更为吻合.
+  
+1.0
+0.5y y y yy y yy y y01.0
+0.5
+00 0.5 1.0N = 1000 N = 5000 N = 10 000 N = 20 000
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05u/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+01.0
+0.5
+00 0.5 1.0
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05v/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+01.0
+0.5
+00 0.5 1.0
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05p/Pa
+0
+−0.05
+ 
+ 
+图 10   PINN与数值结果绝对误差对比
+Fig. 10    Comparison of absolute error between PINN and numerical results
+  
+3.2.2    迭代次数对比
+迭代次数(N_iter)是决定神经网络收敛性及拟
+合效果的重要因素. 若迭代次数不足, 可能导致网络
+未能找到全局最优解, 从而使得PINN无法准确拟
+合目标流场. 为此, 本文针对迭代次数对模型拟合效
+果的影响进行系统性研究. 测试参数设置见表2中
+(2), 分别对10 000, 20 000, 50 000和100 000次迭代
+数进行训练, 并选取计算时间域内中间时刻0.3 s结果进行对比分析, 结果见表4.
+如表4所示, 随着迭代次数增加, 总损失(Loss)
+呈逐步下降的趋势, 表明增加迭代次数能够有效降
+低模型误差. 然而, 这也显著提高了计算时间成本.
+通过结果误差对比(见图11), 可以发现, 在圆柱近壁
+面及流场后部区域, 迭代10 000次时的预测误差相
+较于迭代50 000次时明显偏大. 这表明在这些区域,
+边界条件的准确拟合需要通过更多的迭代次数来实 
+表 3   预测结果对比
+Table 3    Comparison of prediction results
+Sampling point T/s Step/s Loss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+0.1 4706.38 0.09 26.94 5.911 2.223 13.27
+0.5 5572.01 0.1 7.839 4.801 1.341 11.44
+1 8586.08 0.16 5.480 4.424 1.236 6.514
+2 13 442.05 0.25 5.447 4.691 1.205 6.314446 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 13 ===
+现. 在迭代次数达到50 000次后, Loss下降趋于平
+稳, 并伴随一定的振荡波动, 这可能与学习率调整策
+略有关. 因此, 为了在时间成本与预测精度之间取得
+平衡, 选择50 000次作为基准迭代次数. 
+3.2.3    监测点权重对比
+为探讨固定位置监测点(包含物理信息的已知
+数据点)在误差计算中权重ω变化对神经网络拟合
+结果的影响, 本文分别设置了不同权重系数(1 × loss_
+point, 5 × loss_point和10 × loss_point)进行研究. 测
+试参数的具体设置见表2中(3), 选取计算时间域内
+中间时刻0.3 s进行对比, 结果如表5所示.结果对比表明, 当监测点权重由1增加到5时,
+模型的拟合精度显著提高, 表明适当增大监测点权
+重能够有效增强PINN模型对实际物理规律的拟合
+能力. 然而, 当监测点权重由5进一步增加至10时, 
+表 4   预测结果对比
+Table 4    Comparison of prediction results
+Iterations T/s Step/s Loss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+1 1639.54 0.15 18.30 5.075 0.182 1 13.68
+2 3371.57 0.16 9.339 5.022 1.614 8.409
+5 8586.08 0.16 5.480 4.424 1.236 6.514
+10 16 551.40 0.15 4.089 4.406 1.146 6.272
+ 
+1.0
+0.5y
+00 0.5 1.0N_iter = 10 000
+x1.5 2.01.0
+0.5y
+00 0.5 1.0N_iter = 50 000
+x1.5 2.00.05u/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0
+x1.5 2.01.0
+0.5y
+00 0.5 1.0
+x1.5 2.00.05v/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0
+x1.5 2.01.0
+0.5y
+00 0.5 1.0
+x1.5 2.00.05p/Pa
+0
+−0.05
+ 
+ 
+图 11   10 000与50 000次迭代结果绝对误差对比
+Fig. 11    Comparison of absolute error for N_iter = 10 000, 50 000
+ 
+表 5   预测结果对比
+Table 5    Comparison of prediction results
+Weight T/sStep/sLoss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+18268.94 0.175.846 6.048 0.182 9 8.382
+58586.08 0.165.480 4.424 0.123 6 6.514
+108722.21 0.179.790 5.093 0.142 6 7.637第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 447
+
+=== PAGE 14 ===
+拟合精度反而有所下降(Loss增加). 这表明, 当权重
+增至某一阈值后, 进一步提高权重无法继续改善预
+测效果, 甚至可能导致预测误差增大. 因此, 监测点
+权重的设置需要平衡误差收敛性与网络稳定性, 以
+避免过度强化局部信息对整体拟合的负面影响. 
+3.2.4    神经网络层数对比
+类似于傅里叶变换, 神经网络的隐藏层数越
+深, 其拟合能力越强, 结果也越精细. 然而, 隐藏层
+数的增加并不会持续提升PINN的预测效果. 为
+探究网络层数(N_layer)对预测结果的影响, 本文
+分别对具有5层、10层、15层和20层隐藏层的神经网络进行了训练. 测试参数设置详见表2中(4).
+选取时间域内中间时刻0.3 s结果进行分析, 如表6
+所示.
+随着网络层数的增加, 模型的损失逐渐降低, 预
+测精度逐步提升. 然而, 当网络层数增加至20层时,
+误差反而有所上升, 且其拟合效果较10层网络明显
+变差(见图12). 这一现象可能归因于神经网络规模
+的增大, 导致训练难度增加和迭代优化过程更加复
+杂, 从而降低了模型的准确性. 这表明, 过深的网络
+结构可能对PINN的性能产生负面影响, 需在神经
+网络设计中权衡隐藏层数与训练稳定性. 
+ 
+表 6   预测结果对比
+Table 6    Comparison of prediction results
+Layers T/s Step/s Loss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+5 4589.58 0.10 9.775 5.409 0.149 3 0.100 8
+10 8586.08 0.16 5.480 4.424 0.123 6 0.065 14
+15 10 907.54 0.22 5.815 4.634 0.131 7 0.115 2
+20 14 718.62 0.28 36.27 5.941 0.241 7 0.183 1
+ 
+1.0
+0.5y
+00 0.5 1.0N_iter = 10
+x1.5 2.01.0
+0.5y
+00 0.5 1.0N_iter = 20
+x
+x x1.5 2.00.05u/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0 1.5 2.01.0
+0.5y
+00 0.5 1.0 1.5 2.00.05v/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0
+x1.5 2.01.0
+0.5y
+00 0.5 1.0
+x1.5 2.00.05p/Pa
+0
+−0.05
+ 
+ 
+图 12   10层与20层网络预测结果绝对误差对比
+Fig. 12    Comparison of absolute error for N_layer = 10, 20448 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 15 ===
+3.2.5    网络节点数对比
+隐藏层节点数的大小对神经网络处理非线性问
+题的拟合能力具有重要影响. 为研究节点数对网络
+性能的影响, 本文分别对每层包含10, 15, 20和
+30个节点的神经网络进行训练. 测试具体参数见
+表2中(5). 选取计算时间域内0.3 s结果进行对比,
+如表7所示.
+当隐藏层节点数较少时, 拟合精度显著降低, 流场
+的重构效果较差, 整体误差较大(见图13). 这表明节点数不足会限制PINN在求解域内的泛化能力, 导致无
+法准确捕捉流场的细微变化. 这一现象类似于傅里叶
+级数的高阶项贡献, 需要足够的节点数量来表征函数
+的小尺度变化(高阶非线性). 然而, 当节点数增加至30
+时, PINN的误差反而有所增大, 表明当节点数超过一
+定阈值后, 模型性能并未进一步提升, 反而出现精度
+下降的情况. 这可能是由于节点数的增加导致训练
+参数维度呈几何级增长, 从而加大了训练的复杂性
+和优化难度, 最终对模型的预测精度产生负面影响.
+  
+表 7   预测结果对比
+Table 7    Comparison of prediction results
+Nodes T/s Step/s Loss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+10 6488.97 0.11 36.02 7.324 0.338 1 0.160 4
+15 6122.06 0.12 11.50 5.032 0.165 1 0.104 9
+20 8586.08 0.16 5.480 4.424 0.123 6 0.065 14
+30 10 286.86 0.2 8.580 5.867 0.159 8 0.141 6
+ 
+  
+1.0
+0.5y
+01.0
+0.5
+00 0.5 1.0N_node = 10 N_node = 15 N_node = 20 N_node = 30
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05u/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+01.0
+0.5
+00 0.5 1.0
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05v/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+y y y
+y y y
+y y y
+01.0
+0.5
+00 0.5 1.0
+x1.5 2.0 0 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.01.0
+0.5
+00 0.5 1.0
+x1.5 2.00.05p/Pa
+0
+−0.05
+ 
+ 
+图 13   10, 15, 20和30节点数结果绝对误差对比
+Fig. 13    Comparison of absolute errors for N_node = 10, 15, 20 and 30
+  
+3.2.6    监测点选取策略对比
+PINN的拟合效果会因监测点(包含物理信息的
+已知数据点)位置的不同而发生变化. 为探究监测点
+位置对模型性能的影响, 本文针对不同监测点位置
+分布的神经网络进行了训练(见图14). 测试参数具
+体设置见表2中(6), 选取计算时间域内中间时刻
+0.3 s进行对比, 结果如表8所示.相比于矩形区域采样, 圆形区域采样的误差明
+显偏大, 拟合效果较差(见图15). 这表明, 不同的监
+测点采样策略会对预测精度产生显著影响, 采样策
+略的选择决定了监测点在研究区域内的分布特性,
+从而影响模型捕获关键区域特征和复杂动态行为的
+能力. 因此在实际应用中, 需要根据具体的研究对象
+合理设计监测点的位置分布. 进一步对比发现, 与其第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 449
+
+=== PAGE 16 ===
+他模型参数(如迭代次数、监测点权重和网络层数
+等)相比, 监测点位置的选取策略对PINN预测性能的影响最为显著. 优化采样策略不仅可以提升模型
+的收敛速度, 还能够有效降低因数据分布不均导致
+ 
+1.0
+0.9
+0.8
+0.7y
+y0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+00 0.2 0.4 0.6 0.8 1.0
+x xC40 unit: m
+1.2 1.4 1.6 1.8 2.0
+(a) 40 个圆形采样点位置  (C40)
+(a) 40 circular sampling point positions (C40)1.0
+0.9
+0.8
+0.7
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+00 0.2 0.4 0.6 0.8 1.0C100 unit: m
+1.2 1.4 1.6 1.8 2.0
+(b) 100 个圆形采样点位置  (C100)
+(b) 100 circular sampling point positions (C100)
+ 
+ 
+图 14   C40和C100监测点位置选取
+Fig. 14    Selection of monitoring point location (C40, C100)
+ 
+表 8   预测结果对比
+Table 8    Comparison of prediction results
+Location T/s Step/s Loss/10−3 Error _u/10−2 Error _v Error _p/10−2 
+C40 7873.04 0.15 6.549 7.310 0.353 5 9.354
+C100 7771.30 0.15 11.08 9.071 0.257 9 10.19
+S100 8586.08 0.16 5.480 4.424 0.123 6 6.514
+ 
+1.0
+0.5y
+00 0.5 1.0C40
+x1.5 2.01.0
+0.5y
+00 0.5 1.0C100
+x1.5 2.00.05u/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0
+x1.5 2.01.0
+0.5y
+00 0.5 1.0
+x1.5 2.00.05v/(m·s−1)
+0
+−0.05
+1.0
+0.5y
+00 0.5 1.0
+x1.5 2.01.0
+0.5y
+00 0.5 1.0
+x1.5 2.00.05p/Pa
+0
+−0.05
+ 
+ 
+图 15   C40和C100监测点结果绝对误差对比
+Fig. 15    Comparison of absolute error for case of C40 and C100450 力            学            学            报 2025  年 第  57  卷 
+
+=== PAGE 17 ===
+的局部误差放大问题. 
+4     结论
+本文采用PINN对二维剪切流场的重构问题进
+行了研究, 并将预测结果与OpenFOAM数值模拟结
+果进行了误差对比. 通过探究采样点数量、迭代次
+数、监测点误差权重、神经网络层数和网络节点数
+等多种因素, 对模型性能进行了系统性对比分析, 得
+到以下主要结论.
+(1)在流场重构问题中, 利用少量包含物理信息
+的监测点数据对PINN模型进行训练, 可实现剪切
+流场的近似重构, 且整体误差控制在10−3范围内. 此
+外, 通过在训练样本中引入压强数据, 成功实现了压
+强场的定量预测.
+(2)随着采样点数量和迭代次数的增加, PINN
+的误差逐渐减小, 流场预测精度显著提升. 然而, 精
+度的提高是以成倍增加的计算成本为代价. 同时, 神
+经网络的层数、节点数和监测点权重均存在阈值,
+超过该阈值后会导致模型参数维度呈几何倍数增
+长, 从而增加训练复杂性并降低预测精度.
+(3)监测点选取策略对训练误差的影响最为显
+著. 不同的监测点分布会引导模型朝不同方向进行
+优化, 导致预测结果出现较大偏差. 因此, 在PINN
+模型的设计与优化过程中, 应将采样策略作为重点
+关注的环节, 结合数据特性, 通过多次实验调整, 探
+索最适合目标问题的采样方法, 从而最大化模型的
+预测性能.
+本文所建立的二维剪切流PINN模型成功实现
+了流场的重构, 但模型仍存在改进空间. 在模型的训
+练过程中, 涉及多个超参数的设置, 这些参数之间的
+平衡对于保持模型的最佳预测性能至关重要. 然而,
+目前的参数优化过程依赖于大量的试验, 存在一定
+的局限性. 因此, 未来需要探索更加高效的模型优化
+方法或新型模型架构, 以进一步提升PINN的预测
+精度和性能.
+参    考    文    献 
+ 张伟伟, 王旭, 寇家庆. 面向流体力学的多范式融合研究展望. 力
+学进展, 2023, 53(2): 433-467 (Zhang Weiwei, Wang Xu, Kou Ji-
+aqing. Prospects of multi-paradigm fusion methods for fluid mech-
+anics research. Advances  in  Mechanics, 2023, 53(2): 433-467 (in
+Chinese))  1
+ Xu SR, Zhao JZ, Wu HK, et al. A review of solution stabilization  2techniques for RANS CFD solvers. Aerospace, 2023, 10(3): 230-230
+ Subhrangshu P, Saud MA. Review of smooth particle hydrodynam-
+ics and its applications for environmental flows. Journal of the Insti-
+tution of Engineers (India): Series A, 2022, 103(3): 921-941  3
+ El-Emam AM, Zhou L, Shi W, et al. Theories and applications of
+CFD-DEM coupling approach for granular flow: A review. Archives
+of Computational Methods in Engineering, 2021, 28(7): 1-42  4
+ 张伟伟, 寇家庆, 刘溢浪. 智能赋能流体力学展望. 航空学报,
+2021, 42(4): 26-71 (Zhang Weiwei, Kou Jiaqing, Liu Yilang. Pro-
+spect  of  artificial  intelligence  empowered  fluid  mechanics.  Acta
+Aeronautica et Astronautica Sinica. 2021, 42(4): 26-71 (in Chinese))  5
+ 查文舒, 李道伦, 沈路航等. 基于神经网络的偏微分方程求解方法
+研究综述. 力学学报, 2022, 54(3): 543-556 (Zha Wenshu, Li
+Daolun, Shen Luhang. Review of neural network-based methods for
+solving partial differential equations. Chinese Journal of Theoretic-
+al and Applied Mechanics, 2022, 54(3): 543-556 (in Chinese))  6
+ Jin XW, Peng C, Li WC, et al. Prediction model of velocity field
+around circular cylinder over various Reynolds numbers by fusion
+convolutional neural networks based on pressure on the cylinder.
+Physics of Fluids, 2018, 30(4): 047105  7
+ Xu H, Chang HB, Zhang DX. DL-PDE: Deep-learning based data-
+driven discovery of partial differential equations from discrete and
+noisy data. Communications in Computational Physics, 2021, 29(3):
+698-728  8
+ Raissi M, Perdikaris P, Karniadakis G. Physics-informed neural net-
+works: A deep learning framework for solving forward and inverse
+problems involving nonlinear partial differential equations. Journal
+of Computational Physics, 2018, 378: 686-707  9
+ 刘霞, 冯文晖, 连峰等. 基于物理信息神经网络的气动数据融合方
+法. 空气动力学学报, 2023, 41(8): 87-96 (Liu Xia, Feng Wenhui,
+Lian Feng, et al. Aerodynamic data fusion method based on physics-
+informed neural network. Acta  Aerodynamica  Sinica, 2023, 41(8):
+87-96 (in Chinese))10
+ 侯先瑞, 周星宇, 黄骁骋. 基于物理信息神经网络的船舶螺旋桨尾
+流场重构. 上海交通大学学报, 2023, 101: 1-20 (Hou Xianrui, Zhou
+Xingyu, Huang Xiaopin. Reconstruction of ship propeller wake field
+based on physics-informed neural networks. Journal  of  Shanghai
+Jiaotong University, 2023, 101: 1-20 (in Chinese))11
+ 赵暾, 周宇, 程艳青等. 基于内嵌物理机理神经网络的热传导方程
+的正问题及逆问题求解. 空气动力学学报, 2021, 39(5): 19-26
+(Zhao Tun, Zhou Yu, Cheng Yanqing, et al. Solving forward and in-
+verse problems of the heat conduction equation using physics-in-
+formed neural networks. Acta  Aerodynamica  Sinica, 2021, 39(5):
+19-26 (in Chinese))12
+ Ang WHE, Wang G, Ng FB. Physics-informed neural networks for
+low reynolds number flows over cylinder. Energies, 2023, 16(12):
+455813
+ Sun L, Gao H, Pan S, et al. Surrogate modeling for fluid flows based
+on physics-constrained deep learning without simulation data. Com-
+puter  Methods  in  Applied  Mechanics  and  Engineering,  2019,
+361(C): 11273214
+ Maziar R, Alireza Y, Em GK. Hidden fluid mechanics: Learning ve-
+locity and pressure fields from flow visualizations. Science, 2020,
+367(6481): 1026-103015
+ Jagtap  DA,  Kawaguchi  K,  Karniadakis  EG.  Adaptive  activation
+functions  accelerate  convergence  in  deep  and  physics-informed
+neural  networks.  Journal  of  Computational  Physics,  2020,  404:16第  2  期 苑光耀等 : 基于PINN的二维剪切流圆柱绕流场重构 451
+
+=== PAGE 18 ===
+109136
+ Chen C, Zhang GT. Deep learning method based on physics in-
+formed neural network with resnet block for solving fluid flow prob-
+lems. Water, 2021, 13(4): 42317
+ Chen C, Hao M, Li YZ, et al. Deep learning based on PINN for solv-
+ing 2 DOF vortex induced vibration of cylinder. Ocean Engineering,
+2021, 240: 10993218
+ 宋家豪, 曹文博, 张伟伟. FD-PINN: 频域物理信息神经网络. 力学
+学报, 2023, 55(5): 1195-1205 (Song Jiahao, Cao Wenbo, Zhang
+Weiwei. FD-PINN: Frequency domain physics-informed neural net-
+work. Chinese Journal of Theoretical and Applied Mechanics, 2023,
+55(5): 1195-1205 (in Chinese))19
+ 杨茵. 剪切流动掺混特性分析及其流动控制研究. [博士论文]. 西
+安: 西北工业大学, 2019 (Yang yin. Mixing characteristic analysis
+and flow control of shear flow. [PhD Thesis]. Xi’an: Northwestern
+Polytechnical University, 2019 (in Chinese))20
+ 李野, 陈松灿. 基于物理信息的神经网络: 最新进展与展望. 计算
+机科学, 2022, 49(4): 254-262 (Li Ye, Chen Songcan. Physics-in-
+formed neural networks: recent advances and prospects. Computer
+Science, 2022, 49(4): 254-262 (in Chinese))21
+ 郭远, 傅卓佳, 闵建等. 课程-迁移学习物理信息神经网络用于长
+时间非线性波传播模拟. 力学学报, 2024, 56(3): 763-773 (Guo
+Yuan,  Fu  Zhuojia,  Min  Jian,  et  al.  Curriculum-transfer-learning
+based physics-informed neural networks for long-time simulation of
+nonlinear wave propagation. Chinese Journal of Theoretical and Ap-
+plied Mechanics, 2024, 56(3): 763-773 (in Chinese))22
+ 陈旷奇, 欧阳晗青, 朱志成等. 基于稀疏数据的流场结构重构方法
+研究. 北京理工大学学报, 2023, 43(9): 950-961 (Chen Kuangqi,
+Ouyang Hanqing, Zhu Zhicheng. Research on flow field structure
+prediction method driven by physical information. Transactions  of
+Beijing Institute of Technology, 2023, 43(9): 950-961 (in Chinese))23
+ Omar S, Mirjam F. On the use of fourier features-physics informed
+neural networks (FF-PINN) for forward and inverse fluid mechanics24problems. Proceedings  of  the  Institution  of  Mechanical  Engineers,
+Part  M:  Journal  of  Engineering  for  the  Maritime  Environment,
+2023, 237(4): 846-866
+ Michael PDAJ, Shandian Z, et al. A unified scalable framework for
+causal  sweeping  strategies  for  physics-informed  neural  networks
+(PINNs) and their temporal decompositions. Journal of  Computa-
+tional Physics, 2023, 493: 11246425
+ Xue Y, Wang YK, Liang JY. A self-adaptive gradient descent search
+algorithm  for  fully-connected  neural  networks.  Neurocomputing,
+2022, 478: 70-8026
+ Sirignano J, Spiliopoulos K. DGM: A deep learning algorithm for
+solving  partial  differential  equations.  Journal  of  Computational
+Physics, 2018, 375: 1339-136427
+ Emanuele A, Alessandro T, Enrico S. Quantification of uncertainty
+in a defect-based physics-informed neural network for fatigue evalu-
+ation  and  insights  on  influencing  factors.  Engineering  Fracture
+Mechanics, 2023, 292: 10959528
+ He YC, Wang ZC, Xiang H, et al. An artificial viscosity augmented
+physics-informed neural network for incompressible flow. Applied
+Mathematics and Mechanics, 2023, 44(7): 1101-111029
+ Laurin ES, Alf G, Jens L, et al. Physics informed neural networks: A
+case study for gas transport problems. Journal  of  Computational
+Physics, 2023, 481: 11204130
+ 徐健, 朱海龙, 朱江乐等. 基于物理信息神经网络的Burgers-Fish-
+er方程求解方法. 浙江大学学报(工学版), 2023, 57(11): 2160-
+2169 (Xu Jian, Zhu Hailong, Zhu Jiangle, et al. Solution approach of
+Burgers-Fisher equation based on physics-informed neural networks.
+Journal of Zhejiang University (Engineering Science), 2023, 57(11):
+2160-2169 (in Chinese))31
+ 刘强. OpenFOAM在绕流问题中的应用研究. [硕士论文]. 哈尔
+滨: 哈尔滨工程大学, 2012 (Liu Qiang. Application Research of
+OpenFOAM in the study of flow around obstacle. [PhD Thesis].
+Harbin: Harbin Engineering University, 2012 (in Chinese))32452 力            学            学            报 2025  年 第  57  卷 
