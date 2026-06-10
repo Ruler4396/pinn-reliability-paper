@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 720
     strategy:
       matrix:
-        case: ${{ fromJson(format('["{0}"]', inputs.case == 'both' && 'kdv_soliton,nls_soliton' || inputs.case)) }}
+        case: ${{ inputs.case == 'both' && fromJson('["kdv_soliton", "nls_soliton"]') || fromJson(format('["{0}"]', inputs.case)) }}
       fail-fast: false
     
     steps:
