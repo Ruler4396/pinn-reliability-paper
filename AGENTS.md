@@ -19,6 +19,24 @@ python -m minimal_pinn.run_protocol_b --spec minimal_pinn/configs/matrix_protoco
 # Generate paper figures (v5 is current)
 python minimal_pinn/plot_figures_v5.py
 
+# Run degradation prototype clustering analysis
+python -m minimal_pinn.analyze_degradation_clustering
+
+# Run statistical significance analysis
+python -m minimal_pinn.analyze_statistical_significance
+
+# Run null space dimension quantification (Hessian spectrum)
+python -m minimal_pinn.analyze_null_space_hessian
+
+# Run curvature and multimodality analysis
+python -m minimal_pinn.analyze_curvature_multimodality
+
+# Run information density uniformity analysis
+python -m minimal_pinn.analyze_information_density
+
+# Run theoretical framework analysis (predictive model + reliability boundary)
+python -m minimal_pinn.analyze_theoretical_framework
+
 # Output goes to: minimal_pinn/results/paper_figures/v5/
 ```
 

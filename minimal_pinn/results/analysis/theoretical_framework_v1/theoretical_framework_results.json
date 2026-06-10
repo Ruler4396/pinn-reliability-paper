@@ -1,0 +1,93 @@
+{
+  "data": {
+    "poisson": {
+      "boundary_width": 1.33,
+      "d_null": 18,
+      "lambda_max": 2540.0,
+      "effective_curvature": 2540.0,
+      "inverse_curvature": 0.0003937007874015748,
+      "basin_count": 4,
+      "seed_cv": 0.0477,
+      "info_cv": 0.3035,
+      "hessian_entropy": 3.9679,
+      "boundary_irregularity": 0.133,
+      "safe_cross_rate": 0.0
+    },
+    "stokes_poiseuille": {
+      "boundary_width": 3.67,
+      "d_null": 19,
+      "lambda_max": 446.0,
+      "effective_curvature": 446.0,
+      "inverse_curvature": 0.002242152466367713,
+      "basin_count": 2,
+      "seed_cv": 0.2206,
+      "info_cv": 0.1938,
+      "hessian_entropy": 3.9821,
+      "boundary_irregularity": 0.367,
+      "safe_cross_rate": 0.033
+    },
+    "fisher_kpp": {
+      "boundary_width": 5.13,
+      "d_null": 34,
+      "lambda_max": 269.0,
+      "effective_curvature": 269.0,
+      "inverse_curvature": 0.0037174721189591076,
+      "basin_count": 3,
+      "seed_cv": 0.2804,
+      "info_cv": 0.8504,
+      "hessian_entropy": 3.8574,
+      "boundary_irregularity": 0.3,
+      "safe_cross_rate": 0.0
+    },
+    "burgers": {
+      "boundary_width": 4.77,
+      "d_null": 27,
+      "lambda_max": 1300.0,
+      "effective_curvature": 1300.0,
+      "inverse_curvature": 0.0007692307692307692,
+      "basin_count": 2,
+      "seed_cv": 0.3727,
+      "info_cv": 0.4512,
+      "hessian_entropy": 3.7846,
+      "boundary_irregularity": 0.5,
+      "safe_cross_rate": 0.1
+    }
+  },
+  "predictive_model": {
+    "r_squared": 1.0,
+    "adj_r_squared": 1.0,
+    "coefficients": [
+      5.950764320535966,
+      -0.017387778139103638,
+      0.46826251523246964,
+      -1.4424514267850292,
+      4.816596500122327
+    ],
+    "p_values": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ]
+  },
+  "reliability_model": {
+    "pseudo_r2": 0.9999998547173616,
+    "aic": 10.000000653580267,
+    "bic": 6.93147245917972,
+    "coefficients": [
+      1.8960070175485295,
+      5.616666585225172,
+      -0.3150963858994598,
+      -65.58777001679285,
+      -13.288906347507412
+    ],
+    "p_values": [
+      0.9984844306185914,
+      0.9583713301562078,
+      0.9997485894234492,
+      0.947270120536063,
+      0.9893774413287504
+    ]
+  }
+}

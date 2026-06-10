@@ -25,6 +25,7 @@ Each subdirectory contains the output of a specific analysis script.
 | `divergence_morphology_v1/` | R-only vs rel_l2-only morphology plots ⭐ |
 | `raw_scale_cross_case_v1/` | Raw metric parallel coordinates |
 | `external_target_prediction_v1/` | External label prediction test |
+| `degradation_clustering_v1/` | Three prototype unsupervised clustering validation ⭐⭐ |
 
 ## Transfer & Portability
 

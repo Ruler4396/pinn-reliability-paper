@@ -1,0 +1,256 @@
+{
+  "cases": {
+    "poisson": {
+      "case": "poisson",
+      "display": "Poisson",
+      "boundary_width": 1.33,
+      "curvature": {
+        "lambda_max": 2540.919870898524,
+        "lambda_min": 0.01284946908123013,
+        "effective_curvature_k5": 2540.9184162110655,
+        "effective_curvature_k10": 2540.918043087732,
+        "curvature_ratio": 197745.12509704966,
+        "spectral_gap": 0.0014948647940400406
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.09918800716598829,
+        "std": 0.004728288343426517,
+        "variance": 2.2356710658583078e-05,
+        "cv": 0.04766996009420637
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 4,
+        "silhouette_score": 0.20503141506046982,
+        "inter_cluster_distance": 0.304950317561439,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.96785338714086,
+        "normalized_entropy": 0.8616084155182013,
+        "n_eigenvalues": 100
+      }
+    },
+    "stokes_poiseuille": {
+      "case": "stokes_poiseuille",
+      "display": "Stokes-Poiseuille",
+      "boundary_width": 3.67,
+      "curvature": {
+        "lambda_max": 446.2579854707362,
+        "lambda_min": 0.00014881983143650215,
+        "effective_curvature_k5": 446.2579468508341,
+        "effective_curvature_k10": 446.2577682279258,
+        "curvature_ratio": 2998645.9543944835,
+        "spectral_gap": 2.2441491353220044e-05
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.010008274080852668,
+        "std": 0.0022073315774389425,
+        "variance": 4.87231269275909e-06,
+        "cv": 0.22055067233439374
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.4216177490934735,
+        "inter_cluster_distance": 0.2429176351370156,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.9821075399630805,
+        "normalized_entropy": 0.8647036654756493,
+        "n_eigenvalues": 100
+      }
+    },
+    "fisher_kpp": {
+      "case": "fisher_kpp",
+      "display": "Fisher-KPP",
+      "boundary_width": 5.13,
+      "curvature": {
+        "lambda_max": 268.7227380132009,
+        "lambda_min": 0.0002932640414290953,
+        "effective_curvature_k5": 268.7200682765645,
+        "effective_curvature_k10": 268.71850687747076,
+        "curvature_ratio": 916316.6977570691,
+        "spectral_gap": 0.001897411706636376
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.010595900860304633,
+        "std": 0.0029715158896901845,
+        "variance": 8.829906682681249e-06,
+        "cv": 0.2804401370743623
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 3,
+        "silhouette_score": 0.28335210284432744,
+        "inter_cluster_distance": 0.1093182118868219,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.8574271900031167,
+        "normalized_entropy": 0.83762967148096,
+        "n_eigenvalues": 100
+      }
+    },
+    "burgers": {
+      "case": "burgers",
+      "display": "Burgers",
+      "boundary_width": 4.77,
+      "curvature": {
+        "lambda_max": 1299.8348512087741,
+        "lambda_min": 0.0010586785331245007,
+        "effective_curvature_k5": 1299.8317465412285,
+        "effective_curvature_k10": 1299.8300725678869,
+        "curvature_ratio": 1227789.938625225,
+        "spectral_gap": 0.001964618623333081
+      },
+      "seed_variance": {
+        "n_seeds": 30,
+        "mean": 0.018067754370470843,
+        "std": 0.00673367965618529,
+        "variance": 4.5342441712123645e-05,
+        "cv": 0.3726904582669402
+      },
+      "basin_diversity": {
+        "n_models": 20,
+        "n_clusters": 2,
+        "silhouette_score": 0.507166970900008,
+        "inter_cluster_distance": 0.29501112295163984,
+        "valid_seeds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "hessian_entropy": {
+        "entropy": 3.784646196694349,
+        "normalized_entropy": 0.8218254795902423,
+        "n_eigenvalues": 100
+      }
+    }
+  },
+  "correlations": {
+    "curvature_vs_width": {
+      "lambda_max": {
+        "correlation": -0.7999999999999999,
+        "p_value": 0.2000000000000001
+      },
+      "effective_curvature_k5": {
+        "correlation": -0.7999999999999999,
+        "p_value": 0.2000000000000001
+      },
+      "effective_curvature_k10": {
+        "correlation": -0.7999999999999999,
+        "p_value": 0.2000000000000001
+      }
+    },
+    "entropy_vs_width": {
+      "entropy": {
+        "correlation": -0.6000000000000001,
+        "p_value": 0.4
+      },
+      "normalized_entropy": {
+        "correlation": -0.6000000000000001,
+        "p_value": 0.4
+      }
+    },
+    "seed_variance_vs_width": {
+      "std": {
+        "correlation": 0.0,
+        "p_value": 1.0
+      },
+      "variance": {
+        "correlation": 0.0,
+        "p_value": 1.0
+      },
+      "cv": {
+        "correlation": 0.7999999999999999,
+        "p_value": 0.2000000000000001
+      }
+    }
+  }
+}

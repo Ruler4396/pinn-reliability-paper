@@ -46,6 +46,11 @@
 | `new_cases_pilot_results.md` | 新案例先导结果 |
 | `p5_cavity_results.md` | Cavity 案例结果 |
 
+## 退化原型验证
+| 文件 | 内容 |
+|------|------|
+| `degradation_clustering_v1/clustering_summary.md` | 三种退化原型的无监督聚类验证 ⭐⭐ |
+
 ## 论文写作
 | 文件 | 内容 |
 |------|------|

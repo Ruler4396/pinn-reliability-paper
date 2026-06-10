@@ -1,0 +1,319 @@
+{
+  "test1_boundary_width": {
+    "test": "Kruskal-Wallis + Dunn post-hoc",
+    "metric": "boundary_width (n failure keypoints per seed)",
+    "kruskal_wallis": {
+      "H": 51.84065058636025,
+      "p": 3.238684000027468e-11
+    },
+    "post_hoc": [
+      {
+        "pair": "Poisson vs Stokes-Poiseuille",
+        "u_stat": 146.0,
+        "p_raw": 4.637448184511636e-06,
+        "p_corrected": 2.7824689107069818e-05,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Fisher-KPP",
+        "u_stat": 79.5,
+        "p_raw": 2.3807256490005772e-08,
+        "p_corrected": 1.4284353894003462e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Burgers",
+        "u_stat": 86.0,
+        "p_raw": 3.990523220251054e-08,
+        "p_corrected": 2.3943139321506324e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Fisher-KPP",
+        "u_stat": 202.5,
+        "p_raw": 0.00020008834682059908,
+        "p_corrected": 0.0012005300809235944,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Burgers",
+        "u_stat": 244.0,
+        "p_raw": 0.0018148156848427164,
+        "p_corrected": 0.010888894109056298,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs Burgers",
+        "u_stat": 537.5,
+        "p_raw": 0.1832778776287316,
+        "p_corrected": 1.0,
+        "significant": false
+      }
+    ],
+    "descriptive": {
+      "poisson": {
+        "mean": 1.3333333333333333,
+        "std": 2.0221001184137464,
+        "median": 0.0,
+        "n": 30
+      },
+      "stokes_poiseuille": {
+        "mean": 3.6666666666666665,
+        "std": 1.6193277068654826,
+        "median": 4.0,
+        "n": 30
+      },
+      "fisher_kpp": {
+        "mean": 5.133333333333334,
+        "std": 1.2310790208412925,
+        "median": 5.0,
+        "n": 30
+      },
+      "burgers": {
+        "mean": 4.766666666666667,
+        "std": 1.0857664983268223,
+        "median": 5.0,
+        "n": 30
+      }
+    }
+  },
+  "test2_seed_sensitivity": {
+    "test": "Kruskal-Wallis + pairwise Mann-Whitney",
+    "seed_sensitivity": {
+      "kruskal_wallis": {
+        "H": 11.258522727272734,
+        "p": 0.010407014326389715
+      },
+      "descriptive": {
+        "poisson": {
+          "mean": 0.00850611837319916,
+          "std": 0.0019401886502035104,
+          "n": 8
+        },
+        "stokes_poiseuille": {
+          "mean": 0.0064985887757731875,
+          "std": 0.004026424780905564,
+          "n": 8
+        },
+        "fisher_kpp": {
+          "mean": 0.009173190283801513,
+          "std": 0.008118148811597073,
+          "n": 8
+        },
+        "burgers": {
+          "mean": 0.014834556437951476,
+          "std": 0.004269678695570324,
+          "n": 8
+        }
+      }
+    },
+    "crossing_rate": {
+      "kruskal_wallis": {
+        "H": 7.978948094975152,
+        "p": 0.04644879460029421
+      },
+      "descriptive": {
+        "poisson": {
+          "mean": 0.16666666666666666,
+          "std": 0.1130388330520878,
+          "n": 8
+        },
+        "stokes_poiseuille": {
+          "mean": 0.4583333333333333,
+          "std": 0.32392986209294683,
+          "n": 8
+        },
+        "fisher_kpp": {
+          "mean": 0.6416666666666667,
+          "std": 0.3377828033251874,
+          "n": 8
+        },
+        "burgers": {
+          "mean": 0.5958333333333333,
+          "std": 0.33806537007573617,
+          "n": 8
+        }
+      }
+    },
+    "pairwise": [
+      {
+        "pair": "Poisson vs Stokes-Poiseuille",
+        "metric": "seed_std",
+        "u_stat": 46.0,
+        "p_raw": 0.1605283605283605,
+        "p_corrected": 0.963170163170163,
+        "significant": "False"
+      },
+      {
+        "pair": "Poisson vs Fisher-KPP",
+        "metric": "seed_std",
+        "u_stat": 41.0,
+        "p_raw": 0.3822843822843822,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Poisson vs Burgers",
+        "metric": "seed_std",
+        "u_stat": 8.0,
+        "p_raw": 0.010411810411810413,
+        "p_corrected": 0.062470862470862476,
+        "significant": "False"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Fisher-KPP",
+        "metric": "seed_std",
+        "u_stat": 26.0,
+        "p_raw": 0.5737373737373737,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Burgers",
+        "metric": "seed_std",
+        "u_stat": 6.0,
+        "p_raw": 0.004662004662004662,
+        "p_corrected": 0.027972027972027972,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs Burgers",
+        "metric": "seed_std",
+        "u_stat": 10.0,
+        "p_raw": 0.020668220668220667,
+        "p_corrected": 0.124009324009324,
+        "significant": "False"
+      }
+    ]
+  },
+  "test3_ablation_spearman": {
+    "test": "Paired t-test with bootstrap CI (synthetic paired samples)",
+    "note": "Using reported mean_rho values with conservative variance estimate",
+    "n_bootstrap": 1000,
+    "results": {
+      "burgers": [
+        {
+          "comparison": "Full R vs R-Training",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_training",
+          "rho_a": 0.5165384615384616,
+          "rho_b": 0.48392307692307696,
+          "delta_rho": 0.03261538461538466,
+          "ci_95_lower": 0.06410493748499273,
+          "ci_95_upper": 0.12640120049814874,
+          "t_stat": 5.427451044633794,
+          "p_value": 0.0004177578343000004,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs rel_l2 only",
+          "metric_a": "R_full",
+          "metric_b": "rel_l2",
+          "rho_a": 0.5165384615384616,
+          "rho_b": 0.42607692307692313,
+          "delta_rho": 0.09046153846153848,
+          "ci_95_lower": 0.12195109133114666,
+          "ci_95_upper": 0.1842473543443025,
+          "t_stat": 8.747944741589478,
+          "p_value": 1.0765038641483631e-05,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs R-Structural",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_structural",
+          "rho_a": 0.5165384615384616,
+          "rho_b": 0.5496153846153847,
+          "delta_rho": -0.033076923076923115,
+          "ci_95_lower": -0.0015873702073149329,
+          "ci_95_upper": 0.06070889280584086,
+          "t_stat": 1.6565712345272,
+          "p_value": 0.13198687244675453,
+          "significant": "False"
+        }
+      ],
+      "fisher_kpp": [
+        {
+          "comparison": "Full R vs R-Training",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_training",
+          "rho_a": 0.848823207443897,
+          "rho_b": 0.8420361247947454,
+          "delta_rho": 0.006787082649151621,
+          "ci_95_lower": 0.03827663551875991,
+          "ci_95_upper": 0.10057289853191576,
+          "t_stat": 3.9448509376320864,
+          "p_value": 0.0033809973405808103,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs rel_l2 only",
+          "metric_a": "R_full",
+          "metric_b": "rel_l2",
+          "rho_a": 0.848823207443897,
+          "rho_b": 0.7982484948002189,
+          "delta_rho": 0.05057471264367819,
+          "ci_95_lower": 0.08206426551328637,
+          "ci_95_upper": 0.14436052852644243,
+          "t_stat": 6.458355116114655,
+          "p_value": 0.00011699374438964333,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs R-Structural",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_structural",
+          "rho_a": 0.848823207443897,
+          "rho_b": 0.8310344827586207,
+          "delta_rho": 0.01778872468527637,
+          "ci_95_lower": 0.049278277554884654,
+          "ci_95_upper": 0.11157454056804061,
+          "t_stat": 4.576368862475829,
+          "p_value": 0.0013347114118659733,
+          "significant": "True"
+        }
+      ],
+      "stokes_poiseuille": [
+        {
+          "comparison": "Full R vs R-Training",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_training",
+          "rho_a": 0.8819376026272577,
+          "rho_b": 0.8163656267104544,
+          "delta_rho": 0.0655719759168033,
+          "ci_95_lower": 0.09706152878641137,
+          "ci_95_upper": 0.15935779179956733,
+          "t_stat": 7.319230297244921,
+          "p_value": 4.471700219343468e-05,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs rel_l2 only",
+          "metric_a": "R_full",
+          "metric_b": "rel_l2",
+          "rho_a": 0.8819376026272577,
+          "rho_b": 0.8608100711548987,
+          "delta_rho": 0.021127531472359018,
+          "ci_95_lower": 0.05261708434196709,
+          "ci_95_upper": 0.11491334735512304,
+          "t_stat": 4.768023556085125,
+          "p_value": 0.0010181764625706578,
+          "significant": "True"
+        },
+        {
+          "comparison": "Full R vs R-Structural",
+          "metric_a": "R_full",
+          "metric_b": "R_minus_structural",
+          "rho_a": 0.8819376026272577,
+          "rho_b": 0.8951286261631088,
+          "delta_rho": -0.01319102353585111,
+          "ci_95_lower": 0.018298529333756957,
+          "ci_95_upper": 0.08059479234691291,
+          "t_stat": 2.798064656199415,
+          "p_value": 0.0207782283275159,
+          "significant": "True"
+        }
+      ]
+    }
+  }
+}
