@@ -1,0 +1,25 @@
+{
+  "matrix_name": "coarse_v2_kdv_soliton",
+  "cases": [
+    "kdv_soliton"
+  ],
+  "observation_counts": [
+    256,
+    128,
+    64,
+    32,
+    16,
+    8
+  ],
+  "noise_levels": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "seeds": [
+    42
+  ],
+  "overrides": {}
+}

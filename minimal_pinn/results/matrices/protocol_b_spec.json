@@ -1,0 +1,42 @@
+{
+  "protocol_name": "protocol_b",
+  "protocol": {
+    "activation": "sin",
+    "hidden_layers": [
+      128,
+      128,
+      128,
+      128
+    ],
+    "epochs": 2000,
+    "lr": 0.001,
+    "lr_schedule": {
+      "type": "cosine",
+      "eta_min": 1e-05
+    },
+    "num_collocation": 4096,
+    "print_every": 200,
+    "weights": {
+      "data": 10.0,
+      "physics": 1.0,
+      "boundary": 10.0
+    }
+  },
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "experiments": [
+    {
+      "case": "nls_soliton",
+      "case_kwargs": {
+        "eta": 1.0,
+        "xi": 0.0
+      },
+      "num_observation": 256,
+      "noise_std": 0.0,
+      "num_eval": 51
+    }
+  ]
+}
