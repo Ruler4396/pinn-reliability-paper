@@ -39,7 +39,7 @@ OUTPUT_DIR = RESULTS_DIR / "analysis" / "theoretical_framework_v1"
 # ═══════════════════════════════════════════════════════════
 
 def collect_all_metrics() -> Dict[str, Dict[str, float]]:
-    """Collect all computed metrics from previous analyses."""
+    """Collect all computed metrics from previous analyses (all 10 PDE cases)."""
     
     # Boundary width from clustering analysis (only 4 cases have this)
     boundary_widths = {
@@ -49,44 +49,74 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 4.77,
     }
     
-    # Null space dimension from Hessian analysis (only 4 cases)
+    # Null space dimension from Hessian analysis (all 10 cases)
     d_null = {
         "poisson": 18,
         "stokes_poiseuille": 19,
+        "allen_cahn": 29,
         "fisher_kpp": 34,
         "burgers": 27,
+        "heat_equation": 26,
+        "kdv_soliton": 38,
+        "nls_soliton": 23,
+        "wave_equation": 17,
+        "kdv_double_soliton": 32,
     }
     
-    # Curvature (lambda_max) from Hessian analysis (only 4 cases)
+    # Curvature (lambda_max) from Hessian analysis (all 10 cases)
     lambda_max = {
         "poisson": 2540.0,
         "stokes_poiseuille": 446.0,
+        "allen_cahn": 555.0,
         "fisher_kpp": 269.0,
         "burgers": 1300.0,
+        "heat_equation": 903.0,
+        "kdv_soliton": 906.0,
+        "nls_soliton": 473.0,
+        "wave_equation": 1111.0,
+        "kdv_double_soliton": 2890.0,
     }
     
-    # Effective curvature (k=5) (only 4 cases)
+    # Effective curvature (k=5) (all 10 cases)
     effective_curvature = {
         "poisson": 2540.0,
         "stokes_poiseuille": 446.0,
+        "allen_cahn": 555.0,
         "fisher_kpp": 269.0,
         "burgers": 1300.0,
+        "heat_equation": 903.0,
+        "kdv_soliton": 906.0,
+        "nls_soliton": 473.0,
+        "wave_equation": 1111.0,
+        "kdv_double_soliton": 2890.0,
     }
     
-    # Multi-modality (basin count) (only 4 cases)
+    # Multi-modality (basin count) (all 10 cases)
     basin_count = {
         "poisson": 4,
         "stokes_poiseuille": 2,
+        "allen_cahn": 2,
         "fisher_kpp": 3,
         "burgers": 2,
+        "heat_equation": 2,
+        "kdv_soliton": 2,
+        "nls_soliton": 2,
+        "wave_equation": 2,
+        "kdv_double_soliton": 2,
     }
     
-    # Seed variance (CV) (only 4 cases have probe data)
+    # Seed variance (CV) (all 10 cases)
     seed_cv = {
         "poisson": 0.0477,
         "stokes_poiseuille": 0.2206,
+        "allen_cahn": 0.3055,
         "fisher_kpp": 0.2804,
         "burgers": 0.3727,
+        "heat_equation": 0.4616,
+        "kdv_soliton": 0.4591,
+        "nls_soliton": 0.3271,
+        "wave_equation": 0.3300,
+        "kdv_double_soliton": 0.1944,
     }
     
     # Information density CV (all 10 cases)
@@ -103,12 +133,18 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "kdv_double_soliton": 2.0035,
     }
     
-    # Hessian entropy (only 4 cases)
+    # Hessian entropy (all 10 cases)
     hessian_entropy = {
         "poisson": 3.9679,
         "stokes_poiseuille": 3.9821,
+        "allen_cahn": 3.7366,
         "fisher_kpp": 3.8574,
         "burgers": 3.7846,
+        "heat_equation": 3.7835,
+        "kdv_soliton": 3.5509,
+        "nls_soliton": 3.8558,
+        "wave_equation": 3.8830,
+        "kdv_double_soliton": 3.6104,
     }
     
     # Boundary irregularity (jump rate) (only 4 cases)
@@ -127,8 +163,8 @@ def collect_all_metrics() -> Dict[str, Dict[str, float]]:
         "burgers": 0.100,
     }
     
-    # Combine all metrics - include all cases that have info_cv
-    all_cases = list(info_cv.keys())
+    # Combine all metrics - include all 10 cases
+    all_cases = list(d_null.keys())
     data = {}
     
     for case in all_cases:
