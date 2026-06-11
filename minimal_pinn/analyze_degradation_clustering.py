@@ -164,6 +164,59 @@ def load_coarse_data(case_name: str) -> Optional[pd.DataFrame]:
 #  Feature Extraction
 # ═══════════════════════════════════════════════════════════
 
+# Landscape metrics available for all 10 cases (from previous analyses)
+LANDSCAPE_METRICS = {
+    "poisson": {
+        "d_null": 18, "lambda_max": 2540.0, "seed_cv": 0.0477,
+        "info_cv": 0.3035, "hessian_entropy": 3.9679, "basin_count": 4,
+    },
+    "stokes_poiseuille": {
+        "d_null": 19, "lambda_max": 446.0, "seed_cv": 0.2206,
+        "info_cv": 0.1938, "hessian_entropy": 3.9821, "basin_count": 2,
+    },
+    "allen_cahn": {
+        "d_null": 29, "lambda_max": 555.0, "seed_cv": 0.3055,
+        "info_cv": 1.1782, "hessian_entropy": 3.7366, "basin_count": 2,
+    },
+    "fisher_kpp": {
+        "d_null": 34, "lambda_max": 269.0, "seed_cv": 0.2804,
+        "info_cv": 0.8504, "hessian_entropy": 3.8574, "basin_count": 3,
+    },
+    "burgers": {
+        "d_null": 27, "lambda_max": 1300.0, "seed_cv": 0.3727,
+        "info_cv": 0.4512, "hessian_entropy": 3.7846, "basin_count": 2,
+    },
+    "heat_equation": {
+        "d_null": 26, "lambda_max": 903.0, "seed_cv": 0.4616,
+        "info_cv": 0.4506, "hessian_entropy": 3.7835, "basin_count": 2,
+    },
+    "kdv_soliton": {
+        "d_null": 38, "lambda_max": 906.0, "seed_cv": 0.4591,
+        "info_cv": 1.6765, "hessian_entropy": 3.5509, "basin_count": 2,
+    },
+    "nls_soliton": {
+        "d_null": 23, "lambda_max": 473.0, "seed_cv": 0.3271,
+        "info_cv": 1.6215, "hessian_entropy": 3.8558, "basin_count": 2,
+    },
+    "wave_equation": {
+        "d_null": 17, "lambda_max": 1111.0, "seed_cv": 0.3300,
+        "info_cv": 0.3033, "hessian_entropy": 3.8830, "basin_count": 2,
+    },
+    "kdv_double_soliton": {
+        "d_null": 32, "lambda_max": 2890.0, "seed_cv": 0.1944,
+        "info_cv": 2.0035, "hessian_entropy": 3.6104, "basin_count": 2,
+    },
+}
+
+# Boundary width (only 4 cases have this from probability analysis)
+BOUNDARY_WIDTH = {
+    "poisson": 1.33,
+    "stokes_poiseuille": 3.67,
+    "fisher_kpp": 5.13,
+    "burgers": 4.77,
+}
+
+
 def extract_features_from_probes(case_name: str) -> Optional[Dict[str, float]]:
     """
     Extract clustering features from probe data (30 seeds per keypoint).
@@ -270,18 +323,30 @@ def extract_features_from_coarse(case_name: str) -> Optional[Dict[str, float]]:
 
 
 def extract_all_features() -> pd.DataFrame:
+    """
+    Extract features for all 10 PDE cases.
+    Uses landscape metrics (d_null, lambda_max, seed_cv, info_cv, hessian_entropy)
+    that are available for all cases.
+    """
     features_list = []
+    
     for case_name in CASES:
-        feats = extract_features_from_probes(case_name)
-        if feats is not None:
+        # Get landscape metrics
+        if case_name in LANDSCAPE_METRICS:
+            metrics = LANDSCAPE_METRICS[case_name]
+            feats = {
+                "case": case_name,
+                "d_null": metrics["d_null"],
+                "lambda_max": metrics["lambda_max"],
+                "seed_cv": metrics["seed_cv"],
+                "info_cv": metrics["info_cv"],
+                "hessian_entropy": metrics["hessian_entropy"],
+                "basin_count": metrics["basin_count"],
+                "boundary_width": BOUNDARY_WIDTH.get(case_name, None),
+            }
             features_list.append(feats)
-            print(f"  {case_name}: probe features extracted")
-    for case_name in ADDITIONAL_CASES:
-        if case_name not in [f["case"] for f in features_list]:
-            feats = extract_features_from_coarse(case_name)
-            if feats is not None:
-                features_list.append(feats)
-                print(f"  {case_name}: coarse features extracted (limited)")
+            print(f"  {case_name}: landscape metrics extracted")
+    
     return pd.DataFrame(features_list)
 
 
@@ -783,35 +848,37 @@ def plot_silhouette_per_sample(
 
 def generate_summary_report(
     feature_df: pd.DataFrame,
-    probe_cases: pd.DataFrame,
+    feature_df_clean: pd.DataFrame,
     clustering_results: Dict,
     features: List[str],
     case_names: List[str],
 ) -> str:
     lines = [
-        "# 三种退化原型的无监督聚类验证",
+        "# 无监督聚类验证：10个PDE系统退化原型分析",
         "",
         "## 概述",
         "",
-        "本分析使用无监督聚类方法验证三种退化原型（尖锐边界/中间边界/概率边界）的合理性。",
-        "通过比较 k=2,3,4,5 的聚类质量，确定数据驱动的最优分类数。",
+        "本分析使用无监督聚类方法验证PDE系统退化原型的分类。",
+        "使用损失景观特征（零空间维度、曲率、种子方差、信息密度、Hessian熵、basin数）进行聚类。",
+        "通过比较 k=2,3,4,5,6 的聚类质量，确定数据驱动的最优分类数。",
         "",
         f"**分析案例数:** {len(case_names)}",
         f"**使用特征:** {', '.join(features)}",
         "",
-        "## 特征矩阵",
+        "## 特征矩阵（全部10个PDE）",
         "",
-        "| PDE 系统 | 安全区越界率 | 过渡带宽度 | 种子标准差 | 边界跳变率 | 平均越界率 | 边界尖锐度 | 逐点种子标准差 |",
-        "|----------|-------------|-----------|----------|----------|----------|----------|-------------|",
+        "| PDE 系统 | d_null | lambda_max | 种子CV | 信息CV | Hessian熵 | Basin数 | 边界宽度 |",
+        "|----------|--------|------------|--------|--------|-----------|---------|----------|",
     ]
 
-    for _, row in probe_cases.iterrows():
+    for _, row in feature_df.iterrows():
         display = CASES.get(row["case"], {}).get("display", row["case"])
+        width_str = f"{row.get('boundary_width', 0):.2f}" if row.get('boundary_width') is not None else "N/A"
         lines.append(
-            f"| {display} | {row.get('safe_rate',0):.3f} | {row.get('transition_width',0):.3f} | "
-            f"{row.get('seed_std',0):.4f} | {row.get('jump_rate',0):.3f} | "
-            f"{row.get('mean_cross_rate',0):.3f} | {row.get('boundary_sharpness',0):.3f} | "
-            f"{row.get('avg_seed_std_per_point',0):.4f} |"
+            f"| {display} | {row.get('d_null', 0):.0f} | {row.get('lambda_max', 0):.0f} | "
+            f"{row.get('seed_cv', 0):.4f} | {row.get('info_cv', 0):.4f} | "
+            f"{row.get('hessian_entropy', 0):.4f} | {row.get('basin_count', 0):.0f} | "
+            f"{width_str} |"
         )
 
     # Silhouette table
@@ -869,22 +936,15 @@ def generate_summary_report(
             "",
             "## 聚类分配 (k=3)",
             "",
-            "| PDE 系统 | K-Means | GMM | Hierarchical | 理论分类 |",
-            "|----------|---------|-----|-------------|---------|",
+            "| PDE 系统 | K-Means | GMM | Hierarchical |",
+            "|----------|---------|-----|-------------|",
         ])
-        theory_map = {
-            "poisson": "无边界/对照",
-            "stokes_poiseuille": "尖锐边界",
-            "fisher_kpp": "中间边界",
-            "burgers": "概率边界",
-        }
         for i, case in enumerate(case_names):
             display = CASES.get(case, {}).get("display", case)
             km = clustering_results[3]["kmeans"]["labels"][i] + 1
             gm = clustering_results[3]["gmm"]["labels"][i] + 1
             hi = clustering_results[3]["hierarchical"]["labels"][i] + 1
-            theory = theory_map.get(case, "—")
-            lines.append(f"| {display} | {km} | {gm} | {hi} | {theory} |")
+            lines.append(f"| {display} | {km} | {gm} | {hi} |")
 
     # Interpretation
     lines.extend([
@@ -899,29 +959,20 @@ def generate_summary_report(
         "",
     ])
 
-    if optimal_k_sil == 3:
-        lines.extend([
-            "### 支持三类分类的证据",
-            "",
-            "1. Silhouette Score 在 k=3 时最高，表明三类是最自然的聚类数",
-            "2. 三种聚类方法（K-means, GMM, Hierarchical）在 k=3 时均给出一致的聚类结构",
-            "3. 聚类分配与理论预期一致：",
-            "   - Stokes-Poiseuille：尖锐边界（低越界率、窄过渡带）",
-            "   - Fisher-KPP/Burgers：概率边界（高越界率、宽过渡带）",
-            "",
-        ])
-    else:
-        lines.extend([
-            "### 注意",
-            "",
-            f"最优聚类数为 k={optimal_k_sil}，而非 k=3。需要重新审视三类分类的合理性。",
-            "",
-        ])
-
     lines.extend([
+        "### 特征解释",
+        "",
+        "使用损失景观特征进行聚类：",
+        "- **d_null**: 零空间维度（Hessian近零特征值数量）",
+        "- **lambda_max**: 最大特征值（损失景观曲率）",
+        "- **seed_cv**: 种子方差变异系数（多谷性指标）",
+        "- **info_cv**: 信息密度变异系数",
+        "- **hessian_entropy**: Hessian谱熵",
+        "- **basin_count**: 输出场聚类数",
+        "",
         "### 局限性",
         "",
-        "- 样本量有限（4个PDE系统），统计检验力受限",
+        "- 样本量有限（10个PDE系统），统计检验力受限",
         "- 特征来源于特定实验配置",
         "- 结果应视为支持性证据，而非决定性证明",
         "",
@@ -938,11 +989,11 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     print("=" * 70)
-    print("Degradation Prototype Clustering Analysis")
+    print("Degradation Prototype Clustering Analysis (All 10 PDEs)")
     print("=" * 70)
 
     # 1. Extract features
-    print("\n[1/5] Extracting degradation features...")
+    print("\n[1/5] Extracting landscape metrics for all PDE cases...")
     feature_df = extract_all_features()
     if len(feature_df) < 3:
         print("ERROR: Need at least 3 PDE cases")
@@ -951,23 +1002,22 @@ def main():
 
     # 2. Prepare feature matrix
     print("\n[2/5] Preparing feature matrix...")
-    common_features = ["safe_rate", "transition_width", "seed_std", "jump_rate",
-                       "mean_cross_rate", "boundary_sharpness", "avg_seed_std_per_point"]
-    available_features = [f for f in common_features if f in feature_df.columns]
-    probe_cases = feature_df[feature_df["n_keypoints"] > 0].copy()
-
-    if len(probe_cases) < 3:
-        print("ERROR: Need at least 3 cases with probe data")
-        return
-
-    X_raw = probe_cases[available_features].values.astype(float)
-    case_names = probe_cases["case"].tolist()
+    # Use landscape metrics available for all 10 cases
+    landscape_features = ["d_null", "lambda_max", "seed_cv", "info_cv", "hessian_entropy", "basin_count"]
+    available_features = [f for f in landscape_features if f in feature_df.columns]
+    
+    # Filter out rows with any NaN
+    feature_df_clean = feature_df.dropna(subset=available_features)
+    
+    X_raw = feature_df_clean[available_features].values.astype(float)
+    case_names = feature_df_clean["case"].tolist()
     scaler = StandardScalerManual()
     X = scaler.fit_transform(X_raw)
     print(f"  Feature matrix: {X.shape}, Cases: {case_names}")
+    print(f"  Features used: {available_features}")
 
     # 3. Clustering
-    max_k = min(5, len(case_names))
+    max_k = min(6, len(case_names))
     print(f"\n[3/5] Running clustering (k=2..{max_k})...")
     clustering_results = run_clustering_analysis(X, case_names, max_k=max_k)
 
@@ -976,7 +1026,7 @@ def main():
     plot_silhouette_comparison(clustering_results, OUTPUT_DIR)
     plot_bic_aic_comparison(clustering_results, OUTPUT_DIR)
     plot_pca_projection(X, case_names, clustering_results, OUTPUT_DIR)
-    plot_feature_heatmap(probe_cases, OUTPUT_DIR)
+    plot_feature_heatmap(feature_df_clean, OUTPUT_DIR)
     plot_silhouette_per_sample(X, case_names, clustering_results, OUTPUT_DIR)
 
     # 5. Save
@@ -985,7 +1035,7 @@ def main():
     with open(OUTPUT_DIR / "clustering_results.json", "w", encoding="utf-8") as f:
         json.dump(clustering_results, f, indent=2, default=str)
 
-    summary = generate_summary_report(feature_df, probe_cases, clustering_results,
+    summary = generate_summary_report(feature_df, feature_df_clean, clustering_results,
                                       available_features, case_names)
     (OUTPUT_DIR / "clustering_summary.md").write_text(summary, encoding="utf-8")
 
