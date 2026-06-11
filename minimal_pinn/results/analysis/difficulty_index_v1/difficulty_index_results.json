@@ -1,0 +1,262 @@
+{
+  "difficulty_index": {
+    "poisson": {
+      "final_loss": 0.12475287467241283,
+      "log_final_loss": -2.0814205003481856,
+      "physics_loss_ratio": 0.22416470830624607,
+      "z_log_final_loss": 1.8070226855271418,
+      "z_physics_ratio": -0.8401043788902511,
+      "difficulty": 0.9669183066368907
+    },
+    "stokes_poiseuille": {
+      "final_loss": 0.00274717994034286,
+      "log_final_loss": -5.897180333302152,
+      "physics_loss_ratio": 0.4522410632119469,
+      "z_log_final_loss": -0.536856899987118,
+      "z_physics_ratio": 0.6646174002681825,
+      "difficulty": 0.12776050028106445
+    },
+    "allen_cahn": {
+      "final_loss": 0.00153888340573754,
+      "log_final_loss": -6.476698121767816,
+      "physics_loss_ratio": 0.22543801113721743,
+      "z_log_final_loss": -0.8928331598387503,
+      "z_physics_ratio": -0.8317038303019556,
+      "difficulty": -1.724536990140706
+    },
+    "fisher_kpp": {
+      "final_loss": 0.00118190407520156,
+      "log_final_loss": -6.7406284333340265,
+      "physics_loss_ratio": 0.3541683046971439,
+      "z_log_final_loss": -1.054955750452519,
+      "z_physics_ratio": 0.017587524065609043,
+      "difficulty": -1.03736822638691
+    },
+    "burgers": {
+      "final_loss": 0.0042117163771763,
+      "log_final_loss": -5.469885000087078,
+      "physics_loss_ratio": 0.5224153497869861,
+      "z_log_final_loss": -0.27438524234796485,
+      "z_physics_ratio": 1.1275885723128454,
+      "difficulty": 0.8532033299648805
+    },
+    "heat_equation": {
+      "final_loss": 0.00258021950721735,
+      "log_final_loss": -5.9598807645945415,
+      "physics_loss_ratio": 0.5334107801155773,
+      "z_log_final_loss": -0.5753714468514056,
+      "z_physics_ratio": 1.2001303467264663,
+      "difficulty": 0.6247588998750607
+    },
+    "kdv_soliton": {
+      "final_loss": 0.0025039817905053103,
+      "log_final_loss": -5.989873057996752,
+      "physics_loss_ratio": 0.43514588339487265,
+      "z_log_final_loss": -0.593794599068974,
+      "z_physics_ratio": 0.5518328487963002,
+      "difficulty": -0.04196175027267379
+    },
+    "nls_soliton": {
+      "final_loss": 0.00353166910354043,
+      "log_final_loss": -5.64598465760827,
+      "physics_loss_ratio": 0.5010138825925526,
+      "z_log_final_loss": -0.38255672335033225,
+      "z_physics_ratio": 0.9863935159172652,
+      "difficulty": 0.603836792566933
+    },
+    "wave_equation": {
+      "final_loss": 0.02244839165359732,
+      "log_final_loss": -3.7965363041707225,
+      "physics_loss_ratio": 0.15343135431951901,
+      "z_log_final_loss": 0.7534907298064312,
+      "z_physics_ratio": -1.3067639688365955,
+      "difficulty": -0.5532732390301643
+    },
+    "kdv_double_soliton": {
+      "final_loss": 0.1137377172708511,
+      "log_final_loss": -2.1738602061385994,
+      "physics_loss_ratio": 0.11359563589532216,
+      "z_log_final_loss": 1.7502404065634884,
+      "z_physics_ratio": -1.5695780300578694,
+      "difficulty": 0.180662376505619
+    }
+  },
+  "correlations": {
+    "Difficulty <-> boundary_width": {
+      "x_metric": "difficulty",
+      "y_metric": "boundary_width",
+      "spearman_r": -0.26666666666666666,
+      "spearman_p": 0.48792227483870076,
+      "pearson_r": -0.023937771024328848,
+      "pearson_p": 0.9512576535790609,
+      "ci_lower": -0.894736842105263,
+      "ci_upper": 0.7321428571428571,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        0.9669183066368907,
+        -1.724536990140706,
+        -1.03736822638691,
+        0.8532033299648805,
+        0.6247588998750607,
+        -0.04196175027267379,
+        0.603836792566933,
+        -0.5532732390301643,
+        0.180662376505619
+      ],
+      "y_values": [
+        1.33,
+        2.37,
+        5.13,
+        4.77,
+        3.03,
+        5.5,
+        6.8,
+        7.6,
+        8.0
+      ]
+    },
+    "Difficulty <-> seed_var": {
+      "x_metric": "difficulty",
+      "y_metric": "seed_variability",
+      "spearman_r": -0.049999999999999996,
+      "spearman_p": 0.8983528043506303,
+      "pearson_r": 0.17130931470665872,
+      "pearson_p": 0.659433983076378,
+      "ci_lower": -0.8462962962962962,
+      "ci_upper": 0.8172547635850381,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        0.9669183066368907,
+        -1.724536990140706,
+        -1.03736822638691,
+        0.8532033299648805,
+        0.6247588998750607,
+        -0.04196175027267379,
+        0.603836792566933,
+        -0.5532732390301643,
+        0.180662376505619
+      ],
+      "y_values": [
+        0.00850611837319916,
+        0.012732217975806362,
+        0.009173190283801515,
+        0.014834556437951476,
+        0.019247633130430673,
+        0.05717893944863839,
+        0.07743280966636465,
+        0.048856162825916816,
+        0.08872385242345485
+      ]
+    },
+    "Difficulty <-> PBA": {
+      "x_metric": "difficulty",
+      "y_metric": "probability_band_area",
+      "spearman_r": 0.21281413268968713,
+      "spearman_p": 0.5824894619069834,
+      "pearson_r": -0.006769368230641677,
+      "pearson_p": 0.9862100828855941,
+      "ci_lower": -0.6969487307703428,
+      "ci_upper": 0.9401021481358627,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        0.9669183066368907,
+        -1.724536990140706,
+        -1.03736822638691,
+        0.8532033299648805,
+        0.6247588998750607,
+        -0.04196175027267379,
+        0.603836792566933,
+        -0.5532732390301643,
+        0.180662376505619
+      ],
+      "y_values": [
+        0.5,
+        0.5,
+        0.5,
+        0.625,
+        0.375,
+        0.125,
+        0.25,
+        0.125,
+        0.0
+      ]
+    },
+    "Difficulty <-> MFE": {
+      "x_metric": "difficulty",
+      "y_metric": "mean_failure_entropy",
+      "spearman_r": 0.5333333333333333,
+      "spearman_p": 0.13922686754397812,
+      "pearson_r": 0.1221931475886872,
+      "pearson_p": 0.7541467335290261,
+      "ci_lower": -0.33971661490683225,
+      "ci_upper": 0.9473911070780399,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        0.9669183066368907,
+        -1.724536990140706,
+        -1.03736822638691,
+        0.8532033299648805,
+        0.6247588998750607,
+        -0.04196175027267379,
+        0.603836792566933,
+        -0.5532732390301643,
+        0.180662376505619
+      ],
+      "y_values": [
+        0.39618882829060825,
+        0.3163249964176048,
+        0.3414189783539794,
+        0.3968919613311863,
+        0.3586350775916143,
+        0.20603257339795014,
+        0.20914550552532585,
+        0.13713854730163205,
+        0.0
+      ]
+    }
+  }
+}
