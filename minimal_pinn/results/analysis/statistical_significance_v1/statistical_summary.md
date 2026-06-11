@@ -14,7 +14,7 @@
 
 ### Kruskal-Wallis 检验结果
 
-- H 统计量 = 51.8407
+- H 统计量 = 234.9323
 - p 值 = 0.000000
 - **显著差异** (p < 0.05)
 
@@ -24,19 +24,64 @@
 |----------|------|--------|--------|--------|
 | Poisson | 1.33 | 2.02 | 0.0 | 30 |
 | Stokes-Poiseuille | 3.67 | 1.62 | 4.0 | 30 |
+| Allen-Cahn | 2.37 | 1.30 | 2.5 | 30 |
 | Fisher-KPP | 5.13 | 1.23 | 5.0 | 30 |
 | Burgers | 4.77 | 1.09 | 5.0 | 30 |
+| Heat Equation | 3.03 | 1.02 | 3.0 | 30 |
+| KdV Soliton | 5.50 | 0.81 | 5.0 | 30 |
+| NLS Soliton | 6.80 | 0.91 | 7.0 | 30 |
+| Wave Equation | 7.60 | 0.71 | 8.0 | 30 |
+| KdV Double Soliton | 8.00 | 0.00 | 8.0 | 30 |
 
 ### Dunn Post-Hoc 检验结果
 
 | 比较对 | U 统计量 | p (校正后) | 显著性 |
 |--------|----------|-----------|--------|
-| Poisson vs Stokes-Poiseuille | 146.0 | 0.0000 | [SIG] |
+| Poisson vs Stokes-Poiseuille | 146.0 | 0.0002 | [SIG] |
+| Poisson vs Allen-Cahn | 255.0 | 0.1306 | [NS] |
 | Poisson vs Fisher-KPP | 79.5 | 0.0000 | [SIG] |
 | Poisson vs Burgers | 86.0 | 0.0000 | [SIG] |
-| Stokes-Poiseuille vs Fisher-KPP | 202.5 | 0.0012 | [SIG] |
-| Stokes-Poiseuille vs Burgers | 244.0 | 0.0109 | [SIG] |
+| Poisson vs Heat Equation | 174.5 | 0.0014 | [SIG] |
+| Poisson vs KdV Soliton | 59.0 | 0.0000 | [SIG] |
+| Poisson vs NLS Soliton | 34.0 | 0.0000 | [SIG] |
+| Poisson vs Wave Equation | 12.0 | 0.0000 | [SIG] |
+| Poisson vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
+| Stokes-Poiseuille vs Allen-Cahn | 655.5 | 0.0882 | [NS] |
+| Stokes-Poiseuille vs Fisher-KPP | 202.5 | 0.0090 | [SIG] |
+| Stokes-Poiseuille vs Burgers | 244.0 | 0.0817 | [NS] |
+| Stokes-Poiseuille vs Heat Equation | 564.5 | 1.0000 | [NS] |
+| Stokes-Poiseuille vs KdV Soliton | 124.0 | 0.0000 | [SIG] |
+| Stokes-Poiseuille vs NLS Soliton | 49.0 | 0.0000 | [SIG] |
+| Stokes-Poiseuille vs Wave Equation | 25.0 | 0.0000 | [SIG] |
+| Stokes-Poiseuille vs KdV Double Soliton | 15.0 | 0.0000 | [SIG] |
+| Allen-Cahn vs Fisher-KPP | 62.0 | 0.0000 | [SIG] |
+| Allen-Cahn vs Burgers | 72.5 | 0.0000 | [SIG] |
+| Allen-Cahn vs Heat Equation | 324.5 | 1.0000 | [NS] |
+| Allen-Cahn vs KdV Soliton | 7.0 | 0.0000 | [SIG] |
+| Allen-Cahn vs NLS Soliton | 0.0 | 0.0000 | [SIG] |
+| Allen-Cahn vs Wave Equation | 0.0 | 0.0000 | [SIG] |
+| Allen-Cahn vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
 | Fisher-KPP vs Burgers | 537.5 | 1.0000 | [NS] |
+| Fisher-KPP vs Heat Equation | 803.0 | 0.0000 | [SIG] |
+| Fisher-KPP vs KdV Soliton | 393.0 | 1.0000 | [NS] |
+| Fisher-KPP vs NLS Soliton | 135.0 | 0.0001 | [SIG] |
+| Fisher-KPP vs Wave Equation | 40.0 | 0.0000 | [SIG] |
+| Fisher-KPP vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
+| Burgers vs Heat Equation | 783.5 | 0.0000 | [SIG] |
+| Burgers vs KdV Soliton | 282.5 | 0.4202 | [NS] |
+| Burgers vs NLS Soliton | 76.0 | 0.0000 | [SIG] |
+| Burgers vs Wave Equation | 20.0 | 0.0000 | [SIG] |
+| Burgers vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
+| Heat Equation vs KdV Soliton | 19.5 | 0.0000 | [SIG] |
+| Heat Equation vs NLS Soliton | 1.0 | 0.0000 | [SIG] |
+| Heat Equation vs Wave Equation | 0.0 | 0.0000 | [SIG] |
+| Heat Equation vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
+| KdV Soliton vs NLS Soliton | 146.0 | 0.0001 | [SIG] |
+| KdV Soliton vs Wave Equation | 42.0 | 0.0000 | [SIG] |
+| KdV Soliton vs KdV Double Soliton | 0.0 | 0.0000 | [SIG] |
+| NLS Soliton vs Wave Equation | 232.0 | 0.0219 | [SIG] |
+| NLS Soliton vs KdV Double Soliton | 120.0 | 0.0000 | [SIG] |
+| Wave Equation vs KdV Double Soliton | 330.0 | 0.1245 | [NS] |
 
 ### 解释
 
@@ -53,12 +98,12 @@
 
 ### 种子标准差 Kruskal-Wallis 检验
 
-- H = 11.2585, p = 0.010407
+- H = 54.1458, p = 0.000000
 - **显著差异**
 
 ### 越界率 Kruskal-Wallis 检验
 
-- H = 7.9789, p = 0.046449
+- H = 42.4432, p = 0.000003
 - **显著差异**
 
 ### 描述性统计（种子标准差）
@@ -67,8 +112,14 @@
 |----------|------|--------|--------|
 | Poisson | 0.0085 | 0.0019 | 8 |
 | Stokes-Poiseuille | 0.0065 | 0.0040 | 8 |
+| Allen-Cahn | 0.0127 | 0.0109 | 8 |
 | Fisher-KPP | 0.0092 | 0.0081 | 8 |
 | Burgers | 0.0148 | 0.0043 | 8 |
+| Heat Equation | 0.0192 | 0.0092 | 8 |
+| KdV Soliton | 0.0572 | 0.0376 | 8 |
+| NLS Soliton | 0.0774 | 0.0473 | 8 |
+| Wave Equation | 0.0489 | 0.0362 | 8 |
+| KdV Double Soliton | 0.0887 | 0.0269 | 8 |
 
 ### 解释
 

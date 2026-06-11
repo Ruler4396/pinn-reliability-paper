@@ -3,43 +3,176 @@
     "test": "Kruskal-Wallis + Dunn post-hoc",
     "metric": "boundary_width (n failure keypoints per seed)",
     "kruskal_wallis": {
-      "H": 51.84065058636025,
-      "p": 3.238684000027468e-11
+      "H": 234.93228971373338,
+      "p": 1.5037430515928343e-45
     },
     "post_hoc": [
       {
         "pair": "Poisson vs Stokes-Poiseuille",
         "u_stat": 146.0,
         "p_raw": 4.637448184511636e-06,
-        "p_corrected": 2.7824689107069818e-05,
+        "p_corrected": 0.00020868516830302363,
         "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Allen-Cahn",
+        "u_stat": 255.0,
+        "p_raw": 0.0029022829378165223,
+        "p_corrected": 0.1306027322017435,
+        "significant": "False"
       },
       {
         "pair": "Poisson vs Fisher-KPP",
         "u_stat": 79.5,
         "p_raw": 2.3807256490005772e-08,
-        "p_corrected": 1.4284353894003462e-07,
+        "p_corrected": 1.0713265420502597e-06,
         "significant": "True"
       },
       {
         "pair": "Poisson vs Burgers",
         "u_stat": 86.0,
         "p_raw": 3.990523220251054e-08,
-        "p_corrected": 2.3943139321506324e-07,
+        "p_corrected": 1.7957354491129745e-06,
         "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Heat Equation",
+        "u_stat": 174.5,
+        "p_raw": 3.0318183618705598e-05,
+        "p_corrected": 0.0013643182628417518,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs KdV Soliton",
+        "u_stat": 59.0,
+        "p_raw": 3.283247728530279e-09,
+        "p_corrected": 1.4774614778386256e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs NLS Soliton",
+        "u_stat": 34.0,
+        "p_raw": 3.4355722223203555e-10,
+        "p_corrected": 1.54600750004416e-08,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Wave Equation",
+        "u_stat": 12.0,
+        "p_raw": 1.6234458010839394e-11,
+        "p_corrected": 7.305506104877727e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 5.242896151541131e-13,
+        "p_corrected": 2.3593032681935088e-11,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Allen-Cahn",
+        "u_stat": 655.5,
+        "p_raw": 0.001959643259921253,
+        "p_corrected": 0.08818394669645638,
+        "significant": "False"
       },
       {
         "pair": "Stokes-Poiseuille vs Fisher-KPP",
         "u_stat": 202.5,
         "p_raw": 0.00020008834682059908,
-        "p_corrected": 0.0012005300809235944,
+        "p_corrected": 0.00900397560692696,
         "significant": "True"
       },
       {
         "pair": "Stokes-Poiseuille vs Burgers",
         "u_stat": 244.0,
         "p_raw": 0.0018148156848427164,
-        "p_corrected": 0.010888894109056298,
+        "p_corrected": 0.08166670581792224,
+        "significant": "False"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Heat Equation",
+        "u_stat": 564.5,
+        "p_raw": 0.08161139164115518,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Stokes-Poiseuille vs KdV Soliton",
+        "u_stat": 124.0,
+        "p_raw": 7.44098852739719e-07,
+        "p_corrected": 3.348444837328736e-05,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs NLS Soliton",
+        "u_stat": 49.0,
+        "p_raw": 2.1500058506012437e-09,
+        "p_corrected": 9.675026327705597e-08,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Wave Equation",
+        "u_stat": 25.0,
+        "p_raw": 8.910208170335421e-11,
+        "p_corrected": 4.009593676650939e-09,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs KdV Double Soliton",
+        "u_stat": 15.0,
+        "p_raw": 3.835884747154475e-12,
+        "p_corrected": 1.7261481362195138e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs Fisher-KPP",
+        "u_stat": 62.0,
+        "p_raw": 6.41638251089184e-09,
+        "p_corrected": 2.887372129901328e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs Burgers",
+        "u_stat": 72.5,
+        "p_raw": 1.4359996614707483e-08,
+        "p_corrected": 6.461998476618367e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs Heat Equation",
+        "u_stat": 324.5,
+        "p_raw": 0.05588390085430466,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Allen-Cahn vs KdV Soliton",
+        "u_stat": 7.0,
+        "p_raw": 3.263186963784903e-11,
+        "p_corrected": 1.4684341337032066e-09,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs NLS Soliton",
+        "u_stat": 0.0,
+        "p_raw": 1.9904647581303697e-11,
+        "p_corrected": 8.957091411586663e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs Wave Equation",
+        "u_stat": 0.0,
+        "p_raw": 7.851051734758744e-12,
+        "p_corrected": 3.532973280641435e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 9.963058209357263e-13,
+        "p_corrected": 4.483376194210768e-11,
         "significant": "True"
       },
       {
@@ -48,6 +181,146 @@
         "p_raw": 0.1832778776287316,
         "p_corrected": 1.0,
         "significant": false
+      },
+      {
+        "pair": "Fisher-KPP vs Heat Equation",
+        "u_stat": 803.0,
+        "p_raw": 1.0651796494703054e-07,
+        "p_corrected": 4.793308422616374e-06,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs KdV Soliton",
+        "u_stat": 393.0,
+        "p_raw": 0.38119744195417904,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Fisher-KPP vs NLS Soliton",
+        "u_stat": 135.0,
+        "p_raw": 1.6291029076990036e-06,
+        "p_corrected": 7.330963084645516e-05,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs Wave Equation",
+        "u_stat": 40.0,
+        "p_raw": 3.515269889506708e-10,
+        "p_corrected": 1.5818714502780185e-08,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 9.337817830028736e-13,
+        "p_corrected": 4.202018023512931e-11,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs Heat Equation",
+        "u_stat": 783.5,
+        "p_raw": 4.359463715450064e-07,
+        "p_corrected": 1.9617586719525288e-05,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs KdV Soliton",
+        "u_stat": 282.5,
+        "p_raw": 0.009337992309197409,
+        "p_corrected": 0.4202096539138834,
+        "significant": "False"
+      },
+      {
+        "pair": "Burgers vs NLS Soliton",
+        "u_stat": 76.0,
+        "p_raw": 1.6712004319825618e-08,
+        "p_corrected": 7.520401943921528e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs Wave Equation",
+        "u_stat": 20.0,
+        "p_raw": 5.2809161104685965e-11,
+        "p_corrected": 2.3764122497108685e-09,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 9.13759558413691e-13,
+        "p_corrected": 4.111918012861609e-11,
+        "significant": "True"
+      },
+      {
+        "pair": "Heat Equation vs KdV Soliton",
+        "u_stat": 19.5,
+        "p_raw": 9.229389734855975e-11,
+        "p_corrected": 4.153225380685189e-09,
+        "significant": "True"
+      },
+      {
+        "pair": "Heat Equation vs NLS Soliton",
+        "u_stat": 1.0,
+        "p_raw": 1.9685511350472166e-11,
+        "p_corrected": 8.858480107712474e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Heat Equation vs Wave Equation",
+        "u_stat": 0.0,
+        "p_raw": 6.9573248061061015e-12,
+        "p_corrected": 3.1307961627477457e-10,
+        "significant": "True"
+      },
+      {
+        "pair": "Heat Equation vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 8.639771145741515e-13,
+        "p_corrected": 3.887897015583682e-11,
+        "significant": "True"
+      },
+      {
+        "pair": "KdV Soliton vs NLS Soliton",
+        "u_stat": 146.0,
+        "p_raw": 3.2991401446391383e-06,
+        "p_corrected": 0.00014846130650876123,
+        "significant": "True"
+      },
+      {
+        "pair": "KdV Soliton vs Wave Equation",
+        "u_stat": 42.0,
+        "p_raw": 3.5701875370465197e-10,
+        "p_corrected": 1.6065843916709337e-08,
+        "significant": "True"
+      },
+      {
+        "pair": "KdV Soliton vs KdV Double Soliton",
+        "u_stat": 0.0,
+        "p_raw": 6.806907907462864e-13,
+        "p_corrected": 3.063108558358289e-11,
+        "significant": "True"
+      },
+      {
+        "pair": "NLS Soliton vs Wave Equation",
+        "u_stat": 232.0,
+        "p_raw": 0.0004861948586333771,
+        "p_corrected": 0.02187876863850197,
+        "significant": "True"
+      },
+      {
+        "pair": "NLS Soliton vs KdV Double Soliton",
+        "u_stat": 120.0,
+        "p_raw": 1.387080589053465e-08,
+        "p_corrected": 6.241862650740592e-07,
+        "significant": "True"
+      },
+      {
+        "pair": "Wave Equation vs KdV Double Soliton",
+        "u_stat": 330.0,
+        "p_raw": 0.0027663335459477945,
+        "p_corrected": 0.12448500956765075,
+        "significant": "False"
       }
     ],
     "descriptive": {
@@ -63,6 +336,12 @@
         "median": 4.0,
         "n": 30
       },
+      "allen_cahn": {
+        "mean": 2.3666666666666667,
+        "std": 1.303414319734477,
+        "median": 2.5,
+        "n": 30
+      },
       "fisher_kpp": {
         "mean": 5.133333333333334,
         "std": 1.2310790208412925,
@@ -74,6 +353,36 @@
         "std": 1.0857664983268223,
         "median": 5.0,
         "n": 30
+      },
+      "heat_equation": {
+        "mean": 3.033333333333333,
+        "std": 1.015983376941878,
+        "median": 3.0,
+        "n": 30
+      },
+      "kdv_soliton": {
+        "mean": 5.5,
+        "std": 0.806225774829855,
+        "median": 5.0,
+        "n": 30
+      },
+      "nls_soliton": {
+        "mean": 6.8,
+        "std": 0.9092121131323904,
+        "median": 7.0,
+        "n": 30
+      },
+      "wave_equation": {
+        "mean": 7.6,
+        "std": 0.7118052168020874,
+        "median": 8.0,
+        "n": 30
+      },
+      "kdv_double_soliton": {
+        "mean": 8.0,
+        "std": 0.0,
+        "median": 8.0,
+        "n": 30
       }
     }
   },
@@ -81,8 +390,8 @@
     "test": "Kruskal-Wallis + pairwise Mann-Whitney",
     "seed_sensitivity": {
       "kruskal_wallis": {
-        "H": 11.258522727272734,
-        "p": 0.010407014326389715
+        "H": 54.14583333333337,
+        "p": 1.7710677168571688e-08
       },
       "descriptive": {
         "poisson": {
@@ -95,22 +404,52 @@
           "std": 0.004026424780905564,
           "n": 8
         },
+        "allen_cahn": {
+          "mean": 0.012732217975806362,
+          "std": 0.010895802971415992,
+          "n": 8
+        },
         "fisher_kpp": {
-          "mean": 0.009173190283801513,
-          "std": 0.008118148811597073,
+          "mean": 0.009173190283801515,
+          "std": 0.008118148811597075,
           "n": 8
         },
         "burgers": {
           "mean": 0.014834556437951476,
-          "std": 0.004269678695570324,
+          "std": 0.004269678695570326,
+          "n": 8
+        },
+        "heat_equation": {
+          "mean": 0.019247633130430673,
+          "std": 0.009156685755535252,
+          "n": 8
+        },
+        "kdv_soliton": {
+          "mean": 0.05717893944863839,
+          "std": 0.03763642355149264,
+          "n": 8
+        },
+        "nls_soliton": {
+          "mean": 0.07743280966636465,
+          "std": 0.047342804428640924,
+          "n": 8
+        },
+        "wave_equation": {
+          "mean": 0.048856162825916816,
+          "std": 0.03623775986947261,
+          "n": 8
+        },
+        "kdv_double_soliton": {
+          "mean": 0.08872385242345485,
+          "std": 0.026892071224407777,
           "n": 8
         }
       }
     },
     "crossing_rate": {
       "kruskal_wallis": {
-        "H": 7.978948094975152,
-        "p": 0.04644879460029421
+        "H": 42.4432164864832,
+        "p": 2.7267749341952197e-06
       },
       "descriptive": {
         "poisson": {
@@ -119,8 +458,13 @@
           "n": 8
         },
         "stokes_poiseuille": {
-          "mean": 0.4583333333333333,
+          "mean": 0.45833333333333326,
           "std": 0.32392986209294683,
+          "n": 8
+        },
+        "allen_cahn": {
+          "mean": 0.29583333333333334,
+          "std": 0.3128886472142375,
           "n": 8
         },
         "fisher_kpp": {
@@ -129,8 +473,33 @@
           "n": 8
         },
         "burgers": {
-          "mean": 0.5958333333333333,
+          "mean": 0.5958333333333332,
           "std": 0.33806537007573617,
+          "n": 8
+        },
+        "heat_equation": {
+          "mean": 0.37916666666666665,
+          "std": 0.3495781187533212,
+          "n": 8
+        },
+        "kdv_soliton": {
+          "mean": 0.6875,
+          "std": 0.3887077951366554,
+          "n": 8
+        },
+        "nls_soliton": {
+          "mean": 0.85,
+          "std": 0.23687784005919826,
+          "n": 8
+        },
+        "wave_equation": {
+          "mean": 0.9500000000000001,
+          "std": 0.07817359599705714,
+          "n": 8
+        },
+        "kdv_double_soliton": {
+          "mean": 1.0,
+          "std": 0.0,
           "n": 8
         }
       }
@@ -141,8 +510,16 @@
         "metric": "seed_std",
         "u_stat": 46.0,
         "p_raw": 0.1605283605283605,
-        "p_corrected": 0.963170163170163,
-        "significant": "False"
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Poisson vs Allen-Cahn",
+        "metric": "seed_std",
+        "u_stat": 31.0,
+        "p_raw": 0.959129759129759,
+        "p_corrected": 1.0,
+        "significant": false
       },
       {
         "pair": "Poisson vs Fisher-KPP",
@@ -157,8 +534,56 @@
         "metric": "seed_std",
         "u_stat": 8.0,
         "p_raw": 0.010411810411810413,
-        "p_corrected": 0.062470862470862476,
+        "p_corrected": 0.46853146853146854,
         "significant": "False"
+      },
+      {
+        "pair": "Poisson vs Heat Equation",
+        "metric": "seed_std",
+        "u_stat": 6.0,
+        "p_raw": 0.004662004662004662,
+        "p_corrected": 0.2097902097902098,
+        "significant": "False"
+      },
+      {
+        "pair": "Poisson vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 1.0,
+        "p_raw": 0.0003108003108003108,
+        "p_corrected": 0.013986013986013986,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Poisson vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Allen-Cahn",
+        "metric": "seed_std",
+        "u_stat": 25.0,
+        "p_raw": 0.5053613053613053,
+        "p_corrected": 1.0,
+        "significant": false
       },
       {
         "pair": "Stokes-Poiseuille vs Fisher-KPP",
@@ -173,7 +598,103 @@
         "metric": "seed_std",
         "u_stat": 6.0,
         "p_raw": 0.004662004662004662,
+        "p_corrected": 0.2097902097902098,
+        "significant": "False"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Heat Equation",
+        "metric": "seed_std",
+        "u_stat": 6.0,
+        "p_raw": 0.004662004662004662,
+        "p_corrected": 0.2097902097902098,
+        "significant": "False"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 2.0,
+        "p_raw": 0.0006216006216006216,
         "p_corrected": 0.027972027972027972,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Stokes-Poiseuille vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Allen-Cahn vs Fisher-KPP",
+        "metric": "seed_std",
+        "u_stat": 32.0,
+        "p_raw": 1.0,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Allen-Cahn vs Burgers",
+        "metric": "seed_std",
+        "u_stat": 23.0,
+        "p_raw": 0.3822843822843822,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Allen-Cahn vs Heat Equation",
+        "metric": "seed_std",
+        "u_stat": 19.0,
+        "p_raw": 0.19487179487179485,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Allen-Cahn vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 8.0,
+        "p_raw": 0.010411810411810413,
+        "p_corrected": 0.46853146853146854,
+        "significant": "False"
+      },
+      {
+        "pair": "Allen-Cahn vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 6.0,
+        "p_raw": 0.004662004662004662,
+        "p_corrected": 0.2097902097902098,
+        "significant": "False"
+      },
+      {
+        "pair": "Allen-Cahn vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 5.0,
+        "p_raw": 0.0029526029526029526,
+        "p_corrected": 0.13286713286713286,
+        "significant": "False"
+      },
+      {
+        "pair": "Allen-Cahn vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
         "significant": "True"
       },
       {
@@ -181,7 +702,167 @@
         "metric": "seed_std",
         "u_stat": 10.0,
         "p_raw": 0.020668220668220667,
-        "p_corrected": 0.124009324009324,
+        "p_corrected": 0.93006993006993,
+        "significant": "False"
+      },
+      {
+        "pair": "Fisher-KPP vs Heat Equation",
+        "metric": "seed_std",
+        "u_stat": 9.0,
+        "p_raw": 0.014763014763014764,
+        "p_corrected": 0.6643356643356644,
+        "significant": "False"
+      },
+      {
+        "pair": "Fisher-KPP vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 3.0,
+        "p_raw": 0.0010878010878010878,
+        "p_corrected": 0.04895104895104895,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 3.0,
+        "p_raw": 0.0010878010878010878,
+        "p_corrected": 0.04895104895104895,
+        "significant": "True"
+      },
+      {
+        "pair": "Fisher-KPP vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 4.0,
+        "p_raw": 0.0018648018648018648,
+        "p_corrected": 0.08391608391608392,
+        "significant": "False"
+      },
+      {
+        "pair": "Fisher-KPP vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs Heat Equation",
+        "metric": "seed_std",
+        "u_stat": 25.0,
+        "p_raw": 0.5053613053613053,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Burgers vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 11.0,
+        "p_raw": 0.028127428127428127,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Burgers vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 6.0,
+        "p_raw": 0.004662004662004662,
+        "p_corrected": 0.2097902097902098,
+        "significant": "False"
+      },
+      {
+        "pair": "Burgers vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Burgers vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "Heat Equation vs KdV Soliton",
+        "metric": "seed_std",
+        "u_stat": 13.0,
+        "p_raw": 0.04988344988344988,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Heat Equation vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 9.0,
+        "p_raw": 0.014763014763014764,
+        "p_corrected": 0.6643356643356644,
+        "significant": "False"
+      },
+      {
+        "pair": "Heat Equation vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 13.0,
+        "p_raw": 0.04988344988344988,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Heat Equation vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 0.0,
+        "p_raw": 0.0001554001554001554,
+        "p_corrected": 0.006993006993006993,
+        "significant": "True"
+      },
+      {
+        "pair": "KdV Soliton vs NLS Soliton",
+        "metric": "seed_std",
+        "u_stat": 22.0,
+        "p_raw": 0.32820512820512815,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "KdV Soliton vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 35.0,
+        "p_raw": 0.7984459984459983,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "KdV Soliton vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 16.0,
+        "p_raw": 0.10489510489510488,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "NLS Soliton vs Wave Equation",
+        "metric": "seed_std",
+        "u_stat": 41.0,
+        "p_raw": 0.3822843822843822,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "NLS Soliton vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 29.0,
+        "p_raw": 0.7984459984459983,
+        "p_corrected": 1.0,
+        "significant": false
+      },
+      {
+        "pair": "Wave Equation vs KdV Double Soliton",
+        "metric": "seed_std",
+        "u_stat": 10.0,
+        "p_raw": 0.020668220668220667,
+        "p_corrected": 0.93006993006993,
         "significant": "False"
       }
     ]

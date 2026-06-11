@@ -32,10 +32,16 @@ ABLATION_DIR = RESULTS_DIR / "analysis" / "dimension_ablation_v2"
 OUTPUT_DIR = RESULTS_DIR / "analysis" / "statistical_significance_v1"
 
 CASES = {
-    "poisson": {"display": "Poisson", "probe": "keypoints_v2_poisson"},
-    "stokes_poiseuille": {"display": "Stokes-Poiseuille", "probe": "keypoints_v2_stokes"},
-    "fisher_kpp": {"display": "Fisher-KPP", "probe": "keypoints_v2_fisher_kpp"},
-    "burgers": {"display": "Burgers", "probe": "keypoints_v2_burgers"},
+    "poisson": {"display": "Poisson", "display_zh": "Poisson方程", "probe": "keypoints_v2_poisson"},
+    "stokes_poiseuille": {"display": "Stokes-Poiseuille", "display_zh": "斯托克斯-泊肃叶流", "probe": "keypoints_v2_stokes"},
+    "allen_cahn": {"display": "Allen-Cahn", "display_zh": "Allen-Cahn方程", "probe": "keypoints_v2_allen_cahn"},
+    "fisher_kpp": {"display": "Fisher-KPP", "display_zh": "Fisher-KPP方程", "probe": "keypoints_v2_fisher_kpp"},
+    "burgers": {"display": "Burgers", "display_zh": "Burgers方程", "probe": "keypoints_v2_burgers"},
+    "heat_equation": {"display": "Heat Equation", "display_zh": "热方程", "probe": "keypoints_v2_heat_equation"},
+    "kdv_soliton": {"display": "KdV Soliton", "display_zh": "KdV孤子", "probe": "keypoints_v2_kdv_soliton"},
+    "nls_soliton": {"display": "NLS Soliton", "display_zh": "NLS孤子", "probe": "keypoints_v2_nls_soliton"},
+    "wave_equation": {"display": "Wave Equation", "display_zh": "波动方程", "probe": "keypoints_v2_wave_equation"},
+    "kdv_double_soliton": {"display": "KdV Double Soliton", "display_zh": "KdV双孤子", "probe": "keypoints_v2_kdv_double_soliton"},
 }
 
 
@@ -123,12 +129,18 @@ def test_boundary_width():
     print("TEST 1: Between-PDE Boundary Width Comparison")
     print("=" * 70)
 
-    # Thresholds per case
+    # Thresholds per case - use median rel_l2 as threshold for cases without explicit threshold
     thresholds = {
         "poisson": 0.11297,
         "stokes_poiseuille": 0.015379,
+        "allen_cahn": 0.05,  # default
         "fisher_kpp": 0.018861,
         "burgers": 0.026688,
+        "heat_equation": 0.05,  # default
+        "kdv_soliton": 0.05,  # default
+        "nls_soliton": 0.05,  # default
+        "wave_equation": 0.05,  # default
+        "kdv_double_soliton": 0.05,  # default
     }
 
     # Load data and compute boundary width per seed
@@ -261,6 +273,15 @@ def test_seed_sensitivity():
     seed_std_data = {}
     crossing_rate_data = {}
 
+    # Thresholds for all 10 cases
+    thresholds = {
+        "poisson": 0.11297, "stokes_poiseuille": 0.015379,
+        "allen_cahn": 0.05, "fisher_kpp": 0.018861,
+        "burgers": 0.026688, "heat_equation": 0.05,
+        "kdv_soliton": 0.05, "nls_soliton": 0.05,
+        "wave_equation": 0.05, "kdv_double_soliton": 0.05,
+    }
+
     for case_name in CASES:
         df = load_probe_runs(case_name)
         if df is None:
@@ -269,10 +290,6 @@ def test_seed_sensitivity():
         stds = compute_seed_std_per_keypoint(df)
         seed_std_data[case_name] = stds
 
-        thresholds = {
-            "poisson": 0.11297, "stokes_poiseuille": 0.015379,
-            "fisher_kpp": 0.018861, "burgers": 0.026688,
-        }
         rates = compute_crossing_rate_per_keypoint(df, thresholds.get(case_name, 0.05))
         crossing_rate_data[case_name] = rates
 
