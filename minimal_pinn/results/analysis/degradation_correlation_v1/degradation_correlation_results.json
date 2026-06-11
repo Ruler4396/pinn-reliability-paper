@@ -1,0 +1,282 @@
+{
+  "landscape_metrics": {
+    "poisson": {
+      "d_null": 18,
+      "lambda_max": 2540.0,
+      "entropy": 3.9679,
+      "info_cv": 0.3035
+    },
+    "stokes_poiseuille": {
+      "d_null": 19,
+      "lambda_max": 446.0,
+      "entropy": 3.9821,
+      "info_cv": 0.1938
+    },
+    "allen_cahn": {
+      "d_null": 29,
+      "lambda_max": 555.0,
+      "entropy": 3.7366,
+      "info_cv": 1.1782
+    },
+    "fisher_kpp": {
+      "d_null": 34,
+      "lambda_max": 269.0,
+      "entropy": 3.8574,
+      "info_cv": 0.8504
+    },
+    "burgers": {
+      "d_null": 27,
+      "lambda_max": 1300.0,
+      "entropy": 3.7846,
+      "info_cv": 0.4512
+    },
+    "heat_equation": {
+      "d_null": 26,
+      "lambda_max": 903.0,
+      "entropy": 3.7835,
+      "info_cv": 0.4506
+    },
+    "kdv_soliton": {
+      "d_null": 38,
+      "lambda_max": 906.0,
+      "entropy": 3.5509,
+      "info_cv": 1.6765
+    },
+    "nls_soliton": {
+      "d_null": 23,
+      "lambda_max": 473.0,
+      "entropy": 3.8558,
+      "info_cv": 1.6215
+    },
+    "wave_equation": {
+      "d_null": 17,
+      "lambda_max": 1111.0,
+      "entropy": 3.883,
+      "info_cv": 0.3033
+    },
+    "kdv_double_soliton": {
+      "d_null": 32,
+      "lambda_max": 2890.0,
+      "entropy": 3.6104,
+      "info_cv": 2.0035
+    }
+  },
+  "degradation_metrics": {
+    "poisson": {
+      "boundary_width": 1.3333333333333333,
+      "transition_width": 0.5,
+      "seed_cv": 0.00850611837319916,
+      "irregularity": 0.1333333333333333
+    },
+    "allen_cahn": {
+      "boundary_width": 2.3666666666666667,
+      "transition_width": 0.5,
+      "seed_cv": 0.012732217975806362,
+      "irregularity": 0.36666666666666664
+    },
+    "fisher_kpp": {
+      "boundary_width": 5.133333333333334,
+      "transition_width": 0.375,
+      "seed_cv": 0.009173190283801515,
+      "irregularity": 0.3
+    },
+    "burgers": {
+      "boundary_width": 4.766666666666667,
+      "transition_width": 0.375,
+      "seed_cv": 0.014834556437951476,
+      "irregularity": 0.49999999999999994
+    },
+    "heat_equation": {
+      "boundary_width": 3.033333333333333,
+      "transition_width": 0.25,
+      "seed_cv": 0.019247633130430673,
+      "irregularity": 0.3666666666666667
+    },
+    "kdv_soliton": {
+      "boundary_width": 5.5,
+      "transition_width": 0.125,
+      "seed_cv": 0.05717893944863839,
+      "irregularity": 0.5
+    },
+    "nls_soliton": {
+      "boundary_width": 6.8,
+      "transition_width": 0.25,
+      "seed_cv": 0.07743280966636465,
+      "irregularity": 0.3666666666666667
+    },
+    "wave_equation": {
+      "boundary_width": 7.6,
+      "transition_width": 0.0,
+      "seed_cv": 0.048856162825916816,
+      "irregularity": 0.1333333333333333
+    },
+    "kdv_double_soliton": {
+      "boundary_width": 8.0,
+      "transition_width": 0.0,
+      "seed_cv": 0.08872385242345485,
+      "irregularity": 0.0
+    }
+  },
+  "correlations": {
+    "d_null <-> boundary_width": {
+      "landscape_metric": "d_null",
+      "degradation_metric": "boundary_width",
+      "correlation": 0.11666666666666665,
+      "p_value": 0.765007942926146,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        18,
+        29,
+        34,
+        27,
+        26,
+        38,
+        23,
+        17,
+        32
+      ],
+      "y_values": [
+        1.3333333333333333,
+        2.3666666666666667,
+        5.133333333333334,
+        4.766666666666667,
+        3.033333333333333,
+        5.5,
+        6.8,
+        7.6,
+        8.0
+      ]
+    },
+    "lambda_max <-> transition_width": {
+      "landscape_metric": "lambda_max",
+      "degradation_metric": "transition_width",
+      "correlation": -0.2542738138578039,
+      "p_value": 0.5091015147548603,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        2540.0,
+        555.0,
+        269.0,
+        1300.0,
+        903.0,
+        906.0,
+        473.0,
+        1111.0,
+        2890.0
+      ],
+      "y_values": [
+        0.5,
+        0.5,
+        0.375,
+        0.375,
+        0.25,
+        0.125,
+        0.25,
+        0.0,
+        0.0
+      ]
+    },
+    "entropy <-> seedCV": {
+      "landscape_metric": "entropy",
+      "degradation_metric": "seed_cv",
+      "correlation": -0.5333333333333333,
+      "p_value": 0.13922686754397812,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        3.9679,
+        3.7366,
+        3.8574,
+        3.7846,
+        3.7835,
+        3.5509,
+        3.8558,
+        3.883,
+        3.6104
+      ],
+      "y_values": [
+        0.00850611837319916,
+        0.012732217975806362,
+        0.009173190283801515,
+        0.014834556437951476,
+        0.019247633130430673,
+        0.05717893944863839,
+        0.07743280966636465,
+        0.048856162825916816,
+        0.08872385242345485
+      ]
+    },
+    "infoCV <-> irregularity": {
+      "landscape_metric": "info_cv",
+      "degradation_metric": "irregularity",
+      "correlation": 0.17647681943136376,
+      "p_value": 0.6496847436328109,
+      "n_cases": 9,
+      "cases": [
+        "poisson",
+        "allen_cahn",
+        "fisher_kpp",
+        "burgers",
+        "heat_equation",
+        "kdv_soliton",
+        "nls_soliton",
+        "wave_equation",
+        "kdv_double_soliton"
+      ],
+      "x_values": [
+        0.3035,
+        1.1782,
+        0.8504,
+        0.4512,
+        0.4506,
+        1.6765,
+        1.6215,
+        0.3033,
+        2.0035
+      ],
+      "y_values": [
+        0.1333333333333333,
+        0.36666666666666664,
+        0.3,
+        0.49999999999999994,
+        0.3666666666666667,
+        0.5,
+        0.3666666666666667,
+        0.1333333333333333,
+        0.0
+      ]
+    }
+  }
+}
