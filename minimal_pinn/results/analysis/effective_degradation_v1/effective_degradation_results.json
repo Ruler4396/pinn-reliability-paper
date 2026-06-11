@@ -1,0 +1,343 @@
+{
+  "degradation_metrics": {
+    "poisson": {
+      "probability_band_area": 0.5,
+      "mean_failure_entropy": 0.39618882829060825,
+      "irregularity": 0.1333333333333333,
+      "seed_variability": 0.00850611837319916
+    },
+    "allen_cahn": {
+      "probability_band_area": 0.5,
+      "mean_failure_entropy": 0.3163249964176048,
+      "irregularity": 0.36666666666666664,
+      "seed_variability": 0.012732217975806362
+    },
+    "fisher_kpp": {
+      "probability_band_area": 0.5,
+      "mean_failure_entropy": 0.3414189783539794,
+      "irregularity": 0.3,
+      "seed_variability": 0.009173190283801515
+    },
+    "burgers": {
+      "probability_band_area": 0.625,
+      "mean_failure_entropy": 0.3968919613311863,
+      "irregularity": 0.49999999999999994,
+      "seed_variability": 0.014834556437951476
+    },
+    "heat_equation": {
+      "probability_band_area": 0.375,
+      "mean_failure_entropy": 0.3586350775916143,
+      "irregularity": 0.3666666666666667,
+      "seed_variability": 0.019247633130430673
+    },
+    "kdv_soliton": {
+      "probability_band_area": 0.125,
+      "mean_failure_entropy": 0.20603257339795014,
+      "irregularity": 0.5,
+      "seed_variability": 0.05717893944863839
+    },
+    "nls_soliton": {
+      "probability_band_area": 0.25,
+      "mean_failure_entropy": 0.20914550552532585,
+      "irregularity": 0.3666666666666667,
+      "seed_variability": 0.07743280966636465
+    },
+    "wave_equation": {
+      "probability_band_area": 0.125,
+      "mean_failure_entropy": 0.13713854730163205,
+      "irregularity": 0.1333333333333333,
+      "seed_variability": 0.048856162825916816
+    },
+    "kdv_double_soliton": {
+      "probability_band_area": 0.0,
+      "mean_failure_entropy": 0.0,
+      "irregularity": 0.0,
+      "seed_variability": 0.08872385242345485
+    }
+  },
+  "factor_behavior": {
+    "d_null <-> PBA": {
+      "x_metric": "d_null",
+      "y_metric": "probability_band_area",
+      "spearman_r": -0.06810052246069989,
+      "spearman_p": 0.8618018036490146,
+      "pearson_r": -0.12978432737124182,
+      "pearson_p": 0.739288676341682,
+      "ci_lower": -0.684377990430622,
+      "ci_upper": 0.7380459800330802,
+      "n_cases": 9
+    },
+    "lambda <-> MFE": {
+      "x_metric": "lambda_max",
+      "y_metric": "mean_failure_entropy",
+      "spearman_r": -0.08333333333333334,
+      "spearman_p": 0.831214097710308,
+      "pearson_r": -0.3270960897122259,
+      "pearson_p": 0.39023376779520347,
+      "ci_lower": -0.8982608695652171,
+      "ci_upper": 0.7217391304347827,
+      "n_cases": 9
+    },
+    "entropy <-> seed_var": {
+      "x_metric": "hessian_entropy",
+      "y_metric": "seed_variability",
+      "spearman_r": -0.5333333333333333,
+      "spearman_p": 0.13922686754397812,
+      "pearson_r": -0.47355557675888615,
+      "pearson_p": 0.19786982420651858,
+      "ci_lower": -0.9811450579885753,
+      "ci_upper": 0.2293577981651376,
+      "n_cases": 9
+    },
+    "infoCV <-> IRR": {
+      "x_metric": "info_cv",
+      "y_metric": "irregularity",
+      "spearman_r": 0.17647681943136376,
+      "spearman_p": 0.6496847436328109,
+      "pearson_r": -0.029880874742812036,
+      "pearson_p": 0.9391724563966162,
+      "ci_lower": -0.6382883140857746,
+      "ci_upper": 0.9867543820659304,
+      "n_cases": 9
+    },
+    "d_null <-> seed_var": {
+      "x_metric": "d_null",
+      "y_metric": "seed_variability",
+      "spearman_r": 0.11666666666666665,
+      "spearman_p": 0.765007942926146,
+      "pearson_r": 0.13083420586139993,
+      "pearson_p": 0.73723952341818,
+      "ci_lower": -0.6316590389016018,
+      "ci_upper": 0.7545630130371799,
+      "n_cases": 9
+    },
+    "lambda <-> IRR": {
+      "x_metric": "lambda_max",
+      "y_metric": "irregularity",
+      "spearman_r": -0.36976095499904793,
+      "spearman_p": 0.32736054279590693,
+      "pearson_r": -0.6863203913139746,
+      "pearson_p": 0.04119190525338557,
+      "ci_lower": -0.9130650331385965,
+      "ci_upper": 0.6496190611657364,
+      "n_cases": 9
+    },
+    "entropy <-> PBA": {
+      "x_metric": "hessian_entropy",
+      "y_metric": "probability_band_area",
+      "spearman_r": 0.36604030822626193,
+      "spearman_p": 0.3326297774630902,
+      "pearson_r": 0.5002769795342528,
+      "pearson_p": 0.17019591539982412,
+      "ci_lower": -0.4141505674505605,
+      "ci_upper": 0.8327387884758495,
+      "n_cases": 9
+    },
+    "infoCV <-> MFE": {
+      "x_metric": "info_cv",
+      "y_metric": "mean_failure_entropy",
+      "spearman_r": -0.48333333333333334,
+      "spearman_p": 0.18746985521554216,
+      "pearson_r": -0.6612363314024228,
+      "pearson_p": 0.052453774282658995,
+      "ci_lower": -1.0,
+      "ci_upper": 0.4210526315789474,
+      "n_cases": 9
+    }
+  },
+  "clustering_pca": {
+    "degradation_metrics": [
+      "probability_band_area",
+      "mean_failure_entropy",
+      "irregularity",
+      "seed_variability"
+    ],
+    "landscape_metrics": [
+      "d_null",
+      "lambda_max",
+      "hessian_entropy",
+      "info_cv"
+    ],
+    "eigenvalues_deg": [
+      3.461472589939973,
+      0.8645557697153919,
+      0.11689372456347928,
+      0.05707791578115417
+    ],
+    "explained_ratio_deg": [
+      0.7692161310977719,
+      0.19212350438119824,
+      0.025976383236328733,
+      0.012683981284700928
+    ],
+    "eigenvectors_deg": [
+      [
+        -0.5460540311135709,
+        -0.16847957097242716,
+        -0.7069675930099786,
+        -0.41669707426767905
+      ],
+      [
+        -0.5594139651715149,
+        -0.054894302788211204,
+        -0.041699193239869536,
+        0.8260168329856377
+      ],
+      [
+        -0.33710334684364296,
+        0.9176355017529628,
+        0.13625576929424707,
+        -0.16043934929883916
+      ],
+      [
+        0.5246354393505235,
+        0.3557335176911651,
+        -0.6927426398388177,
+        0.3439752245695879
+      ]
+    ],
+    "projected_deg": [
+      [
+        -1.2120524886128092,
+        -1.4619440038533358
+      ],
+      [
+        -1.2678093817924512,
+        -0.061890501523234165
+      ],
+      [
+        -1.3037156335566815,
+        -0.4912367181546439
+      ],
+      [
+        -2.1959098506880124,
+        0.5766117870965851
+      ],
+      [
+        -1.004091139505252,
+        0.1015197800435628
+      ],
+      [
+        0.7357214184649445,
+        1.5822878724060871
+      ],
+      [
+        1.023632960843328,
+        0.9707349342025173
+      ],
+      [
+        1.65031528350042,
+        -0.5539852001220843
+      ],
+      [
+        3.5739088313465137,
+        -0.6620979500954542
+      ]
+    ],
+    "eigenvalues_land": [
+      2.7315547950705246,
+      1.19941693773578,
+      0.3994245798610199,
+      0.16960368733267592
+    ],
+    "explained_ratio_land": [
+      0.6070121766823388,
+      0.2665370972746178,
+      0.08876101774689332,
+      0.037689708296150204
+    ],
+    "projected_land": [
+      [
+        2.33089340455908,
+        1.441735985145558
+      ],
+      [
+        -0.5716990480199988,
+        -0.7116440995065619
+      ],
+      [
+        -0.14457838509838564,
+        -1.3831846059763107
+      ],
+      [
+        0.5012454534382769,
+        -0.030893190885672245
+      ],
+      [
+        0.5719275547256163,
+        -0.4395624101793177
+      ],
+      [
+        -2.6782936856878994,
+        -0.32700143683851385
+      ],
+      [
+        0.12494094289892385,
+        -0.6125092747702654
+      ],
+      [
+        1.9693696647313008,
+        -0.039153100460418755
+      ],
+      [
+        -2.1038059015468953,
+        2.1022121334715
+      ]
+    ],
+    "clustering": {
+      "2": {
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "silhouette": 0.3113521242330011
+      },
+      "3": {
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "silhouette": 0.33073227093877144
+      },
+      "4": {
+        "labels": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          2,
+          3
+        ],
+        "silhouette": 0.3204414936905118
+      }
+    },
+    "cases": [
+      "poisson",
+      "allen_cahn",
+      "fisher_kpp",
+      "burgers",
+      "heat_equation",
+      "kdv_soliton",
+      "nls_soliton",
+      "wave_equation",
+      "kdv_double_soliton"
+    ]
+  }
+}
